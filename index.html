@@ -57,11 +57,9 @@
 (function(){
   var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
   var frame = document.getElementById('frame');
-  var KEY = 'mt_combined_tab';
   function activate(src){
     tabs.forEach(function(t){ t.classList.toggle('active', t.dataset.src === src); });
     if(frame.getAttribute('src') !== src) frame.setAttribute('src', src);
-    try { localStorage.setItem(KEY, src); } catch(e) {}
   }
   tabs.forEach(function(t){ t.addEventListener('click', function(){ activate(t.dataset.src); }); });
   // 홈 모듈 카드 클릭 → 해당 탭으로 전환
@@ -72,10 +70,7 @@
       if(target){ activate(target.dataset.src); window.scrollTo(0,0); }
     }
   });
-  try {
-    var saved = localStorage.getItem(KEY);
-    if(saved && tabs.some(function(t){ return t.dataset.src === saved; })) activate(saved);
-  } catch(e) {}
+  /* 열 때는 항상 홈부터 — 마지막 탭을 기억하지 않습니다 */
 })();
 </script>
 </body>

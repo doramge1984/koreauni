@@ -72,6 +72,11 @@
   .stepcard li{margin-bottom:7px;}
   .stepcard .note{background:#fbf4e4;border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:12px 16px;margin-top:14px;font-size:.92rem;color:var(--navy-2);}
   .stepcard .goal{display:inline-block;background:rgba(79,138,137,.12);color:var(--teal);font-weight:700;font-size:.82rem;padding:5px 12px;border-radius:999px;margin-bottom:6px;}
+  .stepcard .goalpeek{margin-top:12px;background:#eef7f6;border:1px solid rgba(79,138,137,.35);
+    border-radius:14px;padding:16px 18px 18px;}
+  .stepcard .goalpeek p{margin:0;font-size:.93rem;line-height:1.7;color:var(--navy-2);}
+  .stepcard .goalpeek p b{color:var(--teal);}
+  .stepcard .goalpeek .cta-btn{margin-top:12px;}
   .substep{font-weight:700;color:var(--navy);margin:16px 0 4px;}
 
   /* collapsible steps */
@@ -88,6 +93,8 @@
   #hands .stepcard.collapsed .chev{transform:rotate(-90deg);}
   #hands .stepcard .m-body{padding:0 0 24px;animation:missionfade .25s ease;}
   #hands .stepcard.collapsed .m-body{display:none;}
+  #hands .stepcard{margin-bottom:56px;}
+  #hands .stepcard:last-of-type{margin-bottom:28px;}
   @keyframes missionfade{from{opacity:0;transform:translateY(-4px);}to{opacity:1;transform:none;}}
 
   .tool-tag{display:inline-flex;align-items:center;gap:6px;font-size:.74rem;font-weight:700;padding:3px 10px;border-radius:999px;margin-left:8px;vertical-align:middle;}
@@ -111,6 +118,9 @@
 
   .cta-btn{display:inline-block;margin-top:14px;background:linear-gradient(135deg,var(--terra),#e0a07a);color:#fff;text-decoration:none;font-weight:700;font-size:1rem;padding:12px 24px;border-radius:12px;box-shadow:0 8px 20px rgba(207,128,93,.35);transition:.18s;}
   .cta-btn.teal{background:linear-gradient(135deg,var(--teal),#3f7574);box-shadow:0 8px 20px rgba(79,138,137,.3);}
+  .cta-btn.pad{background:linear-gradient(135deg,var(--gold),#d9b46a);box-shadow:0 8px 20px rgba(195,154,77,.32);}
+  .cta-btn.ghost{background:#fff;color:var(--navy-2);border:1.5px solid var(--line);box-shadow:0 4px 12px rgba(36,53,81,.07);}
+  .cta-btn.ghost:hover{border-color:var(--teal);color:var(--teal);}
   .cta-btn:hover{transform:translateY(-2px);}
   .kbd{background:var(--cream-2);border:1px solid var(--line);border-radius:6px;padding:1px 7px;font-size:.85rem;font-weight:600;color:var(--navy);}
   .mono{font-family:"SFMono-Regular",Consolas,Menlo,monospace;background:var(--cream-2);padding:1px 6px;border-radius:5px;font-size:.86rem;color:var(--terra);text-decoration:none;}
@@ -135,12 +145,48 @@
   .more[open]>summary::before{content:"−";}
   .more>summary span{font-weight:600;color:var(--muted);font-size:.92em;}
   .more .bp-g:first-of-type{margin-top:14px;}
-  /* 결과물 예시 이미지 (토글) */
-  .expic{margin:14px 0 0;text-align:center;}
-  .expic img{width:100%;max-width:400px;border:1px solid var(--line);border-radius:12px;
-    box-shadow:0 8px 22px rgba(36,53,81,.12);display:block;margin:0 auto;}
-  .expic figcaption{margin:9px auto 0;max-width:520px;font-size:.8rem;line-height:1.55;color:var(--muted);}
-  .expic figcaption b{color:var(--terra);}
+  .path{margin:8px 0 0;background:var(--cream-2);border-radius:10px;padding:10px 14px;
+    font-size:.92rem;font-weight:600;color:var(--navy-2);line-height:1.6;}
+  .path b{color:var(--terra);}
+  /* 링크 붙여넣기 박스 */
+  .urlbox{margin:0 0 13px;background:linear-gradient(135deg,#eef7f6,#f3ead6);border:1px solid var(--line);
+    border-radius:12px;padding:13px 15px;box-shadow:0 4px 14px rgba(36,53,81,.05);}
+  .urlbox label{display:block;font-weight:800;color:var(--teal);font-size:.86rem;margin-bottom:8px;}
+  .urlbox .urlrow{display:flex;gap:8px;align-items:stretch;}
+  .urlbox input{flex:1;min-width:0;padding:10px 12px;border:1px solid var(--line);border-radius:9px;
+    font-size:.88rem;font-family:inherit;color:var(--ink);background:#fff;box-sizing:border-box;}
+  .urlbox input:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(79,138,137,.15);}
+  .urlbox .urlrow button{flex:none;background:var(--navy);color:#fff;border:1px solid var(--navy-2);
+    border-radius:9px;padding:0 15px;font-size:.84rem;font-weight:700;cursor:pointer;white-space:nowrap;transition:.15s;}
+  .urlbox .urlrow button:hover{background:var(--navy-2);transform:translateY(-1px);}
+  .urlbox .ok{margin-top:7px;font-size:.8rem;font-weight:700;color:var(--teal);display:none;}
+  .urlbox.filled .ok{display:block;}
+  .urlbox .hint{margin-top:7px;font-size:.78rem;line-height:1.5;color:var(--muted);}
+  .urlbox .hint b{color:var(--terra);}
+  @media(max-width:560px){ .urlbox .urlrow{flex-wrap:wrap;} .urlbox .urlrow button{width:100%;padding:10px 0;} }
+
+  /* 결과물 예시 — 디자인별 비교 (항상 보임) */
+  .expair{margin:16px 0 0;background:var(--paper);border:1px solid var(--line);
+    border-left:4px solid var(--gold);border-radius:0 16px 16px 0;padding:15px 18px 16px;}
+  .expair>h5{margin:0 0 4px;font-size:.88rem;font-weight:800;color:var(--navy);}
+  .expair>p.exlead{margin:0 0 13px;font-size:.8rem;line-height:1.55;color:var(--muted);}
+  .expair>p.exlead b{color:var(--terra);}
+  .exgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+  .exgrid figure{margin:0;text-align:center;}
+  .exgrid img{width:100%;border:1px solid var(--line);border-radius:11px;
+    box-shadow:0 6px 18px rgba(36,53,81,.13);display:block;}
+  .exgrid figcaption{margin-top:8px;font-size:.79rem;font-weight:700;line-height:1.45;color:var(--navy-2);}
+  .exgrid figcaption span{display:block;margin-top:2px;font-weight:600;color:var(--muted);}
+  @media(max-width:620px){ .exgrid{grid-template-columns:1fr;gap:20px;} }
+  .expair.goalex{margin-top:14px;background:#eef7f6;border-color:rgba(79,138,137,.35);}
+  .expair.goalex>h5{font-size:1rem;color:var(--teal);}
+  .expair.goalex>p.exlead{font-size:.9rem;line-height:1.7;color:var(--navy-2);margin-bottom:16px;}
+  .expair.goalex>p.exlead b{color:var(--teal);}
+  .expair.goalex .exgrid img{background:#fff;box-shadow:0 8px 22px rgba(36,53,81,.16);}
+  .expair.goalex .exgrid figcaption{font-size:.86rem;}
+  .expair.goalex>p.goalnext{margin:16px 0 0;padding-top:14px;border-top:1px dashed rgba(79,138,137,.35);
+    font-size:.92rem;line-height:1.7;color:var(--navy-2);}
+  .expair.goalex>p.goalnext b{color:var(--terra);}
   /* 예시 갤러리 */
   .gal{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--teal);
     border-radius:0 16px 16px 0;padding:16px 20px 14px;margin:14px 0 6px;}
@@ -281,7 +327,7 @@
       <div class="arr">➔</div>
       <div class="step"><div class="n">3</div><span class="ico">📱</span><h4>Canvas 안내 페이지</h4><p>모바일 참여 가이드</p></div>
       <div class="arr">➔</div>
-      <div class="step"><div class="n">4</div><span class="ico">📚</span><h4>Gemini Notebook 보고서·프로그램</h4><p>안전 보고서 + MT 프로그램</p></div>
+      <div class="step"><div class="n">4</div><span class="ico">📚</span><h4>Gemini Notebook 프로그램·포스터</h4><p>MT 프로그램 + 안내 포스터</p></div>
     </div>
   </div>
 </section>
@@ -377,12 +423,18 @@
           </div>
         </div>
       </div>
+      <a class="cta-btn pad" href="https://padlet.com/JA_Korea/9-21-6enva6oxcsdk72n7" target="_blank" rel="noopener">🧡 완성한 마스코트 패들렛에 올리기</a>
+      <div class="note">💡 마음에 드는 결과가 나오면 <b>이미지를 저장해 패들렛에 올려주세요.</b> 어떤 버튼을 골랐는지도 함께 적으면 서로 참고할 수 있어요.</div>
     </div>
 
     <!-- STEP 2 -->
     <div class="stepcard" id="step2">
       <div class="head"><div class="num">2</div><h3>당신은 오늘 <span style="color:var(--terra);">신나는</span> MT 기획자 <span class="tool-tag gemini">Gemini</span></h3></div>
       <span class="goal">🎯 결과물 · MT 수요조사 문항셋 리포트</span>
+      <div class="goalpeek">
+        <p>👀 <b>이런 구글 폼을 만들게 됩니다.</b> 먼저 열어서 어떤 걸 물어보는지 훑어보세요 — 아래 실습은 <b>이 폼의 문항을 AI와 함께 뽑는 과정</b>입니다.</p>
+        <a class="cta-btn teal" href="https://docs.google.com/forms/d/e/1FAIpQLSe92SMFrVfs1hVfxgWWzABsnlWASoF9NPmuntAGYGA8HOEJwA/viewform" target="_blank" rel="noopener">📝 완성 예시 · MT 수요조사 폼 열어보기</a>
+      </div>
 
       <p class="substep" style="margin-top:1.4rem;">먼저 · 뭘 물어야 할지 모를 땐, AI에게 <b>인터뷰를 받으세요</b></p>
       <p>설문을 처음 만들면 <b>무엇을 물어야 할지부터 막힙니다.</b> 이럴 때 쓰는 게 <b>메타프롬프트</b>예요 — 답을 달라고 하는 대신, <b>AI가 나에게 질문하게 만드는 프롬프트</b>입니다. 질문에 답하다 보면 내가 만들려던 폼이 저절로 구체화됩니다.</p>
@@ -401,12 +453,11 @@
 
       <div class="warn" style="background:#eef7f6;border-left:4px solid var(--teal);border-radius:0 10px 10px 0;padding:13px 17px;margin:5.4rem 0 6px;font-size:.93rem;color:var(--navy-2);">📌 <b>아래 긴 버전은 '연수용'입니다.</b> 오늘은 시간이 짧아 여러분이 <b>고르기만 하면 되도록</b> 질문 순서와 예시를 미리 정해 두었어요. 실제로 혼자 쓰실 때는 <b>위의 짧은 메타프롬프트</b>를 권합니다. 짧을수록 AI가 여러분 상황에 맞게 자유롭게 물어봅니다.</div>
 
-      <p class="substep">연수용 · 실시간 대화형 인터뷰 진행</p>
+      <p class="substep" style="margin-top:1.6rem;">연수용 · 실시간 대화형 인터뷰 진행</p>
+      <div class="note">💡 Gemini가 질문을 하나씩 던지면, 예시 1~3번 중 골라 답하거나 우리 팀 사정을 자유롭게 적으면 됩니다. 세 질문 대화가 끝나면 <b>문항셋 리포트</b>가 완성됩니다.</div>
       <ul>
         <li>제미나이에서 <b>새 채팅</b>을 시작합니다.</li>
         <li>제미나이가 MT 수요조사 폼 작성에 필요한 <b>4가지 실무 질문</b>(희망 일정, 희망 장소, 차등 정산, 행정 및 안전 가이드)을 하나씩 던지며 답변을 구체화합니다.</li>
-        <li><b>시나리오 기반 가이드 (Few-shot Helper)</b>: 사용자가 대답하기 쉽도록 '현실적인 3대 예시'를 동적으로 제공하여 기획의 질을 높입니다.</li>
-        <li><b>결과물의 규격화 (Format Locking)</b>: 대화가 끝나면 즉시 구글 폼에 복사-붙여넣기 할 수 있는 최종 템플릿 형태로 보여줍니다.</li>
       </ul>
       <div class="prompt-box">
         <div class="gh"><span class="gi">🗣️</span><h4>프롬프트 · 실시간 대화형 인터뷰</h4></div>
@@ -459,8 +510,11 @@
 7번부터는 <span style="color:#ff8f8f;">위 대화에서 정해진 내용</span>으로 채울 것 — <span style="color:#ff8f8f;">희망 일정·날짜(체크박스), 숙박 일수(객관식), 희망 지역 선호 순위(그리드 또는 단답형), 숙소 유형(객관식)</span>, 참불 및 늦참 여부(객관식), 그 밖에 대화에서 정해진 행정 문항, 안전 수칙 동의(객관식) 순서로</pre>
         </div>
       </div>
-      <a class="cta-btn teal" href="https://share.gemini.google/1KWlngduK5QQ" target="_blank" rel="noopener">🔗 2단계 결과물 예시 보기 (Gemini)</a>
-      <div class="note">💡 Gemini가 질문을 하나씩 던지면, 예시 1~3번 중 골라 답하거나 우리 팀 사정을 자유롭게 적으면 됩니다. 세 질문 대화가 끝나면 문항셋 리포트가 완성됩니다.</div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+        <a class="cta-btn teal" href="https://share.gemini.google/1KWlngduK5QQ" target="_blank" rel="noopener">🔗 2단계 결과물 예시 보기 (Gemini)</a>
+        <a class="cta-btn" href="https://form.new" target="_blank" rel="noopener">📝 구글 폼 만들기</a>
+        <a class="cta-btn ghost" href="https://workspace.google.com/labs-sign-up/" target="_blank" rel="noopener">🧪 구글 워크스페이스 랩스 가입</a>
+      </div>
     </div>
 
     <!-- STEP 3 -->
@@ -468,58 +522,85 @@
       <div class="head"><div class="num">3</div><h3>CANVAS를 이용한 MT 공식 안내 가이드 모바일 웹 제작 <span class="tool-tag canvas">Canvas</span></h3></div>
       <span class="goal">🎯 결과물 · 단톡방에 공유할 모바일 안내 페이지</span>
       <p>인터뷰를 바탕으로 학우들에게 배포할 <b>안내 가이드 웹페이지</b>를 제작합니다.</p>
-      <ul>
-        <li>도출된 수요조사 내용을 모바일이나 웹에서 보기 편한 <b>웹앱 스타일</b>로 시각화합니다.</li>
-        <li><b>사용자 환경(UI/UX) 최적화</b>: 카카오톡 등 모바일 링크 유입이 많은 학생들의 특성을 고려해 <b>세로형 모바일 뷰포트</b> 레이아웃으로 설계합니다.</li>
-        <li><b>조건부 정산 및 데이터 시각화</b>: 확정되지 않은 회비를 가상의 더미 데이터와 카드로 표현하여 직관적인 이해를 돕습니다.</li>
-        <li><b>동적 인터랙션 및 안전 서약</b>: 학생들이 필수 안전 규정을 직접 체크박스로 터치하여 동의해야만 하단 '설문 참여' 버튼이 활성화되도록 동적 기능을 구현합니다.</li>
-        <li><b>비주얼 계층과 신뢰감 형성</b>: 대비감 있는 다크 모드 카드 스타일로 '투명 회계 약속'을 강조하고, 시선을 끄는 전면 가로형 버튼으로 설문 참여율을 극대화합니다.</li>
-      </ul>
       <div class="prompt-box">
         <div class="gh"><span class="gi">📱</span><h4>프롬프트 · Canvas 안내 웹페이지 UI</h4></div>
-        <p class="desc">2단계와 같은 채팅에서 이어서 붙여넣으면, 앞 대화 내용이 반영됩니다.</p>
+        <p class="desc">2단계와 <b>같은 채팅</b>에서 이어서 붙여넣으면 앞 대화 내용이 반영됩니다.</p>
+        <div class="urlbox" id="formUrlBox">
+          <label>🔗 내 구글 폼 응답자 링크 <span style="display:inline-block;margin-left:6px;padding:2px 9px;border-radius:999px;background:rgba(122,112,100,.14);color:var(--muted);font-size:.74rem;font-weight:700;vertical-align:1px;">선택사항</span></label>
+          <div class="urlrow">
+            <input id="formUrlInput" type="text" placeholder="https://docs.google.com/forms/d/e/…/viewform" autocomplete="off" spellcheck="false">
+            <button id="formUrlBtn" type="button">📎 프롬프트에 넣기</button>
+          </div>
+          <div class="ok">✅ 아래 프롬프트의 <b>[구글 폼 응답자 링크 넣기]</b> 자리에 들어갔어요.</div>
+          <p class="hint"><b>안 넣어도 됩니다.</b> 폼을 아직 안 만들었으면 비워 둔 채로 프롬프트를 복사하고, 나중에 완성된 페이지에서 링크만 바꿔 넣으면 돼요.</p>
+        </div>
         <div class="codewrap">
           <button class="copy" onclick="copyPrompt(this)">📋 프롬프트 복사</button>
           <pre>우리가 방금 완성한 수요조사 빌드업 내용을 바탕으로 우측에 Canvas(작업대) 창을 새로 열어줘. 이번에 만들 것은 학우들이 설문 참여 전 단톡방 링크를 타고 들어와서 확인하는 'MT 공식 안내 가이드 모바일 웹페이지 UI'야. 학우들이 일정을 확인하고 본인의 상황에 따른 예상 회비(차등 정산 방식)를 체크한 뒤, 필수 안전 지침에 동의하고 설문에 참여할 수 있도록 아래 가이드라인에 맞춰 시각화해줘.
 
-[UI 시각화 가이드라인]
-1. 전체 레이아웃: <span style="color:#ff8f8f;">스마트폰 세로 화면(모바일 뷰포트)에 최적화된 깔끔한 노션/웹앱 스타일</span>로 구성해 줘.
-2. 최상단 [웰컴 배너 & 안내]: 2단계에서 빌드한 다정한 설문 안내문을 배치하여 '한 분 한 분의 취향과 사정을 존중하기 위해 정밀 조사를 시작한다'는 메시지를 전달해 줘.
-3. [행사 개요 컴포넌트]: <span style="color:#ff8f8f;">박스 구획을 나누어</span> 우리가 조율한 [후보 일정 및 확정된 장소/거리 컨셉]을 직관적인 이모지와 함께 요약해 줘.
-4. [★참여 유형별 회비 안내 카드]: (★예시 금액으로 시각화 규칙) 아직 최종 회비가 확정되지 않은 수요조사 단계이므로, 학우들이 차등 정산 방식을 직관적으로 이해할 수 있도록 <span style="color:#ff8f8f;">'가상의 예시 금액(예: 기본 회비 50,000원 기준)'을 임의로 설정하여 표(Table)나 카드 형태로 이쁘게 가공해 줘. 금액 옆에는 반드시 *(수요조사 결과에 따라 변동 가능)* 이라는 안내 문구를 작게</span> 넣어줘.
+[내용 구성]
+1. 전체 레이아웃: <span style="color:#ff8f8f;">스마트폰 세로 화면(모바일 뷰포트)</span>에 맞춰 구성해 줘.
+2. 최상단 [웰컴 배너 &amp; 안내]: 2단계에서 빌드한 다정한 설문 안내문을 배치하여 '한 분 한 분의 취향과 사정을 존중하기 위해 정밀 조사를 시작한다'는 메시지를 전달해 줘.
+3. [행사 개요 컴포넌트]: 박스 구획을 나누어 우리가 조율한 [후보 일정 및 확정된 장소/거리 컨셉]을 이모지와 함께 요약해 줘.
+4. [참여 유형별 회비 안내 카드]: 아직 최종 회비가 확정되지 않은 수요조사 단계이므로, 학우들이 차등 정산 방식을 이해할 수 있도록 <span style="color:#ff8f8f;">'가상의 예시 금액(예: 기본 회비 50,000원 기준)'을 임의로 설정하여 카드 3장으로</span> 정리해 줘. 카드 아래에 *(수요조사 결과에 따라 변동 가능)* 이라는 안내 문구를 한 번만 작게 넣어줘.
 - 예: [정속 참여형] 금~토 전체 참여 ➔ 100% (예시: 50,000원)
 - 예: [금요 야간 늦참형] 금요일 밤 합류 ➔ 30% 할인가 (예시: 35,000원)
 - 예: [토요 당일 합류형] 토요일 낮 합류 ➔ 50% 할인가 (예시: 25,000원)
-5. [🚨 필수 안전 행동강령 컴포넌트]: 학우들이 가이드를 읽으며 직접 터치하여 체크할 수 있도록 아래 문구와 구조를 그대로 반영한 '체크박스 컴포넌트'를 시각적으로 예쁘게 만들어줘.
-- [🛡️ 안전하고 깨끗한 놀이문화 정착 약속] "의무 가이드를 모두 이해하셨다면 체크박스를 채워 동의해 주세요. <span style="color:#ff8f8f;">체크를 전부 마치셔야 하단의 '설문 참여' 버튼이 활성화됩니다.</span>"
+5. [🚨 필수 안전 행동강령 컴포넌트]: 학우들이 가이드를 읽으며 직접 터치하여 체크할 수 있도록 아래 문구와 구조를 그대로 반영한 '체크박스 컴포넌트'로 만들어 줘. <span style="color:#8ad3a4;">항목의 글자를 눌러도 체크되게 하고, 세 개를 모두 체크하면 하단 버튼이 활성화되게 해 줘.</span>
+- [🛡️ 안전하고 깨끗한 놀이문화 정착 약속] "의무 가이드를 모두 이해하셨다면 체크박스를 채워 동의해 주세요. 체크를 전부 마치셔야 하단의 '설문 참여' 버튼이 활성화됩니다."
 - [ ] 강압적인 주류 권유 및 강권 전면 금지 (서브텍스트: 타인의 선호(음주/무알코올 조)를 철저히 존중하고 즐겁게 소통합니다.)
 - [ ] 야간 무단 이탈 금지 및 개인 과실 면책 (서브텍스트: 집행부 허가 없는 야간 이탈 사고 시 개인 책임임을 인지하고 통제에 따릅니다.)
 - [ ] 숙박 시설 기물 파손 책임 동의 (서브텍스트: 본인의 고의 또는 명백한 부주의로 기물이나 가전제품 파손 시 실비 변상합니다.)
-6. [💡 투명 운영 및 회계 약속]: 안전 강령 하단에 <span style="color:#ff8f8f;">어두운 반전 배경색 박스(다크 모드 카드 스타일)를 활용</span>해 신뢰감을 주는 아래 피드백 문구를 강조해줘. "세부 장보기 목록, 펜션 계약 단가표 및 모든 영수증 집행 내역은 우리 학생회/동아리 명의로 단 1원도 유용되지 않으며, 행사 종료 후 사후 회계 보고서를 통하여 가장 투명하고 정직하게 오픈해 드립니다."
+6. [💡 투명 운영 및 회계 약속]: 안전 강령 하단에 반전 배경색 박스를 두고 아래 문구를 넣어줘. "세부 장보기 목록, 펜션 계약 단가표 및 모든 영수증 집행 내역은 우리 학생회/동아리 명의로 단 1원도 유용되지 않으며, 행사 종료 후 사후 회계 보고서를 통하여 가장 투명하고 정직하게 오픈해 드립니다."
 - 하단 태그 및 마크 표시: #투명회계 #안전제일, 오른쪽 정렬로 앞 대화에서 확정된 실제 학생회/동아리 명칭(예: 14대 Gemini 학생회)을 명시해 줄 것.
-7. [★최하단 '설문 참여하기' CTA 버튼]: 페이지 맨 마지막에는 학우들이 동의를 마치고 구글 설문 폼으로 넘어갈 수 있도록 눈에 띄는 버튼 컴포넌트를 만들어줘.
+7. [최하단 '설문 참여하기' CTA 버튼]: 페이지 맨 마지막에는 학우들이 동의를 마치고 구글 설문 폼으로 넘어갈 수 있도록 버튼 컴포넌트를 만들어줘.
 - 안내 멘트: "🎉 필수 동의 완료! 이제 하단 버튼을 클릭해 설문지로 바로 진입하세요."
 - 버튼 양식: <span style="color:#ff8f8f;">모바일 화면 너비에 꽉 차는 라운드 버튼 형태</span> (예: [ 📝 내 성향 반영하러 가기 (구글 설문 연결) ])
-- 버튼 바로 아래에는 실제 설문지 주소 링크인 '직접 주소: [구글 폼 응답자 링크 넣기]' 를 깔끔하게 하이퍼링크로 연동해 줄 것.</pre>
+- 버튼 바로 아래에는 실제 설문지 주소 링크인 '직접 주소: <span id="formUrlSlot" style="color:#ff8f8f;font-weight:800;">[구글 폼 응답자 링크 넣기]</span>' 를 깔끔하게 하이퍼링크로 연동해 줄 것.
+
+[디자인]
+<span style="color:#8ad3a4;">위 구성은 그대로 두고 스타일만 아래대로 만들어 줘.</span>
+- 바깥 배경 #eef1f7, 본문은 흰색 420px 중앙 정렬 (데스크톱에서도 휴대폰 화면처럼)
+- 색은 네 가지만 — 인디고 #3b5bdb(메인·버튼) / 민트 #0ca678(체크 완료) / 주황 #f76707(안전 강령) / 노랑 #fcc419(강조 문구)
+- 맨 위 배너: 인디고→퍼플 대각선 그라데이션 + 흰 글자
+- 회비 카드 3장: 위아래로 쌓고 왼쪽 테두리 4px를 각각 인디고·민트·주황으로
+- 투명 회계 박스: #1b2440 배경 + 흰 글자, 강조 문구만 노랑
+- 카드: 흰 배경 / 모서리 14px / 테두리 1px #e4e8f0 / 글꼴 Pretendard / 본문 15px 행간 1.65
+- 체크박스는 브라우저 기본 대신 직접 만들고, 체크되면 민트색으로
+<span style="color:#8ad3a4;">위 색상 코드를 빠뜨리지 말고 전부 적용해 줘.</span></pre>
         </div>
       </div>
-      <a class="cta-btn teal" href="https://gemini.google.com/share/b4efe48d17e5?skid=c9c9462c-0080-4cd9-938e-dc317f5af046" target="_blank" rel="noopener">🔗 3단계 결과물 예시 보기 (Canvas 안내 페이지)</a>
-      <div class="note">💡 완성된 Canvas는 우측 상단 <b>공유 → 링크 생성</b>으로 주소를 만들어 공유하세요.</div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+        <a class="cta-btn teal" href="https://gemini.google.com/share/b4efe48d17e5?skid=c9c9462c-0080-4cd9-938e-dc317f5af046" target="_blank" rel="noopener">🔗 기본 예시 보기 (Canvas 안내 페이지)</a>
+        <a class="cta-btn" href="https://share.gemini.google/jx26n2uW6VVR" target="_blank" rel="noopener">🎨 디자인 적용 예시 보기</a>
+      </div>
+      <div class="note">💡 완성되면 <b>체크박스 세 개를 눌러 보세요.</b> 다 체크해야 아래 버튼이 켜집니다.<br>💡 <b>디자인이 마음에 안 들면 같은 채팅에 한 줄만 더 보내면 됩니다.</b> 앞에 <span style="color:#c0392b;">"내용은 그대로 두고 디자인만"</span>을 붙이는 게 요령이에요.<br>&nbsp;&nbsp;&nbsp;&nbsp;· <span class="mono" style="color:#c0392b;">내용은 그대로 두고 디자인만 밤에 보기 좋게 어두운 화면으로 바꿔줘.</span><br>&nbsp;&nbsp;&nbsp;&nbsp;· <span class="mono" style="color:#c0392b;">내용은 그대로 두고 디자인만 파스텔 톤으로 부드럽게 바꿔줘.</span><br>&nbsp;&nbsp;&nbsp;&nbsp;· <span class="mono" style="color:#c0392b;">내용은 그대로 두고 디자인만 대학 축제 포스터처럼 통통 튀게 바꿔줘.</span></div>
     </div>
 
     <!-- STEP 4 -->
     <div class="stepcard" id="step4">
-      <div class="head"><div class="num">4</div><h3>Gemini Notebook으로 MT 프로그램 + 안전 포스터 만들기 <span class="tool-tag nlm">Gemini Notebook</span></h3></div>
-      <span class="goal">🎯 결과물 · 단톡방에 뿌릴 MT 안내 포스터 1장 (일정표 + 안전·인권 수칙)</span>
+      <div class="head"><div class="num">4</div><h3>Gemini Notebook으로 MT 프로그램 + 단톡방 안내 포스터 만들기 <span class="tool-tag nlm">Gemini Notebook</span></h3></div>
+      <span class="goal">🎯 결과물 · 단톡방에 뿌릴 MT 안내 포스터 1장 (일정표 + 안전 수칙)</span>
+      <div class="expair goalex">
+        <h5>👀 오늘 이걸 만듭니다 — 완성 예시 두 장</h5>
+        <p class="exlead">일정표 · 준비물 · 안전 수칙이 <b>한 장에</b> 들어간 포스터입니다. 단톡방에 그대로 올릴 수 있어요. 두 장은 <b>같은 기획안, 같은 [내용 구성]</b>으로 만들고 <b>[디자인]</b> 문단만 갈아 끼운 것 — 디자인을 바꿔도 일정표가 지면 절반, 안전 수칙은 맨 아래 띠 박스라는 구조는 그대로입니다.</p>
+        <div class="exgrid">
+          <figure>
+            <img src="sample-poster.jpg" alt="게임 퀘스트 디자인으로 만든 MT 안내 포스터 — 어두운 남색 배경, 퀘스트 목록형 일정표, 하단 안전 수칙 4가지">
+            <figcaption>🎮 게임 퀘스트<span>퀘스트 목록형 일정 · 픽셀 테두리</span></figcaption>
+          </figure>
+          <figure>
+            <img src="sample-poster2.jpg" alt="여행 티켓 디자인으로 만든 MT 안내 포스터 — 탑승권 형태, 절취선과 도장 장식, 하단 안전 수칙 4가지">
+            <figcaption>🎫 여행 티켓<span>탑승권 형태 · 절취선·도장 장식</span></figcaption>
+          </figure>
+        </div>
+        <p class="goalnext">👉 그런데 이걸 만들려면 <b>먼저 프로그램이 있어야</b> 하죠. 그래서 <b>① 사례 수집 → ② 기획안</b>부터 갑니다.</p>
+      </div>
       <p>Gemini Notebook으로 이동하여 <b>새 노트북 만들기</b>를 선택합니다.</p>
-      <ul>
-        <li>Gemini Notebook에 추가할 자료를 다운 받습니다.</li>
-      </ul>
       <a class="cta-btn teal" href="https://drive.google.com/drive/folders/14QItAD_9cTW0antNQ0M2w5qCIm6kiAvC" target="_blank" rel="noopener">📥 Gemini Notebook 소스 다운로드</a>
       <ul>
-        <li>다운로드 한 소스를 추가합니다. (<b>대학 성희롱·성폭력 사건처리 매뉴얼(교육부)</b>, <b>대학생 집단연수 운영 안전 확보 매뉴얼(교육부)</b>)</li>
+        <li>다운로드 한 소스를 추가합니다. (<b>대학생 집단연수 운영 안전 확보 매뉴얼(교육부)</b>)</li>
       </ul>
-      <div class="note">💡 이번 실습의 흐름은 <b>자료 여러 개 → 기획안 하나 → 그 기획안이 다시 새 자료 → 포스터 한 장</b>입니다. 내가 만든 결과물을 다시 재료로 쓰는 것이 Gemini Notebook의 핵심입니다.</div>
 
       <p class="substep" style="margin-top:2.6rem;">① MT 프로그램 사례 수집 (Fast Research)</p>
       <ul>
@@ -536,7 +617,6 @@
 3. 소외 없는 운영: 내향적인 참가자나 중간에 합류한 인원도 빠지지 않고 참여하게 만드는 진행 방식</pre>
         </div>
       </div>
-      <div class="note">💡 <b>안전·인권은 일부러 검색하지 않습니다.</b> 그 내용은 방금 올린 <b>교육부 매뉴얼</b>이 맡습니다. 웹에서 긁어온 글보다 공식 매뉴얼이 근거로 훨씬 낫기 때문입니다.</div>
       <ul>
         <li>수집한 자료를 <b>가져오기</b> 버튼을 눌러 가져옵니다.</li>
         <li>수집되지 않는 자료는 모두 삭제합니다.</li>
@@ -544,7 +624,7 @@
 
       <p class="substep" style="margin-top:2.6rem;">② MT 세부 프로그램 기획안</p>
       <ul>
-        <li>매뉴얼 2개와 가져온 웹소스를 <b>모두 선택한 상태</b>에서 채팅에 아래 프롬프트를 입력합니다. <b>(매뉴얼 체크가 켜져 있어야 4번 안전 수칙이 매뉴얼 근거로 나옵니다)</b></li>
+        <li>매뉴얼과 가져온 웹소스를 <b>모두 선택한 상태</b>에서 채팅에 아래 프롬프트를 입력합니다.</li>
       </ul>
       <div class="prompt-box">
         <div class="gh"><span class="gi">📋</span><h4>프롬프트 · MT 프로그램 기획안</h4></div>
@@ -569,9 +649,9 @@
 
 단순한 술자리를 대체할 수 있는 구성원들이 서로 진솔한 이야기를 나누고 깊은 유대감을 형성할 수 있는 야간 네트워킹 활동을 기획해 주세요.
 
-4. 안전·인권 핵심 수칙 4가지
+4. 안전 핵심 수칙 4가지
 
-<span style="color:#8ad3a4;">업로드된 교육부 매뉴얼만을 근거로</span>, 이번 MT에 반드시 들어가야 할 수칙을 <span style="color:#ff8f8f;">(1) 이동 및 숙소 안전, (2) 음주 강요 금지, (3) 디지털 인권(사진·영상 촬영과 공유), (4) 문제 발생 시 신고와 비밀유지</span> — 네 항목으로 각각 한 문장씩 정리해 주세요. 대학생이 한 번에 읽고 이해할 만큼 짧고 직관적인 문장으로 써 주세요.</pre>
+<span style="color:#8ad3a4;">업로드된 교육부 매뉴얼만을 근거로</span>, 이번 MT에 반드시 들어가야 할 수칙을 <span style="color:#ff8f8f;">(1) 이동 및 차량 안전, (2) 숙소 안전과 야간 인원 점검, (3) 음주로 인한 안전사고 예방(강요 금지 포함), (4) 사고 발생 시 응급 대응과 신고 절차</span> — 네 항목으로 각각 한 문장씩 정리해 주세요. 대학생이 한 번에 읽고 이해할 만큼 짧고 직관적인 문장으로 써 주세요.</pre>
         </div>
       </div>
       <ul>
@@ -580,7 +660,8 @@
       </ul>
 
       <p class="substep" style="margin-top:2.6rem;">③ 단톡방에 뿌릴 안내 포스터 1장</p>
-      <p>소스로 변환한 <b>기획안 하나만 체크</b>합니다(매뉴얼·웹소스는 체크 해제). 스튜디오에서 <b>인포그래픽</b>을 고른 뒤, <b>인포그래픽 카드 오른쪽의 &gt;</b> 를 눌러 설명란을 펼치고, <b>세부정보 수준</b>을 <b>&#39;간결하게&#39;</b>로 체크한 후 아래 프롬프트를 넣으세요.</p>
+      <p>소스로 변환한 <b>기획안 하나만 체크</b>합니다. (매뉴얼·웹소스는 체크 해제)</p>
+      <p class="path">스튜디오 → <b>인포그래픽</b> → 카드 오른쪽 <b>&gt;</b> → <b>세부정보 수준 &#39;간결하게&#39;</b></p>
       <ul>
         <li><b>방향</b> — 단톡방 배포용은 <b>세로</b>, 인쇄용 포스터는 <b>정사각형</b></li>
         <li>결과물은 <b>PNG</b>로 내려받을 수 있습니다.</li>
@@ -601,7 +682,7 @@
 [내용 구성]
 - 가장 크고 눈에 띄게: <span style="color:#ff8f8f;">1박 2일 시간대별 일정표</span>
 - 중간: 주요 팀빌딩 게임과 야간 프로그램의 이름, 소요 시간
-- 맨 아래 띠 모양 박스: <span style="color:#ff8f8f;">안전·인권 핵심 수칙 4가지</span>를 각각 한 줄씩
+- 맨 아래 띠 모양 박스: <span style="color:#ff8f8f;">안전 핵심 수칙 4가지</span>를 각각 한 줄씩
 <span style="color:#8ad3a4;">전체 지면의 절반 이상을 일정표에 쓰고, 안전 수칙은 하단 박스 안에만 넣어 줘.</span> 대학생이 휴대폰으로 한 번에 훑어볼 수 있게 문장은 짧게, 글자는 크게 해 줘.
 
 [디자인]
@@ -609,23 +690,18 @@
 <span id="posterDesign">게임 화면처럼 만들어 줘. 일정표는 시간순 퀘스트 목록처럼, 각 프로그램은 획득할 미션 카드처럼 배치해 줘. 어두운 남색 배경에 밝은 하늘색·노란색 강조, 픽셀 느낌의 테두리와 체크박스 장식을 넣어 줘. 글자는 배경과 또렷하게 구분되도록 밝고 굵게 써 줘.</span></pre>
         </div>
       </div>
-      <details class="more" style="margin-top:16px;">
-        <summary>🖼️ 결과물 예시 보기 <span>게임 퀘스트 디자인으로 만든 포스터</span></summary>
-        <figure class="expic">
-          <img src="sample-poster.jpg" alt="게임 퀘스트 디자인으로 만든 MT 안내 포스터 예시 — 1박 2일 일정표, 주요 프로그램 안내, 하단에 안전·인권 핵심 수칙 4가지" loading="lazy">
-          <figcaption>🎮 <b>게임 퀘스트</b> 디자인 · 세로 · 세부정보 수준 <b>&#39;간결하게&#39;</b><br>일정표가 지면의 절반 이상을 차지하고, 안전·인권 수칙 4가지는 <b>맨 아래 띠 박스</b>에 들어갔습니다. 디자인 칩을 바꾸면 이 분위기만 달라집니다.</figcaption>
-        </figure>
-      </details>
+      <div class="note">💡 <b>결과물 예시는 이 실습 맨 위</b>에 있습니다. 두 장 모두 <b>같은 기획안·같은 [내용 구성]</b>으로 만들고 <b>[디자인]</b> 문단만 갈아 끼운 것이니, 지금 고른 디자인이 어떻게 반영되는지 비교해 보세요.</div>
       <div class="note">💡 디자인 지시는 <b>맨 끝에 따로</b> 둡니다. 앞에 섞으면 <b>&#39;일정표에 지면 절반&#39;</b> 같은 구성 규칙을 디자인 지시가 밀어냅니다. 완성된 PNG는 <b>패들렛</b>에 올려 서로 비교해 보세요.</div>
+      <a class="cta-btn pad" href="https://padlet.com/JA_Korea/9-21-6enva6oxcsdk72n7" target="_blank" rel="noopener">🧡 완성한 포스터 패들렛에 올리기</a>
 
       <p class="substep" style="margin-top:2.6rem;">④ [인솔자용] 안전 및 비상상황 대응 체크리스트 <span class="pill">시간 되면</span></p>
-      <p>학생회 임원·조장이 <b>인쇄해서 들고 다닐</b> 문서입니다. 이건 그림이 아니라 글이 필요하니, <b>매뉴얼 2개만 체크</b>하고 스튜디오에서 <b>보고서</b>를 고른 뒤 설명란에 아래 프롬프트를 넣으세요.</p>
+      <p>학생회 임원·조장이 <b>인쇄해서 들고 다닐</b> 문서입니다. 이건 그림이 아니라 글이 필요하니, <b>매뉴얼만 체크</b>하고 스튜디오에서 <b>보고서</b>를 고른 뒤 설명란에 아래 프롬프트를 넣으세요.</p>
       <div class="prompt-box">
         <div class="gh"><span class="gi">📋</span><h4>프롬프트 · 안전 및 비상상황 대응 체크리스트 (보고서)</h4></div>
         <p class="desc">스튜디오 → <b>보고서</b> → 설명란에 붙여넣으세요.</p>
         <div class="codewrap">
           <button class="copy" onclick="copyPrompt(this)">📋 프롬프트 복사</button>
-          <pre>선택한 두 매뉴얼을 바탕으로, <span style="color:#ff8f8f;">MT 인솔자가 현장에서 비상시 참고할 수 있는 &#39;안전 및 비상상황 대응 체크리스트&#39;</span>를 작성해 줘. (1) 출발 전 차량 상태 및 운전자 점검, (2) 안전사고 시 소방서 및 교육부 신고 핫라인, (3) 성희롱 발생 시 피해자 보호(가해자 분리 및 비밀 보장) 수칙을 한눈에 들어오는 개조식으로 요약해 줘.</pre>
+          <pre>선택한 매뉴얼을 바탕으로, <span style="color:#ff8f8f;">MT 인솔자가 현장에서 비상시 참고할 수 있는 &#39;안전 및 비상상황 대응 체크리스트&#39;</span>를 작성해 줘. (1) 출발 전 차량 상태 및 운전자 점검, (2) 안전사고 시 소방서 및 응급 신고 절차, (3) 야간 인원 점검과 숙소 안전 관리 수칙을 한눈에 들어오는 개조식으로 요약해 줘.</pre>
         </div>
       </div>
       <div class="note">💡 같은 자료인데 <b>③은 모두에게 뿌리는 그림</b>, <b>④는 인솔자만 보는 글</b>입니다. <b>누가 · 어디서 읽느냐</b>에 따라 만들 형태가 달라집니다.</div>
@@ -667,6 +743,27 @@ function copyPrompt(btn){
     setTimeout(function(){ btn.innerHTML = o; }, 1600);
   }).catch(function(){ btn.innerHTML = '⚠️ 복사 실패'; });
 }
+/* 구글 폼 응답자 링크 → 프롬프트에 주입 */
+(function(){
+  var box = document.getElementById('formUrlBox');
+  var inp = document.getElementById('formUrlInput');
+  var btn = document.getElementById('formUrlBtn');
+  var slot = document.getElementById('formUrlSlot');
+  if(!box || !inp || !btn || !slot) return;
+  var KEY = 'mt_form_url_m2';
+  try { var saved = localStorage.getItem(KEY); if(saved){ inp.value = saved; } } catch(e) {}
+  function apply(){
+    var v = (inp.value || '').trim();
+    if(!v){ inp.focus(); return; }
+    slot.textContent = v;
+    box.classList.add('filled');
+    try { localStorage.setItem(KEY, v); } catch(e) {}
+    var o = btn.textContent; btn.textContent = '✅ 넣었어요!';
+    setTimeout(function(){ btn.textContent = o; }, 1600);
+  }
+  btn.addEventListener('click', apply);
+  inp.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); apply(); } });
+})();
 /* ③ 포스터 디자인 골라 넣기 — [디자인] 문단만 갈아 끼웁니다 */
 (function(){
   var wrap = document.getElementById('posterChips');
