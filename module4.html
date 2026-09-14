@@ -4,19 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MT 추억 아카이빙 · 엽서 자동 발송 교안</title>
+<link rel="stylesheet" href="fonts/pretendard.css">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" as="style" crossorigin
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
 <style>
   :root{
-    --cream:#faf5e9;
-    --cream-2:#f3ead6;
-    --paper:#fffdf8;
+    --cream:#ffffff;
+    --cream-2:#f1f3f4;
+    --paper:#ffffff;
     --navy:#243551;
     --navy-2:#34496b;
-    --teal:#4f8a89;
-    --terra:#cf805d;
-    --gold:#c39a4d;
+    --teal:#1e8e3e;
+    --terra:#1967d2;
+    --gold:#e8a020;
     --ink:#2f2a24;
     --muted:#7a7064;
-    --line:#e3d7bf;
+    --line:#e8eaed;
     --shadow:0 14px 40px rgba(36,53,81,.14);
     --green:#3d8c5a;
   }
@@ -24,19 +29,19 @@
   html{scroll-behavior:smooth;font-size:21px;}
   body{
     margin:0;
-    font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+    font-family:"Pretendard Variable","Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
     color:var(--ink);
     background:
-      radial-gradient(1200px 600px at 80% -10%,#fbeede 0%,transparent 60%),
-      radial-gradient(900px 500px at -10% 20%,#eef3ef 0%,transparent 55%),
+      radial-gradient(1200px 600px at 80% -10%,#f8f9fa 0%,transparent 60%),
+      radial-gradient(900px 500px at -10% 20%,#ffffff 0%,transparent 55%),
       var(--cream);
-    line-height:1.7;
+    line-height:1.72;
   }
 
   nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);background:var(--navy);border-bottom:1px solid rgba(255,255,255,.12);}
   .nav-inner{max-width:1080px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
-  .brand{font-weight:800;color:#fff;display:flex;align-items:center;gap:8px;font-size:1.02rem;}
-  .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--terra);box-shadow:0 0 0 4px rgba(207,128,93,.18);}
+  .brand{font-weight:600;color:#fff;display:flex;align-items:center;gap:8px;font-size:1.02rem;}
+  .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--terra);box-shadow:0 0 0 4px rgba(25,103,210,.18);}
   .nav-links{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
   .nav-links a{color:rgba(255,255,255,.85);text-decoration:none;font-size:.86rem;font-weight:600;padding:6px 11px;border-radius:999px;transition:.18s;}
   .nav-links a:hover{background:rgba(255,255,255,.18);color:#fff;}
@@ -45,33 +50,33 @@
   .wrap{max-width:1240px;margin:0 auto;padding:0 22px;}
   section{padding:62px 0;border-bottom:1px dashed var(--line);}
   section:last-of-type{border-bottom:none;}
-  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:14px;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#80868b;margin-bottom:14px;}
   .eyebrow::before{content:"⛺";font-size:1rem;}
-  h2.sec{font-size:1.9rem;margin:0 0 10px;color:var(--navy);font-weight:800;letter-spacing:-.01em;}
+  h2.sec{font-size:1.9rem;margin:0 0 10px;color:var(--navy);font-weight:600;letter-spacing:-.01em;}
   .lead{font-size:1.06rem;color:var(--muted);max-width:760px;margin:0 0 26px;}
 
   /* HERO */
   .hero{position:relative;overflow:hidden;padding:74px 0 64px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(36,53,81,.04),transparent 40%);}
   .hero .wrap{position:relative;z-index:2;}
   .tent-path{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.35;}
-  .stamp-badge{display:inline-flex;align-items:center;gap:9px;border:2px dashed var(--terra);color:var(--terra);padding:6px 14px;border-radius:999px;font-weight:700;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;transform:rotate(-2deg);background:rgba(255,255,255,.5);}
-  .hero h1{font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.12;margin:20px 0 14px;color:var(--navy);font-weight:800;letter-spacing:-.02em;}
-  .hero h1 .hl{color:var(--terra);}
+  .stamp-badge{display:inline-flex;align-items:center;gap:9px;border:1px solid #dadce0;color:#5f6368;padding:6px 14px;border-radius:999px;font-weight:600;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.5);}
+  .hero h1{font-size:clamp(2rem,3.4vw,3rem);line-height:1.12;margin:20px 0 14px;color:var(--navy);font-weight:600;letter-spacing:-.035em;}
+  .hero h1 .hl{background:linear-gradient(100deg,#4285f4,#9b72cb 40%,#d96570 72%,#f2994a);-webkit-background-clip:text;background-clip:text;color:transparent;}
   .hero p.sub{font-size:1.15rem;color:var(--navy-2);max-width:680px;margin:0 0 26px;}
   .meta-row{display:flex;gap:12px;flex-wrap:wrap;}
-  .chip{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 15px;font-size:.9rem;color:var(--navy-2);font-weight:600;box-shadow:0 4px 14px rgba(36,53,81,.05);}
+  .chip{background:var(--paper);border:0;border-radius:22px;padding:10px 15px;font-size:.9rem;color:var(--navy-2);font-weight:600;box-shadow:0 4px 14px rgba(36,53,81,.05);}
   .chip b{color:var(--terra);}
 
   /* CARDS */
   .grid{display:grid;gap:18px;}
   .grid-3{grid-template-columns:repeat(3,1fr);}
   .grid-2{grid-template-columns:repeat(2,1fr);}
-  .card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 6px 20px rgba(36,53,81,.05);}
+  .card{background:var(--paper);border:0;border-radius:22px;padding:22px;box-shadow:0 6px 20px rgba(36,53,81,.05);}
   .card h3{margin:0 0 8px;color:var(--navy);font-size:1.12rem;}
   .card p{margin:0;color:var(--muted);font-size:.95rem;}
   .card .ico{font-size:1.6rem;margin-bottom:6px;display:block;}
 
-  .why-box{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#f4ecd9;border-radius:20px;padding:34px 32px;box-shadow:var(--shadow);}
+  .why-box{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#f1f3f4;border-radius:20px;padding:34px 32px;box-shadow:var(--shadow);}
   .why-box h3{color:#fff;margin:0 0 12px;font-size:1.35rem;}
   .why-box p{color:#d9e0ec;margin:0 0 14px;}
 
@@ -81,7 +86,7 @@
   #autofx .stage{position:relative;}
   #autofx .imgwrap{position:relative;width:100%;border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 30px rgba(36,53,81,.14);background:#243551;aspect-ratio:1630/924;cursor:pointer;}
   #autofx .imgwrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
-  #autofx .fxph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;text-align:center;font-size:.92rem;padding:20px;line-height:1.6;}
+  #autofx .fxph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;text-align:center;font-size:.92rem;padding:20px;line-height:1.6;}
   #autofx .cf .after{opacity:0;transition:opacity .9s ease;}
   #autofx .cf.done .after{opacity:1;}
   #autofx .proc{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;z-index:4;}
@@ -90,48 +95,48 @@
   #autofx .proc.on .shimmer{animation:fxsh 1s linear infinite;}
   @keyframes fxsh{to{transform:translateX(100%);}}
   #autofx .procbox{position:relative;z-index:2;background:rgba(36,53,81,.85);color:#fff;padding:16px 22px;border-radius:14px;text-align:center;min-width:230px;}
-  #autofx .procbox span{font-weight:700;font-size:.95rem;}
+  #autofx .procbox span{font-weight:600;font-size:.95rem;}
   #autofx .bar{height:7px;background:rgba(255,255,255,.25);border-radius:99px;margin-top:11px;overflow:hidden;}
-  #autofx .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--terra),#e0a07a);border-radius:99px;transition:width 1s linear;}
+  #autofx .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--terra),#4285f4);border-radius:99px;transition:width 1s linear;}
   #autofx .spin{width:26px;height:26px;border:3px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;margin:0 auto 8px;animation:fxsp .7s linear infinite;}
   @keyframes fxsp{to{transform:rotate(360deg);}}
-  #autofx .fxbadge{position:absolute;top:12px;right:12px;background:var(--teal);color:#fff;font-weight:800;padding:7px 14px;border-radius:99px;box-shadow:0 6px 16px rgba(79,138,137,.4);opacity:0;transform:translateY(-6px);transition:.3s;z-index:5;}
+  #autofx .fxbadge{position:absolute;top:12px;right:12px;background:var(--teal);color:#fff;font-weight:600;padding:7px 14px;border-radius:99px;box-shadow:0 6px 16px rgba(30,142,62,.4);opacity:0;transform:translateY(-6px);transition:.3s;z-index:5;}
   #autofx .fxbadge.on{opacity:1;transform:none;}
   #autofx .controls{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center;}
-  #autofx .run{background:linear-gradient(135deg,var(--terra),#e0a07a);color:#fff;border:none;font-weight:800;font-size:1rem;padding:13px 24px;border-radius:12px;cursor:pointer;box-shadow:0 8px 20px rgba(207,128,93,.35);animation:revpulse 1.6s ease-in-out infinite;}
+  #autofx .run{background:#243551;color:#fff;border:none;font-weight:600;font-size:1rem;padding:13px 24px;border-radius:14px;cursor:pointer;box-shadow:0 4px 14px rgba(60,64,67,.16);animation:revpulse 1.6s ease-in-out infinite;}
   #autofx .run:disabled{opacity:.5;animation:none;cursor:default;}
-  #autofx .reset{background:var(--paper);border:1px solid var(--line);color:var(--navy);font-weight:700;padding:11px 18px;border-radius:12px;cursor:pointer;}
+  #autofx .reset{background:var(--paper);border:1px solid var(--line);color:var(--navy);font-weight:600;padding:11px 18px;border-radius:14px;cursor:pointer;}
   #autofx .hint{color:var(--muted);font-size:.85rem;}
   .postcard-demo{
-    background:#fffbf2;border:1px solid var(--line);border-radius:18px;
+    background:#fcfcfd;border:0;border-radius:24px;
     overflow:hidden;box-shadow:var(--shadow);aspect-ratio:16/9;
     display:grid;grid-template-columns:1fr 1fr;
   }
   .pc-photo{background:linear-gradient(135deg,#d4e8d0,#a8c5a0);display:flex;align-items:center;justify-content:center;position:relative;}
-  .pc-photo .ph-label{color:rgba(255,255,255,.7);font-size:.8rem;font-weight:700;text-align:center;}
+  .pc-photo .ph-label{color:rgba(255,255,255,.7);font-size:.8rem;font-weight:600;text-align:center;}
   .pc-photo .ph-icon{font-size:3rem;display:block;margin-bottom:8px;}
-  .pc-photo .stamp-mt{position:absolute;top:14px;right:14px;width:56px;height:56px;border:3px solid rgba(255,255,255,.6);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(207,128,93,.75);color:#fff;font-size:.52rem;font-weight:700;text-align:center;line-height:1.3;}
+  .pc-photo .stamp-mt{position:absolute;top:14px;right:14px;width:56px;height:56px;border:3px solid rgba(255,255,255,.6);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(25,103,210,.75);color:#fff;font-size:.52rem;font-weight:600;text-align:center;line-height:1.3;}
   .pc-right{padding:24px;display:flex;flex-direction:column;gap:12px;border-left:1px solid var(--line);}
-  .pc-to{font-size:.7rem;font-weight:700;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
-  .pc-name{font-size:1.5rem;font-weight:800;color:var(--navy);}
-  .pc-entry{display:inline-block;background:var(--terra);color:#fff;font-weight:800;font-size:1.1rem;padding:5px 14px;border-radius:8px;}
+  .pc-to{font-size:.7rem;font-weight:600;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+  .pc-name{font-size:1.5rem;font-weight:600;color:var(--navy);}
+  .pc-entry{display:inline-block;background:var(--terra);color:#fff;font-weight:600;font-size:1.1rem;padding:5px 14px;border-radius:8px;}
   .pc-memory{font-size:.85rem;color:var(--navy-2);line-height:1.6;background:var(--cream);border-radius:10px;padding:10px 12px;margin:0;}
   .pc-lines{display:flex;flex-direction:column;gap:5px;margin-top:auto;}
   .pc-lines span{display:block;height:1px;background:var(--line);}
   .pc-lines span:nth-child(2){width:60%;}
   .reveal-controls{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:center;}
-  .run-btn{background:linear-gradient(135deg,var(--terra),#e0a07a);color:#fff;border:none;font-weight:800;font-size:1.02rem;padding:14px 26px;border-radius:12px;cursor:pointer;box-shadow:0 8px 20px rgba(207,128,93,.35);animation:revpulse 1.6s ease-in-out infinite;}
+  .run-btn{background:#1967d2;color:#fff;border:none;font-weight:600;font-size:1.02rem;padding:14px 26px;border-radius:14px;cursor:pointer;box-shadow:0 4px 14px rgba(60,64,67,.16);animation:revpulse 1.6s ease-in-out infinite;}
   @keyframes revpulse{0%,100%{transform:scale(1);}50%{transform:scale(1.04);}}
   .before-state,.after-state{display:none;}
   .before-state.on,.after-state.on{display:block;}
-  .entry-demo{text-align:center;padding:40px;background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);}
-  .entry-demo .e-num{font-size:4rem;font-weight:900;color:var(--terra);line-height:1;}
+  .entry-demo{text-align:center;padding:40px;background:var(--paper);border:0;border-radius:24px;box-shadow:var(--shadow);}
+  .entry-demo .e-num{font-size:4rem;font-weight:700;color:var(--terra);line-height:1;}
   .entry-demo .e-label{color:var(--muted);font-size:.9rem;margin-top:8px;}
 
   /* FLOW */
   .flow{display:flex;align-items:stretch;gap:0;flex-wrap:wrap;justify-content:center;}
-  .flow .step{flex:1 1 130px;min-width:120px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px 14px;text-align:center;box-shadow:0 5px 16px rgba(36,53,81,.05);position:relative;}
-  .flow .step .n{width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin:0 auto 8px;font-size:.85rem;}
+  .flow .step{flex:1 1 130px;min-width:120px;background:var(--paper);border:0;border-radius:22px;padding:18px 14px;text-align:center;box-shadow:0 5px 16px rgba(36,53,81,.05);position:relative;}
+  .flow .step .n{width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;margin:0 auto 8px;font-size:.85rem;}
   .flow .step .ico{font-size:1.7rem;display:block;margin-bottom:6px;}
   .flow .step h4{margin:0 0 4px;font-size:.95rem;color:var(--navy);}
   .flow .step p{margin:0;font-size:.78rem;color:var(--muted);}
@@ -141,39 +146,39 @@
   /* SCALE MOCK */
   .scale-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
   @media(max-width:820px){.scale-grid{grid-template-columns:1fr;}}
-  .mock{background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 8px 22px rgba(36,53,81,.08);}
-  .mock-head{background:var(--navy);color:#fff;font-weight:700;font-size:.9rem;padding:11px 14px;}
+  .mock{background:var(--paper);border:0;border-radius:22px;overflow:hidden;box-shadow:0 8px 22px rgba(36,53,81,.08);}
+  .mock-head{background:var(--navy);color:#fff;font-weight:600;font-size:.9rem;padding:11px 14px;}
   .mock-sheet{font-size:.76rem;}
-  .mock-sheet .r{display:grid;grid-template-columns:1.4fr 1fr 1.4fr .7fr;border-bottom:1px solid #efeada;}
-  .mock-sheet .r>div{padding:7px 10px;border-right:1px solid #f2eee3;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
-  .mock-sheet .r.h{background:#e8f0ef;font-weight:700;color:var(--navy);}
+  .mock-sheet .r{display:grid;grid-template-columns:1.4fr 1fr 1.4fr .7fr;border-bottom:1px solid #eceff1;}
+  .mock-sheet .r>div{padding:7px 10px;border-right:1px solid #f1f3f4;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+  .mock-sheet .r.h{background:#e8f0ef;font-weight:600;color:var(--navy);}
   .mock-sheet .r.new{animation:rowin .6s ease;}
-  @keyframes rowin{from{background:#fff3da;}to{background:transparent;}}
-  .mock-counter{text-align:center;color:var(--teal);font-weight:700;padding:9px;font-size:.82rem;border-top:1px solid #efeada;background:#fbfaf6;}
+  @keyframes rowin{from{background:#fef9e7;}to{background:transparent;}}
+  .mock-counter{text-align:center;color:var(--teal);font-weight:600;padding:9px;font-size:.82rem;border-top:1px solid #eceff1;background:#fcfcfd;}
   .mock-drive{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:14px;}
-  .mock-drive .pdf{border:1px solid var(--line);border-radius:10px;padding:12px 6px;text-align:center;background:#fbfaf6;font-size:.7rem;color:var(--muted);overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+  .mock-drive .pdf{border:1px solid var(--line);border-radius:10px;padding:12px 6px;text-align:center;background:#fcfcfd;font-size:.7rem;color:var(--muted);overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
   .mock-drive .pdf .ic{font-size:1.5rem;display:block;margin-bottom:4px;}
   .mock-drive .pdf.new{animation:rowin .6s ease;}
 
   /* STEP CARDS */
-  .stepcard{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px 28px;margin-bottom:20px;box-shadow:0 6px 20px rgba(36,53,81,.05);}
+  .stepcard{background:var(--paper);border:0;border-radius:24px;padding:26px 28px;margin-bottom:20px;box-shadow:0 6px 20px rgba(36,53,81,.05);}
   #hands .stepcard{margin-bottom:4.5rem;}
   .stepcard .head{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
-  .stepcard .num{flex:none;width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--terra),#e0a07a);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.15rem;box-shadow:0 5px 14px rgba(207,128,93,.35);}
+  .stepcard .num{flex:none;width:42px;height:42px;border-radius:14px;background:#1967d2;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:1.15rem;box-shadow:0 5px 14px rgba(25,103,210,.35);}
   .stepcard .head h3{margin:0;color:var(--navy);font-size:1.2rem;}
   .stepcard ol,.stepcard ul{margin:8px 0 0;padding-left:20px;color:var(--ink);}
   .stepcard li{margin-bottom:7px;}
-  .stepcard .note{background:#fbf4e4;border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:12px 16px;margin-top:14px;font-size:.92rem;color:var(--navy-2);}
+  .stepcard .note{background:#f8f9fa;border-left:4px solid #4285f4;border-radius:0 10px 10px 0;padding:12px 16px;margin-top:14px;font-size:.92rem;color:var(--navy-2);}
   .stepcard .warn{background:#fff1f0;border-left:4px solid #e05555;border-radius:0 10px 10px 0;padding:12px 16px;margin-top:14px;font-size:.92rem;color:#7a2020;}
 
   /* COLLAPSIBLE */
   #hands .stepcard.collapsible{padding-top:0;padding-bottom:0;}
   #hands .stepcard.collapsible .head{cursor:pointer;padding:22px 0;margin-bottom:0;user-select:none;}
   #hands .stepcard.collapsible .head:hover h3{color:var(--terra);}
-  #hands .stepcard .donebtn{flex:none;margin-left:auto;border:1px solid var(--line);background:var(--cream-2);color:var(--muted);border-radius:999px;padding:5px 13px;font-size:.78rem;font-weight:700;cursor:pointer;transition:.15s;}
+  #hands .stepcard .donebtn{flex:none;margin-left:auto;border:1px solid var(--line);background:var(--cream-2);color:var(--muted);border-radius:999px;padding:5px 13px;font-size:.78rem;font-weight:600;cursor:pointer;transition:.15s;}
   #hands .stepcard .donebtn:hover{border-color:var(--teal);color:var(--teal);}
-  #hands .stepcard.done .donebtn{background:#4f8a89;color:#fff;border-color:#4f8a89;}
-  #hands .stepcard.done .num{background:linear-gradient(135deg,#4f8a89,#3f7574);box-shadow:0 5px 14px rgba(79,138,137,.35);}
+  #hands .stepcard.done .donebtn{background:#1e8e3e;color:#fff;border-color:#1e8e3e;}
+  #hands .stepcard.done .num{background:linear-gradient(135deg,#1e8e3e,#1e8e3e);box-shadow:0 2px 8px rgba(60,64,67,.14);}
   #hands .stepcard.done .head h3{color:var(--muted);}
   #hands .stepcard .chev{flex:none;margin-left:12px;color:var(--terra);font-size:1.05rem;transition:transform .2s;}
   #hands .stepcard.collapsed .chev{transform:rotate(-90deg);}
@@ -182,39 +187,39 @@
   @keyframes missionfade{from{opacity:0;transform:translateY(-4px);}to{opacity:1;transform:none;}}
 
   /* GEMINI BOX */
-  .gemini-box{background:linear-gradient(135deg,#f1ecff,#eef7f6);border:2px dashed #7b61ff;border-radius:18px;padding:24px 26px;margin:16px 0;box-shadow:0 6px 20px rgba(123,97,255,.1);}
+  .gemini-box{background:linear-gradient(135deg,#e9f2ff,#e6f8ef);border:2px dashed #4285f4;border-radius:18px;padding:24px 26px;margin:16px 0;box-shadow:0 6px 20px rgba(66,133,244,.1);}
   .gemini-box .gh{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
-  .gemini-box .gi{flex:none;width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#7b61ff,#4f8a89);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.3rem;box-shadow:0 5px 14px rgba(123,97,255,.35);}
+  .gemini-box .gi{flex:none;width:42px;height:42px;border-radius:14px;background:#1967d2;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.3rem;box-shadow:0 5px 14px rgba(66,133,244,.35);}
   .gemini-box h3{margin:0;color:var(--navy);font-size:1.18rem;}
   .gemini-box p{color:var(--navy-2);margin:0 0 12px;}
-  .prompt-box{background:#fff;border:1px solid #c5b8f8;border-radius:12px;padding:16px 18px;font-size:.9rem;color:var(--ink);line-height:1.7;white-space:pre-wrap;font-family:inherit;position:relative;}
+  .prompt-box{background:#fff;border:1px solid #d4e2ff;border-radius:14px;padding:16px 18px;font-size:.9rem;color:var(--ink);line-height:1.7;white-space:pre-wrap;font-family:inherit;position:relative;}
 
   /* CODE */
   .codewrap{position:relative;margin-top:16px;}
   .codewrap .copy{position:absolute;top:12px;right:12px;z-index:2;background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25);border-radius:8px;padding:6px 12px;font-size:.78rem;font-weight:600;cursor:pointer;transition:.15s;}
   .codewrap .copy:hover{background:rgba(255,255,255,.22);}
-  .codewrap .copy.ok{background:rgba(79,138,137,.8);border-color:#4f8a89;}
+  .codewrap .copy.ok{background:rgba(30,142,62,.8);border-color:#1e8e3e;}
   pre{background:#1f2d44;color:#e6edf3;border-radius:14px;padding:22px 20px 22px 20px;overflow:auto;font-family:"SFMono-Regular",Consolas,Menlo,monospace;font-size:.82rem;line-height:1.6;margin:0;box-shadow:var(--shadow);}
   pre .c{color:#8aa0bd;}
-  pre .k{color:#f0a37a;}
+  pre .k{color:#4285f4;}
   pre .s{color:#a5d6a7;}
   pre .n{color:#79c0ff;}
   .mono{font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;background:var(--cream-2);padding:1px 6px;border-radius:5px;font-size:.86rem;color:var(--terra);}
   .kbd{background:var(--cream-2);border:1px solid var(--line);border-radius:6px;padding:1px 7px;font-size:.85rem;font-weight:600;color:var(--navy);font-family:inherit;}
-  .substep{font-weight:700;color:var(--navy);margin:18px 0 4px;font-size:1.05rem;}
-  details.tip{margin-top:16px;background:#fbf4e4;border:1px solid var(--gold);border-radius:12px;padding:2px 18px;}
-  details.tip summary{cursor:pointer;font-weight:700;color:var(--navy);padding:12px 0;list-style:none;}
+  .substep{font-weight:600;color:var(--navy);margin:18px 0 4px;font-size:1.05rem;}
+  details.tip{margin-top:16px;background:#f8f9fa;border:1px solid #c6dafc;border-radius:14px;padding:2px 18px;}
+  details.tip summary{cursor:pointer;font-weight:600;color:var(--navy);padding:12px 0;list-style:none;}
   details.tip summary::-webkit-details-marker{display:none;}
-  details.tip summary::before{content:"▸  ";color:var(--terra);font-weight:700;}
+  details.tip summary::before{content:"▸  ";color:var(--terra);font-weight:600;}
   details.tip[open] summary::before{content:"▾  ";}
   details.tip .tip-body{padding:0 0 14px;color:var(--navy-2);font-size:.95rem;}
 
   /* CLOSING */
-  .closing{background:linear-gradient(135deg,var(--teal),#3f7574);color:#fff;border-radius:22px;padding:44px 38px;text-align:center;box-shadow:var(--shadow);}
+  .closing{background:linear-gradient(120deg,#4285f4,#9b72cb 40%,#d96570 72%,#f2994a);color:#fff;border-radius:22px;padding:44px 38px;text-align:center;box-shadow:var(--shadow);}
   .closing h2{color:#fff;font-size:1.8rem;margin:0 0 12px;}
   .closing p{color:#e7f1f0;max-width:640px;margin:0 auto;font-size:1.05rem;}
   .closing .ach-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:24px 0;}
-  .closing .ach{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);border-radius:14px;padding:14px 18px;min-width:140px;font-weight:700;font-size:.95rem;line-height:1.45;}
+  .closing .ach{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);border-radius:14px;padding:14px 18px;min-width:140px;font-weight:600;font-size:.95rem;line-height:1.45;}
   .closing .ach .n{font-size:1.7rem;margin-bottom:5px;}
   .closing .ach span{display:block;font-weight:400;opacity:.85;font-size:.8rem;margin-top:2px;}
 
@@ -224,6 +229,16 @@
   #progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--terra),var(--teal));width:0%;z-index:999;transition:width .1s;}
 
   @media(max-width:820px){.grid-3,.grid-2{grid-template-columns:1fr;}.postcard-demo{grid-template-columns:1fr;aspect-ratio:auto;}}
+
+  body::after{content:"";position:fixed;left:0;right:0;bottom:0;height:3px;z-index:9999;pointer-events:none;background:linear-gradient(90deg,#3186ff 0%,#3186ff 24%,#2b8ee7 33%,#1fa1ad 41%,#12b572 50%,#91c52b 58%,#ffae0e 66%,#ff6c2e 75%,#c85774 84%,#4380ee 93%,#3186ff 100%);}
+
+  .hero{position:relative;}
+  .hero::before{content:"";position:absolute;inset:-40px 0 -10px;z-index:0;pointer-events:none;
+    background:radial-gradient(620px 360px at 22% 30%, rgba(233,242,255,.95) 0%, rgba(233,242,255,0) 70%),radial-gradient(560px 340px at 68% 22%, rgba(238,226,248,.85) 0%, rgba(238,226,248,0) 70%),radial-gradient(600px 360px at 82% 62%, rgba(254,235,235,.8) 0%, rgba(254,235,235,0) 70%),radial-gradient(620px 380px at 38% 78%, rgba(254,249,231,.9) 0%, rgba(254,249,231,0) 70%);}
+  .hero > *{position:relative;z-index:1;}
+
+  .cta-btn.teal{background:#243551;}
+  .cta-btn:hover,.run:hover,.gasrun-btn:hover{filter:brightness(1.25);}
 </style>
 </head>
 <body>
@@ -247,9 +262,9 @@
 <header class="hero">
   <svg class="tent-path" viewBox="0 0 1080 360" preserveAspectRatio="none">
     <path d="M-20,300 C200,200 400,320 600,180 800,60 1000,160 1120,100"
-          fill="none" stroke="#cf805d" stroke-width="2" stroke-dasharray="3 9" stroke-linecap="round"/>
-    <path d="M100,360 L280,180 L460,360" fill="none" stroke="#4f8a89" stroke-width="1.5" stroke-dasharray="4 8" opacity=".5"/>
-    <path d="M650,340 L820,170 L990,340" fill="none" stroke="#4f8a89" stroke-width="1.5" stroke-dasharray="4 8" opacity=".4"/>
+          fill="none" stroke="#1967d2" stroke-width="2" stroke-dasharray="3 9" stroke-linecap="round"/>
+    <path d="M100,360 L280,180 L460,360" fill="none" stroke="#1e8e3e" stroke-width="1.5" stroke-dasharray="4 8" opacity=".5"/>
+    <path d="M650,340 L820,170 L990,340" fill="none" stroke="#1e8e3e" stroke-width="1.5" stroke-dasharray="4 8" opacity=".4"/>
   </svg>
   <div class="wrap">
     <span class="stamp-badge">⛺ MT 추억 아카이빙 · 자동화 워크숍</span>
@@ -270,7 +285,7 @@
     <span class="eyebrow">한눈에 보기</span>
     <h2 class="sec">무엇을 · 왜 · 어떻게</h2>
     <p class="lead">코드를 외우지 않아도 됩니다. Gemini에게 코드를 만들어달라고 시키고, 그 코드를 붙여 넣으면 끝입니다. "내가 만든 로봇이 실제로 일하는 모습"을 눈으로 확인하는 것 — 그 경험이 오늘의 목표입니다.</p>
-    <div style="background:#eef7f6;border-left:4px solid var(--teal);border-radius:0 12px 12px 0;padding:14px 18px;margin:0 0 22px;color:var(--navy-2);font-size:.96rem;">💡 <b>모듈 3에서 만난 앱스 스크립트(Apps Script), 기억나죠?</b> 그땐 데이터를 <b>'읽어서 내보내는(API)'</b> 용도였고, 이번엔 폼 제출에 <b>자동으로 반응해 일하는(트리거)</b> 용도예요. <b>같은 도구, 다른 초능력!</b> 🤖</div>
+    <div style="background:#e6f8ef;border-left:4px solid var(--teal);border-radius:0 12px 12px 0;padding:14px 18px;margin:0 0 22px;color:var(--navy-2);font-size:.96rem;">💡 <b>모듈 3에서 만난 앱스 스크립트(Apps Script), 기억나죠?</b> 그땐 데이터를 <b>'읽어서 내보내는(API)'</b> 용도였고, 이번엔 폼 제출에 <b>자동으로 반응해 일하는(트리거)</b> 용도예요. <b>같은 도구, 다른 초능력!</b> 🤖</div>
     <div class="grid grid-3">
       <div class="card">
         <span class="ico">🎯</span>
@@ -304,17 +319,17 @@
       <p>오늘 여러분은 이 시스템을 <b>직접 손으로 한 번 만들어</b> 봅니다. 완성 후엔 동아리 신입 모집, 행사 응모, 방명록 — 어디든 그대로 가져다 쓸 수 있습니다. 진짜 핵심은 코딩 실력이 아니라 <b>"이 반복은 자동화할 수 있다"는 눈</b>이에요.</p>
     </div>
 
-    <div style="margin-top:24px;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:28px 30px;box-shadow:0 6px 20px rgba(36,53,81,.05);">
+    <div style="margin-top:24px;background:var(--paper);border:0;border-radius:24px;padding:28px 30px;box-shadow:0 6px 20px rgba(36,53,81,.05);">
       <h3 style="margin:0 0 12px;color:var(--navy);font-size:1.2rem;">왜 지금, '자동화'가 가장 강력한 무기일까</h3>
       <p style="color:var(--navy-2);margin:0 0 12px;">우리가 하는 일의 많은 부분은 거창한 시스템이 아니라, 매번 손으로 반복하는 <b>잔업</b>으로 채워져 있어요. 같은 양식 수십 개 만들기, 응답 받아 정리하기, 한 명 한 명에게 메일 보내기 — 사람이 하면 지치고 실수하지만, 한 번 자동화해두면 <b>24시간, 실수 없이, 똑같이</b> 일합니다.</p>
       <p style="color:var(--navy-2);margin:0 0 12px;">그래서 진짜 핵심은 코딩 실력이 아니라 <b>"이 반복은 자동화에게 맡길 수 있다"는 눈</b>이에요. 작은 일부터 AI 에이전트에게 시켜본 경험이 쌓이면, 결국 더 큰 업무 흐름도 스스로 설계하게 됩니다.</p>
       <p style="color:var(--navy-2);margin:0 0 16px;">그리고 이건 지금 <b>가장 필요한 역량</b>이기도 해요. 기업이 채용에서 보는 'AI 활용 능력'의 핵심이 바로 이것 — <b>반복 업무를 스스로 자동화하는 힘</b>이거든요. AI 에이전트 시대엔 일을 빨리 하는 사람보다 <b>'사람 없이 돌아가는 시스템'을 만드는 사람</b>이 앞서갑니다.</p>
       <div style="display:flex;gap:10px;flex-wrap:wrap;">
-        <span style="background:var(--cream-2);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.88rem;font-weight:700;color:var(--navy-2);">⏱ 반복 업무 시간 절약</span>
-        <span style="background:var(--cream-2);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.88rem;font-weight:700;color:var(--navy-2);">🎯 사람의 실수 제거</span>
-        <span style="background:var(--cream-2);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.88rem;font-weight:700;color:var(--navy-2);">💼 채용이 보는 'AI 활용 역량'</span>
-        <span style="background:var(--cream-2);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.88rem;font-weight:700;color:var(--navy-2);">🤖 AI 에이전트 시대</span>
-        <span style="background:var(--cream-2);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.88rem;font-weight:700;color:var(--navy-2);">⚙️ 반복을 시스템으로</span>
+        <span style="background:var(--cream-2);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.88rem;font-weight:600;color:var(--navy-2);">⏱ 반복 업무 시간 절약</span>
+        <span style="background:var(--cream-2);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.88rem;font-weight:600;color:var(--navy-2);">🎯 사람의 실수 제거</span>
+        <span style="background:var(--cream-2);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.88rem;font-weight:600;color:var(--navy-2);">💼 채용이 보는 'AI 활용 역량'</span>
+        <span style="background:var(--cream-2);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.88rem;font-weight:600;color:var(--navy-2);">🤖 AI 에이전트 시대</span>
+        <span style="background:var(--cream-2);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.88rem;font-weight:600;color:var(--navy-2);">⚙️ 반복을 시스템으로</span>
       </div>
     </div>
   </div>
@@ -452,7 +467,7 @@
     <p class="lead">시스템을 만들기 전에, 여러분이 먼저 <b>'참여자'</b>가 되어 봅니다. 체험 폼에 <b>MT 소감</b>을 적고 사진을 올려 신청하면 잠시 후 메일함에 <b>내 이름·사진·커피 응모번호가 박힌 추억 엽서</b>가 도착해요. 이걸 경험한 뒤, 아래 실습에서 직접 이 시스템을 만듭니다.</p>
     <div class="stepcard" style="border:2px solid var(--teal);max-width:820px;">
       <div class="head">
-        <div class="num" style="background:linear-gradient(135deg,var(--teal),#3f7574);box-shadow:0 5px 14px rgba(79,138,137,.35);">✈</div>
+        <div class="num" style="background:#1967d2;box-shadow:0 2px 8px rgba(60,64,67,.14);">✈</div>
         <h3>체험 순서</h3>
       </div>
       <ol>
@@ -461,10 +476,10 @@
         <li>잠시 후 <b>메일함을 확인</b>합니다 — 엽서가 도착했나요?</li>
         <li>받은 엽서에 <b>내 이름·사진·커피 응모번호</b>가 잘 들어갔는지 확인합니다.</li>
       </ol>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeqpVepQTnv-9_PQtIl4pQD21HcTBptpd8q1mb0MB3Dhzyg6w/viewform?usp=header" target="_blank" rel="noopener" style="display:inline-block;margin-top:16px;background:linear-gradient(135deg,var(--terra),#e0a07a);color:#fff;text-decoration:none;font-weight:700;font-size:1rem;padding:12px 24px;border-radius:12px;box-shadow:0 8px 20px rgba(207,128,93,.35);">✈ 체험 폼 열기</a>
-      <p style="margin-top:16px;font-weight:700;color:var(--navy);">제출하면 이렇게 완성 엽서가 메일로 도착해요</p>
-      <img src="postcard-mail.png" alt="신청자에게 도착한 완성 엽서 메일" style="display:block;width:100%;max-width:560px;margin:8px 0 0;border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 22px rgba(36,53,81,.1);" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-      <div style="display:none;align-items:center;justify-content:center;border:2px dashed var(--terra);border-radius:14px;background:rgba(207,128,93,.06);color:var(--terra);font-weight:700;font-size:.92rem;padding:18px;text-align:center;max-width:560px;">🖼️ 완성 엽서 메일 캡처 (파일명: postcard-mail.png)</div>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeqpVepQTnv-9_PQtIl4pQD21HcTBptpd8q1mb0MB3Dhzyg6w/viewform?usp=header" target="_blank" rel="noopener" style="display:inline-block;margin-top:16px;background:#1967d2;color:#fff;text-decoration:none;font-weight:600;font-size:1rem;padding:12px 24px;border-radius:14px;box-shadow:0 4px 14px rgba(60,64,67,.16);">✈ 체험 폼 열기</a>
+      <p style="margin-top:16px;font-weight:600;color:var(--navy);">제출하면 이렇게 완성 엽서가 메일로 도착해요</p>
+      <img src="postcard-mail.png" alt="신청자에게 도착한 완성 엽서 메일" style="display:block;width:100%;max-width:560px;margin:8px 0 0;border:0;border-radius:22px;box-shadow:0 8px 22px rgba(36,53,81,.1);" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div style="display:none;align-items:center;justify-content:center;border:2px dashed var(--terra);border-radius:14px;background:rgba(25,103,210,.06);color:var(--terra);font-weight:600;font-size:.92rem;padding:18px;text-align:center;max-width:560px;">🖼️ 완성 엽서 메일 캡처 (파일명: postcard-mail.png)</div>
     </div>
   </div>
 </section>
@@ -486,7 +501,7 @@
       </div>
       <div class="m-body">
         <p>엽서 디자인 배경 위에 텍스트박스와 사진 도형을 올려 템플릿을 만듭니다. <b>시간이 부족하면 아래 '사본 만들기'로 완성 템플릿을 내 드라이브에 복사</b>해서 바로 쓰면 됩니다.</p>
-        <a href="https://docs.google.com/presentation/d/1upH9NKxjFhDNGc_tT6ManIgGDNNKpoaDU_OijLz9ads/copy" target="_blank" rel="noopener" style="display:inline-block;margin:8px 0 6px;background:linear-gradient(135deg,var(--teal),#3f7574);color:#fff;text-decoration:none;font-weight:700;font-size:1rem;padding:12px 22px;border-radius:12px;box-shadow:0 8px 20px rgba(79,138,137,.3);">📑 엽서 템플릿 사본 만들기</a>
+        <a href="https://docs.google.com/presentation/d/1upH9NKxjFhDNGc_tT6ManIgGDNNKpoaDU_OijLz9ads/copy" target="_blank" rel="noopener" style="display:inline-block;margin:8px 0 6px;background:#1967d2;color:#fff;text-decoration:none;font-weight:600;font-size:1rem;padding:12px 22px;border-radius:14px;box-shadow:0 8px 20px rgba(30,142,62,.3);">📑 엽서 템플릿 사본 만들기</a>
         <details class="tip">
           <summary>📖 직접 만드는 방법 (열어보기)</summary>
           <div class="tb">
@@ -495,8 +510,8 @@
               <li>슬라이드 오른쪽 클릭 → <b>배경 변경</b> → 이미지 → 준비된 엽서 PNG 업로드</li>
               <li>텍스트박스 3개 삽입 (삽입 → 텍스트박스). <b>정확히 아래 문자열</b>로 입력:</li>
             </ol>
-            <div style="background:#fff3da;border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:14px 18px;margin:12px 0;font-size:.95rem;">
-              <div style="font-weight:700;margin-bottom:8px;color:var(--navy);">필수 텍스트 표식 (이 문자열 그대로 — 띄어쓰기 포함)</div>
+            <div style="background:#fef9e7;border-left:4px solid #4285f4;border-radius:0 12px 12px 0;padding:14px 18px;margin:12px 0;font-size:.95rem;">
+              <div style="font-weight:600;margin-bottom:8px;color:var(--navy);">필수 텍스트 표식 (이 문자열 그대로 — 띄어쓰기 포함)</div>
               <span class="mono" style="font-size:1rem;">{{이름}}</span> &nbsp; <span class="mono" style="font-size:1rem;">{{소감}}</span> &nbsp; <span class="mono" style="font-size:1rem;">{{응모번호}}</span>
             </div>
             <ol start="4">
@@ -509,13 +524,13 @@
           📌 주소창 형식: <span class="mono" style="font-size:1rem;">https://docs.google.com/presentation/d/<b style="color:#e5484d;">[TEMPLATE_ID]</b>/edit</span><br>
           <span class="mono">/d/</span> 뒤 ~ <span class="mono">/edit</span> 앞 문자열이 TEMPLATE_ID입니다.
         </div>
-        <div style="margin-top:2.4rem;background:#fdecec;border:2px solid #e5484d;border-radius:12px;padding:14px 16px;">
-          <label style="display:block;font-weight:700;color:#c0392b;font-size:.92rem;margin-bottom:8px;">🔗 여기에 슬라이드 주소를 붙여넣으면 TEMPLATE_ID만 뽑아드려요 (자동 저장)</label>
+        <div style="margin-top:2.4rem;background:#fdecec;border:2px solid #e5484d;border-radius:14px;padding:14px 16px;">
+          <label style="display:block;font-weight:600;color:#c0392b;font-size:.92rem;margin-bottom:8px;">🔗 여기에 슬라이드 주소를 붙여넣으면 TEMPLATE_ID만 뽑아드려요 (자동 저장)</label>
           <input class="idurl" data-kind="template" data-key="m4_template" type="text" placeholder="https://docs.google.com/presentation/d/..../edit" autocomplete="off" spellcheck="false" style="width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:9px;font-size:.9rem;font-family:inherit;color:var(--ink);background:#fff;box-sizing:border-box;">
           <div style="margin-top:10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-            <span style="font-size:.85rem;color:var(--muted);font-weight:700;">추출된 TEMPLATE_ID:</span>
-            <span class="idval" style="font-family:Consolas,Menlo,monospace;font-weight:700;color:#e5484d;word-break:break-all;">—</span>
-            <button class="idcopy" type="button" style="background:var(--navy);color:#fff;border:none;border-radius:8px;padding:6px 12px;font-size:.8rem;font-weight:700;cursor:pointer;">📋 복사</button>
+            <span style="font-size:.85rem;color:var(--muted);font-weight:600;">추출된 TEMPLATE_ID:</span>
+            <span class="idval" style="font-family:Consolas,Menlo,monospace;font-weight:600;color:#e5484d;word-break:break-all;">—</span>
+            <button class="idcopy" type="button" style="background:var(--navy);color:#fff;border:none;border-radius:8px;padding:6px 12px;font-size:.8rem;font-weight:600;cursor:pointer;">📋 복사</button>
           </div>
         </div>
       </div>
@@ -539,13 +554,13 @@
           📌 주소창 형식: <span class="mono" style="font-size:1rem;">https://drive.google.com/drive/folders/<b style="color:#e5484d;">[FOLDER_ID]</b></span><br>
           <span class="mono">/folders/</span> 뒤 문자열이 FOLDER_ID입니다.
         </div>
-        <div style="margin-top:2.4rem;background:#fdecec;border:2px solid #e5484d;border-radius:12px;padding:14px 16px;">
-          <label style="display:block;font-weight:700;color:#c0392b;font-size:.92rem;margin-bottom:8px;">🔗 여기에 폴더 주소를 붙여넣으면 FOLDER_ID만 뽑아드려요 (자동 저장)</label>
+        <div style="margin-top:2.4rem;background:#fdecec;border:2px solid #e5484d;border-radius:14px;padding:14px 16px;">
+          <label style="display:block;font-weight:600;color:#c0392b;font-size:.92rem;margin-bottom:8px;">🔗 여기에 폴더 주소를 붙여넣으면 FOLDER_ID만 뽑아드려요 (자동 저장)</label>
           <input class="idurl" data-kind="folder" data-key="m4_folder" type="text" placeholder="https://drive.google.com/drive/folders/...." autocomplete="off" spellcheck="false" style="width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:9px;font-size:.9rem;font-family:inherit;color:var(--ink);background:#fff;box-sizing:border-box;">
           <div style="margin-top:10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-            <span style="font-size:.85rem;color:var(--muted);font-weight:700;">추출된 FOLDER_ID:</span>
-            <span class="idval" style="font-family:Consolas,Menlo,monospace;font-weight:700;color:#e5484d;word-break:break-all;">—</span>
-            <button class="idcopy" type="button" style="background:var(--navy);color:#fff;border:none;border-radius:8px;padding:6px 12px;font-size:.8rem;font-weight:700;cursor:pointer;">📋 복사</button>
+            <span style="font-size:.85rem;color:var(--muted);font-weight:600;">추출된 FOLDER_ID:</span>
+            <span class="idval" style="font-family:Consolas,Menlo,monospace;font-weight:600;color:#e5484d;word-break:break-all;">—</span>
+            <button class="idcopy" type="button" style="background:var(--navy);color:#fff;border:none;border-radius:8px;padding:6px 12px;font-size:.8rem;font-weight:600;cursor:pointer;">📋 복사</button>
           </div>
         </div>
       </div>
@@ -561,7 +576,7 @@
       </div>
       <div class="m-body">
         <p>MT 소감·사진을 담을 응답 폼이에요. <b>시간이 부족하면 아래 '폼 사본 만들기'로 완성된 폼을 내 드라이브에 복사</b>해서 바로 쓰면 됩니다. (질문 4개가 코드와 정확히 일치하게 미리 세팅돼 있어요.)</p>
-        <a href="https://docs.google.com/forms/d/1Xy9MV5yr4PLaK4cIUI6bzZpQscoDLc8SPxl_oyRBFsA/copy" target="_blank" rel="noopener" style="display:inline-block;margin:8px 0 6px;background:linear-gradient(135deg,var(--teal),#3f7574);color:#fff;text-decoration:none;font-weight:700;font-size:1rem;padding:12px 22px;border-radius:12px;box-shadow:0 8px 20px rgba(79,138,137,.3);">📋 MT 체험 폼 사본 만들기</a>
+        <a href="https://docs.google.com/forms/d/1Xy9MV5yr4PLaK4cIUI6bzZpQscoDLc8SPxl_oyRBFsA/copy" target="_blank" rel="noopener" style="display:inline-block;margin:8px 0 6px;background:#1967d2;color:#fff;text-decoration:none;font-weight:600;font-size:1rem;padding:12px 22px;border-radius:14px;box-shadow:0 8px 20px rgba(30,142,62,.3);">📋 MT 체험 폼 사본 만들기</a>
         <details class="tip">
           <summary>📖 직접 만드는 방법 (질문 4개 추가)</summary>
           <div class="tb">
@@ -570,15 +585,15 @@
               <li>아래 질문 4개 추가 — <b>이름이 코드와 완전히 일치해야 합니다</b></li>
             </ol>
             <table style="width:100%;border-collapse:collapse;margin:12px 0;font-size:.92rem;">
-              <tr style="background:#e8f0ef;font-weight:700;color:var(--navy);">
+              <tr style="background:#e8f0ef;font-weight:600;color:var(--navy);">
                 <td style="padding:8px 12px;border:1px solid var(--line);">질문명</td>
                 <td style="padding:8px 12px;border:1px solid var(--line);">질문 유형</td>
                 <td style="padding:8px 12px;border:1px solid var(--line);">비고</td>
               </tr>
-              <tr><td style="padding:8px 12px;border:1px solid var(--line);font-weight:700;color:#c04040;">이메일</td><td style="padding:8px 12px;border:1px solid var(--line);">단답형</td><td style="padding:8px 12px;border:1px solid var(--line);color:var(--muted);">필수 항목</td></tr>
-              <tr style="background:#fbfaf6;"><td style="padding:8px 12px;border:1px solid var(--line);font-weight:700;color:#c04040;">이름</td><td style="padding:8px 12px;border:1px solid var(--line);">단답형</td><td style="padding:8px 12px;border:1px solid var(--line);color:var(--muted);">필수 항목</td></tr>
-              <tr><td style="padding:8px 12px;border:1px solid var(--line);font-weight:700;color:#c04040;">소감</td><td style="padding:8px 12px;border:1px solid var(--line);">장문형</td><td style="padding:8px 12px;border:1px solid var(--line);color:var(--muted);">MT 추억 한 줄</td></tr>
-              <tr style="background:#fbfaf6;"><td style="padding:8px 12px;border:1px solid var(--line);font-weight:700;color:#c04040;">사진</td><td style="padding:8px 12px;border:1px solid var(--line);">파일 업로드</td><td style="padding:8px 12px;border:1px solid var(--line);color:var(--muted);">이미지 파일 허용 권장</td></tr>
+              <tr><td style="padding:8px 12px;border:1px solid var(--line);font-weight:600;color:#c04040;">이메일</td><td style="padding:8px 12px;border:1px solid var(--line);">단답형</td><td style="padding:8px 12px;border:1px solid var(--line);color:var(--muted);">필수 항목</td></tr>
+              <tr style="background:#fcfcfd;"><td style="padding:8px 12px;border:1px solid var(--line);font-weight:600;color:#c04040;">이름</td><td style="padding:8px 12px;border:1px solid var(--line);">단답형</td><td style="padding:8px 12px;border:1px solid var(--line);color:var(--muted);">필수 항목</td></tr>
+              <tr><td style="padding:8px 12px;border:1px solid var(--line);font-weight:600;color:#c04040;">소감</td><td style="padding:8px 12px;border:1px solid var(--line);">장문형</td><td style="padding:8px 12px;border:1px solid var(--line);color:var(--muted);">MT 추억 한 줄</td></tr>
+              <tr style="background:#fcfcfd;"><td style="padding:8px 12px;border:1px solid var(--line);font-weight:600;color:#c04040;">사진</td><td style="padding:8px 12px;border:1px solid var(--line);">파일 업로드</td><td style="padding:8px 12px;border:1px solid var(--line);color:var(--muted);">이미지 파일 허용 권장</td></tr>
             </table>
             <div class="warn">⚠️ 가장 흔한 오류 — 질문명 불일치<br>코드 속 '이메일', '이름', '소감', '사진'과 폼 질문 이름이 <b>띄어쓰기·맞춤법까지 완전히 같아야</b> 합니다. 다르면 빈 엽서가 발송됩니다.</div>
           </div>
@@ -606,17 +621,17 @@
         <div class="gi">✨</div>
         <h3>코드를 못 짜도 괜찮아요 — Gemini로 코드 만들기</h3>
       </div>
-      <p>아래 프롬프트를 <a href="https://gemini.google.com" target="_blank" style="color:#7b61ff;font-weight:700;">Gemini</a>에 <b>그대로 붙여넣으면</b>, <b>4단계에 들어갈 Apps Script 코드</b>를 거의 완성된 형태로 만들어 줍니다. "AI에게 시켜서 자동화 코드를 받아오는" 경험 그 자체예요.</p>
+      <p>아래 프롬프트를 <a href="https://gemini.google.com" target="_blank" style="color:#4285f4;font-weight:600;">Gemini</a>에 <b>그대로 붙여넣으면</b>, <b>4단계에 들어갈 Apps Script 코드</b>를 거의 완성된 형태로 만들어 줍니다. "AI에게 시켜서 자동화 코드를 받아오는" 경험 그 자체예요.</p>
       <div class="prompt-box" id="gemini-prompt">구글 폼이 제출되면 슬라이드 템플릿을 복사해 {{이름}}과 {{소감}} 항목을 채우고, 대체 텍스트(제목 또는 설명)가 '사진자리'인 도형을 사용자가 업로드한 사진 파일로 바꾼 뒤, PDF로 변환하여 신청자에게 메일로 자동 발송하는 Apps Script를 만들어줘.
 
 [필수 조건]
 1. 구글 시트에 데이터가 들어오는 순서대로 고유한 세 자리 응모번호(예: 001, 002...)를 코드가 스스로 계산해서 자동 생성하게 해줘. 동시에 여러 명이 제출해도 번호가 겹치지 않도록 e.range.getRow()를 사용해줘.
 2. 그 생성된 응모번호를 슬라이드 템플릿에 있는 {{응모번호}} 표식 자리에 매핑해서 글자가 치환되도록 짜줘.
 3. 구글 폼의 질문 명칭은 이메일, 이름, 소감, 사진이며, TEMPLATE_ID와 FOLDER_ID는 코드 상단 변수에서 쉽게 바꿀 수 있게 전역 변수로 분리해줘.</div>
-      <button onclick="copyPrompt()" id="copy-prompt-btn" style="margin-top:12px;background:linear-gradient(135deg,#7b61ff,#4f8a89);color:#fff;border:none;font-weight:700;padding:10px 20px;border-radius:10px;cursor:pointer;font-size:.9rem;">📋 프롬프트 복사</button>
-      <span id="copy-prompt-ok" style="display:none;margin-left:10px;color:#4f8a89;font-weight:700;">✅ 복사됨!</span>
-      <div style="margin-top:16px;background:rgba(255,255,255,.6);border-radius:12px;padding:12px 16px;color:var(--navy-2);font-size:.93rem;line-height:1.7;">💡 <b>핵심</b>은 ① 폼 질문 이름(<b>이메일·이름·소감·사진</b>) ② 약속된 표식(<span class="mono">{{이름}}</span>·<span class="mono">{{소감}}</span>·<span class="mono">{{응모번호}}</span>·대체 텍스트 <span class="mono">사진자리</span>) ③ 최종 결과물(<b>PDF → 메일 + 커피 응모번호</b>)을 빠짐없이 적는 것. 그러면 거의 정확한 코드가 나와요.</div>
-      <div style="margin-top:10px;background:rgba(255,255,255,.6);border-radius:12px;padding:12px 16px;color:var(--navy-2);font-size:.93rem;line-height:1.7;">🔨 코드가 예상과 다르게 나와도 괜찮아요. 그땐 에러 메시지나 "이 부분이 이렇게 안 돼", "이렇게 바꿔줘"처럼 원하는 바를 AI에게 다시 알려주며 <b>대화하듯 고쳐나가면</b> 됩니다. <b>오류를 잡는 디버깅 과정도 AI와 함께</b> 하는 거예요. 오늘은 시간 관계상, 미리 완성해 둔 <b>최종 코드를 다음 단계(4단계)에서 다 같이</b> 넣어보겠습니다!</div>
+      <button onclick="copyPrompt()" id="copy-prompt-btn" style="margin-top:12px;background:#1967d2;color:#fff;border:none;font-weight:600;padding:10px 20px;border-radius:10px;cursor:pointer;font-size:.9rem;">📋 프롬프트 복사</button>
+      <span id="copy-prompt-ok" style="display:none;margin-left:10px;color:#1e8e3e;font-weight:600;">✅ 복사됨!</span>
+      <div style="margin-top:16px;background:rgba(255,255,255,.6);border-radius:14px;padding:12px 16px;color:var(--navy-2);font-size:.93rem;line-height:1.7;">💡 <b>핵심</b>은 ① 폼 질문 이름(<b>이메일·이름·소감·사진</b>) ② 약속된 표식(<span class="mono">{{이름}}</span>·<span class="mono">{{소감}}</span>·<span class="mono">{{응모번호}}</span>·대체 텍스트 <span class="mono">사진자리</span>) ③ 최종 결과물(<b>PDF → 메일 + 커피 응모번호</b>)을 빠짐없이 적는 것. 그러면 거의 정확한 코드가 나와요.</div>
+      <div style="margin-top:10px;background:rgba(255,255,255,.6);border-radius:14px;padding:12px 16px;color:var(--navy-2);font-size:.93rem;line-height:1.7;">🔨 코드가 예상과 다르게 나와도 괜찮아요. 그땐 에러 메시지나 "이 부분이 이렇게 안 돼", "이렇게 바꿔줘"처럼 원하는 바를 AI에게 다시 알려주며 <b>대화하듯 고쳐나가면</b> 됩니다. <b>오류를 잡는 디버깅 과정도 AI와 함께</b> 하는 거예요. 오늘은 시간 관계상, 미리 완성해 둔 <b>최종 코드를 다음 단계(4단계)에서 다 같이</b> 넣어보겠습니다!</div>
     </div>
 
     <!-- STEP 4 -->
@@ -640,13 +655,13 @@
           <li>아래 박스의 <b>'아래 코드에 ID 적용'</b> 버튼을 눌러 내 <span class="mono">TEMPLATE_ID</span>·<span class="mono">FOLDER_ID</span>를 코드에 채우기 <span style="color:var(--muted);">(또는 코드 맨 위 두 줄에 직접 입력)</span></li>
           <li>완성된 코드(Gemini 생성 코드 또는 ID가 채워진 예시 코드)를 <b><span class="mono">Code.gs</span></b>에 붙여넣기 → <span class="kbd">Ctrl+S</span> <span style="color:var(--muted);">(또는 상단 💾 저장 아이콘)</span>으로 저장</li>
         </ol>
-        <div style="background:#fdecec;border:2px solid #e5484d;border-radius:12px;padding:14px 16px;margin:12px 0;">
-          <div style="font-weight:700;color:#c0392b;margin-bottom:8px;">🔑 1·2단계에서 저장한 내 ID (아래 예시 코드에 넣을 값)</div>
-          <div class="mono" style="font-size:.92rem;margin:4px 0;">TEMPLATE_ID = <span id="apply-template" style="color:#e5484d;font-weight:700;">— (1단계에서 추출하면 자동 표시)</span></div>
-          <div class="mono" style="font-size:.92rem;margin:4px 0;">FOLDER_ID = <span id="apply-folder" style="color:#e5484d;font-weight:700;">— (2단계에서 추출하면 자동 표시)</span></div>
-          <button id="apply-ids-btn" type="button" style="margin-top:10px;background:var(--terra);color:#fff;border:none;border-radius:9px;padding:9px 18px;font-weight:700;font-size:.9rem;cursor:pointer;">⬇ 아래 코드에 ID 적용</button>
+        <div style="background:#fdecec;border:2px solid #e5484d;border-radius:14px;padding:14px 16px;margin:12px 0;">
+          <div style="font-weight:600;color:#c0392b;margin-bottom:8px;">🔑 1·2단계에서 저장한 내 ID (아래 예시 코드에 넣을 값)</div>
+          <div class="mono" style="font-size:.92rem;margin:4px 0;">TEMPLATE_ID = <span id="apply-template" style="color:#e5484d;font-weight:600;">— (1단계에서 추출하면 자동 표시)</span></div>
+          <div class="mono" style="font-size:.92rem;margin:4px 0;">FOLDER_ID = <span id="apply-folder" style="color:#e5484d;font-weight:600;">— (2단계에서 추출하면 자동 표시)</span></div>
+          <button id="apply-ids-btn" type="button" style="margin-top:10px;background:var(--terra);color:#fff;border:none;border-radius:9px;padding:9px 18px;font-weight:600;font-size:.9rem;cursor:pointer;">⬇ 아래 코드에 ID 적용</button>
         </div>
-        <p style="font-weight:800;color:var(--navy);font-size:1.05rem;margin:18px 0 8px;">📄 예시 앱스 스크립트(Apps Script) 코드</p>
+        <p style="font-weight:600;color:var(--navy);font-size:1.05rem;margin:18px 0 8px;">📄 예시 앱스 스크립트(Apps Script) 코드</p>
         <div class="codewrap">
           <button class="copy" onclick="copyCode('backup-code',this)">복사</button>
               <pre id="backup-code"><span class="c">// =============================================</span>
@@ -739,10 +754,10 @@
           <li>아래 설정값 선택</li>
         </ol>
         <table style="width:100%;border-collapse:collapse;margin:12px 0;font-size:.92rem;">
-          <tr><td style="padding:8px 12px;border:1px solid var(--line);background:#e8f0ef;font-weight:700;color:var(--navy);width:40%;">실행할 함수</td><td style="padding:8px 12px;border:1px solid var(--line);font-weight:700;color:var(--terra);">onFormSubmit</td></tr>
-          <tr><td style="padding:8px 12px;border:1px solid var(--line);background:#e8f0ef;font-weight:700;color:var(--navy);">이벤트 소스</td><td style="padding:8px 12px;border:1px solid var(--line);font-weight:700;color:var(--terra);">스프레드시트에서</td></tr>
-          <tr><td style="padding:8px 12px;border:1px solid var(--line);background:#e8f0ef;font-weight:700;color:var(--navy);">이벤트 유형</td><td style="padding:8px 12px;border:1px solid var(--line);font-weight:700;color:var(--terra);">양식 제출 시</td></tr>
-          <tr><td style="padding:8px 12px;border:1px solid var(--line);background:#e8f0ef;font-weight:700;color:var(--navy);">실패 알림 설정</td><td style="padding:8px 12px;border:1px solid var(--line);font-weight:700;color:var(--terra);">즉시 알림 <span style="color:var(--muted);font-weight:400;">(연수 당일 추천)</span></td></tr>
+          <tr><td style="padding:8px 12px;border:1px solid var(--line);background:#e8f0ef;font-weight:600;color:var(--navy);width:40%;">실행할 함수</td><td style="padding:8px 12px;border:1px solid var(--line);font-weight:600;color:var(--terra);">onFormSubmit</td></tr>
+          <tr><td style="padding:8px 12px;border:1px solid var(--line);background:#e8f0ef;font-weight:600;color:var(--navy);">이벤트 소스</td><td style="padding:8px 12px;border:1px solid var(--line);font-weight:600;color:var(--terra);">스프레드시트에서</td></tr>
+          <tr><td style="padding:8px 12px;border:1px solid var(--line);background:#e8f0ef;font-weight:600;color:var(--navy);">이벤트 유형</td><td style="padding:8px 12px;border:1px solid var(--line);font-weight:600;color:var(--terra);">양식 제출 시</td></tr>
+          <tr><td style="padding:8px 12px;border:1px solid var(--line);background:#e8f0ef;font-weight:600;color:var(--navy);">실패 알림 설정</td><td style="padding:8px 12px;border:1px solid var(--line);font-weight:600;color:var(--terra);">즉시 알림 <span style="color:var(--muted);font-weight:400;">(연수 당일 추천)</span></td></tr>
         </table>
         <div class="note">💡 <b>'실패 알림 설정'</b>은 트리거(코드)가 오류로 멈추면 <b>운영자 메일로만</b> 알려주는 옵션이에요. <b>연수·행사 당일엔 '즉시 알림'</b>으로 두면 문제를 바로 알아채 고칠 수 있어요. (동시 제출로 메일이 많이 오는 게 부담되면 '매시간', 평상시 운영은 '매일'도 괜찮아요.)</div>
         <ol start="4"><li>저장 클릭</li></ol>
@@ -782,11 +797,11 @@
           <summary>🔧 문제 해결 — 메일이 안 오거나 엽서가 이상할 때</summary>
           <div class="tip-body">
             <table style="width:100%;border-collapse:collapse;font-size:.88rem;margin-top:8px;">
-              <tr style="background:#e8f0ef;font-weight:700;color:var(--navy);"><td style="padding:7px 10px;border:1px solid var(--line);">증상</td><td style="padding:7px 10px;border:1px solid var(--line);">원인</td><td style="padding:7px 10px;border:1px solid var(--line);">해결</td></tr>
+              <tr style="background:#e8f0ef;font-weight:600;color:var(--navy);"><td style="padding:7px 10px;border:1px solid var(--line);">증상</td><td style="padding:7px 10px;border:1px solid var(--line);">원인</td><td style="padding:7px 10px;border:1px solid var(--line);">해결</td></tr>
               <tr><td style="padding:7px 10px;border:1px solid var(--line);">메일이 안 옴</td><td style="padding:7px 10px;border:1px solid var(--line);">트리거 미설정</td><td style="padding:7px 10px;border:1px solid var(--line);">트리거 목록 확인 후 재추가</td></tr>
-              <tr style="background:#fbfaf6;"><td style="padding:7px 10px;border:1px solid var(--line);">{{이름}} 그대로 나옴</td><td style="padding:7px 10px;border:1px solid var(--line);">질문명 불일치</td><td style="padding:7px 10px;border:1px solid var(--line);">폼 질문명과 코드 키값 대조</td></tr>
+              <tr style="background:#fcfcfd;"><td style="padding:7px 10px;border:1px solid var(--line);">{{이름}} 그대로 나옴</td><td style="padding:7px 10px;border:1px solid var(--line);">질문명 불일치</td><td style="padding:7px 10px;border:1px solid var(--line);">폼 질문명과 코드 키값 대조</td></tr>
               <tr><td style="padding:7px 10px;border:1px solid var(--line);">사진이 안 들어감</td><td style="padding:7px 10px;border:1px solid var(--line);">대체 텍스트 미설정</td><td style="padding:7px 10px;border:1px solid var(--line);">도형 → 대체 텍스트 → '사진자리'</td></tr>
-              <tr style="background:#fbfaf6;"><td style="padding:7px 10px;border:1px solid var(--line);">응모번호 #000</td><td style="padding:7px 10px;border:1px solid var(--line);">행 계산 오류</td><td style="padding:7px 10px;border:1px solid var(--line);">헤더 행 1개 확인, row-1 점검</td></tr>
+              <tr style="background:#fcfcfd;"><td style="padding:7px 10px;border:1px solid var(--line);">응모번호 #000</td><td style="padding:7px 10px;border:1px solid var(--line);">행 계산 오류</td><td style="padding:7px 10px;border:1px solid var(--line);">헤더 행 1개 확인, row-1 점검</td></tr>
               <tr><td style="padding:7px 10px;border:1px solid var(--line);">트리거 실행 안 됨</td><td style="padding:7px 10px;border:1px solid var(--line);">폼에서 Apps Script 열었음</td><td style="padding:7px 10px;border:1px solid var(--line);">반드시 시트 → 확장 프로그램으로 열기</td></tr>
             </table>
           </div>
@@ -811,7 +826,7 @@
         <div class="ach"><div class="n">🔢</div>응모번호<span>동시 제출 안전</span></div>
         <div class="ach"><div class="n">📧</div>자동 발송<span>사람 손 없이</span></div>
       </div>
-      <div style="background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:14px;padding:14px 22px;display:inline-block;font-weight:700;font-size:1.05rem;margin-top:4px;">
+      <div style="background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:14px;padding:14px 22px;display:inline-block;font-weight:600;font-size:1.05rem;margin-top:4px;">
         "이 반복은 자동화할 수 있다" — 그 눈이 생긴 것이 오늘의 진짜 성과입니다.
       </div>
     </div>

@@ -4,6 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>연수 전 준비사항 · Gemini Academy</title>
+<link rel="stylesheet" href="fonts/pretendard.css">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" as="style" crossorigin
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
 <style>
   :root{
     --blue:#1a73e8; --blue-d:#174ea6; --blue-s:#e8f0fe;
@@ -18,8 +23,7 @@
   html{-webkit-text-size-adjust:100%;}
   body{
     margin:0; background:var(--surface); color:var(--ink);
-    font-family:"Google Sans","Product Sans",Roboto,"Noto Sans KR",
-      "Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+    font-family:"Pretendard Variable","Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
     -webkit-font-smoothing:antialiased; line-height:1.65;
   }
   .wrap{max-width:760px; margin:0 auto; padding:0 16px 56px;}
@@ -53,7 +57,7 @@
     font-size:.98rem; font-weight:700; color:var(--white); margin-top:1px;}
   .c1 .no{background:#4285f4;} .c2 .no{background:#ea4335;}
   .c3 .no{background:#fbbc04; color:#3c4043;} .c4 .no{background:#34a853;}
-  .c5 .no{background:#9334e6;} .c6 .no{background:#4285f4;} .c7 .no{background:#ea4335;}
+  .c5 .no{background:#1e8e3e;} .c6 .no{background:#4285f4;} .c7 .no{background:#ea4335;}
   .card .bd{flex:1; min-width:0;}
   .card h2{margin:0; font-size:clamp(1.06rem,3.3vw,1.22rem); font-weight:700;
     letter-spacing:-.02em; line-height:1.42; display:flex; align-items:center;
@@ -120,6 +124,8 @@
   @media print{
     body{background:#fff;} .card,.foot{box-shadow:none;} .wrap{padding-bottom:0;}
   }
+
+  body::after{content:"";position:fixed;left:0;right:0;bottom:0;height:3px;z-index:9999;pointer-events:none;background:linear-gradient(90deg,#3186ff 0%,#3186ff 24%,#2b8ee7 33%,#1fa1ad 41%,#12b572 50%,#91c52b 58%,#ffae0e 66%,#ff6c2e 75%,#c85774 84%,#4380ee 93%,#3186ff 100%);}
 </style>
 </head>
 <body>
