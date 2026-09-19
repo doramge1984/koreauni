@@ -295,6 +295,62 @@
   }
 
   body::after{content:"";position:fixed;left:0;right:0;bottom:0;height:3px;z-index:9999;pointer-events:none;background:linear-gradient(90deg,#3186ff 0%,#3186ff 24%,#2b8ee7 33%,#1fa1ad 41%,#12b572 50%,#91c52b 58%,#ffae0e 66%,#ff6c2e 75%,#c85774 84%,#4380ee 93%,#3186ff 100%);}
+  .head{display:flex;align-items:center;gap:clamp(12px,1.6vw,28px);flex-wrap:wrap;}
+  .mission{position:absolute; inset:0; z-index:3; display:flex; align-items:center; justify-content:center; padding:6%;
+    background:linear-gradient(120deg,#e8f0fe 0%,#f1e8fb 40%,#fce8ea 72%,#fdefe2 100%);
+    opacity:0; pointer-events:none; transition:opacity .55s ease;}
+  .frame.m .mission{opacity:1;}
+  .frame.m .badge{opacity:0;}
+  .frame{container-type:inline-size;}
+  .info.ready .desc{display:none;}
+  /* 첫 화면 무대 조명: 제목 + 퀘스트 카드만 또렷하게 */
+  .ready .rail, .ready .tools-line, .ready .brand, .ready .info, .ready .hint, .ready .go-btn{
+    transition:opacity .6s ease, filter .6s ease, transform .6s cubic-bezier(.2,.9,.3,1);}
+  .ready.spot .rail, .ready.spot .tools-line, .ready.spot .brand, .ready.spot .info, .ready.spot .hint, .ready.spot .go-btn{
+    opacity:.35; filter:blur(1.5px);}
+  .ready.spot .play{animation:spotPulse 2.6s ease-in-out infinite;}
+  @keyframes spotPulse{0%,100%{box-shadow:0 0 0 0 rgba(66,133,244,.45), 0 4px 14px rgba(25,103,210,.25);}
+    50%{box-shadow:0 0 0 10px rgba(66,133,244,0), 0 6px 22px rgba(155,114,203,.4);}}
+  @media (prefers-reduced-motion: reduce){ .ready.spot .play{animation:none;} }
+  .mission{justify-content:flex-start; padding:6.5cqi 8cqi;}
+  .mc-in{width:100%; display:flex; flex-direction:column; align-items:flex-start; text-align:left;
+    transform:translateY(10px); transition:transform .7s cubic-bezier(.2,.9,.3,1);}
+  .frame.m .mc-in{transform:none;}
+  .q-tag{display:inline-flex; align-items:center; gap:.6em; font-size:max(.72rem,1.9cqi); font-weight:800; letter-spacing:.22em; color:#7a5bb0;}
+  .q-tag::after{content:""; width:6cqi; height:2px; border-radius:2px; background:linear-gradient(90deg,#9b72cb,transparent);}
+  .q-who{margin:2.4cqi 0 0; font-size:4.7cqi; color:var(--ink-2); line-height:1.35; letter-spacing:-.01em;}
+  .q-who b{color:var(--ink); font-weight:800; background:linear-gradient(transparent 62%,rgba(155,114,203,.22) 62%);}
+  .q-goal{margin:1.2cqi 0 0; font-size:8.4cqi; font-weight:800; color:var(--ink); line-height:1.14; letter-spacing:-.02em; word-break:keep-all;}
+  .q-goal .gr{background:linear-gradient(100deg,#4285f4 0%,#9b72cb 42%,#d96570 74%,#f2994a 100%); -webkit-background-clip:text; background-clip:text; color:transparent;}
+  .q-rew{width:100%; margin-top:5cqi; padding-top:3cqi; border-top:1px solid rgba(155,114,203,.25);}
+  .q-rew .lb{font-size:max(.7rem,1.7cqi); font-weight:700; letter-spacing:.08em; color:var(--muted);}
+  .q-tiles{margin-top:1.8cqi; display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:1.8cqi;}
+  .q-tiles figure{margin:0; position:relative;}
+  .q-tiles .im{aspect-ratio:1; border-radius:1.6cqi; overflow:hidden; background:#fff; border:2px solid #fff; box-shadow:0 3px 12px rgba(72,60,40,.14);}
+  .q-tiles img{width:100%; height:100%; object-fit:cover; object-position:top; display:block;}
+  .q-tiles .n{position:absolute; top:-.7em; left:-.5em; width:1.9em; height:1.9em; border-radius:50%; display:grid; place-items:center;
+    font-size:max(.62rem,1.5cqi); font-weight:700; color:#fff; background:linear-gradient(120deg,#4285f4,#9b72cb 45%,#d96570); box-shadow:0 2px 6px rgba(0,0,0,.15);}
+  /* 보상 상자: 등장(1회) + 빛이 1→5로 은은하게 이동(반복) */
+  .q-tiles figure:nth-child(1){--i:0} .q-tiles figure:nth-child(2){--i:1} .q-tiles figure:nth-child(3){--i:2}
+  .q-tiles figure:nth-child(4){--i:3} .q-tiles figure:nth-child(5){--i:4}
+  .frame.m .q-tiles figure{animation:qIn .7s cubic-bezier(.2,.9,.3,1) both; animation-delay:calc(.35s + var(--i)*.15s);}
+  .q-tiles .tr{position:absolute; left:0; top:0; width:100%; aspect-ratio:1; overflow:visible; pointer-events:none;}
+  .q-tiles .tr rect{fill:none; stroke:url(#qgr); stroke-width:3.5px; vector-effect:non-scaling-stroke; stroke-linecap:round;
+    stroke-dasharray:100; stroke-dashoffset:100; opacity:0; filter:drop-shadow(0 0 4px rgba(155,114,203,.85));}
+  .frame.m .q-tiles .tr rect{animation:qDraw 7.5s linear infinite; animation-delay:calc(1.4s + var(--i)*1.5s);}
+  .frame.m .q-tiles .im{animation:qGlow 7.5s ease-in-out infinite, qFocus 7.5s ease-in-out infinite backwards; animation-delay:calc(1.4s + var(--i)*1.5s);}
+  .frame.m .q-tiles .n{animation:qLift 7.5s ease-in-out infinite, qFocus 7.5s ease-in-out infinite backwards; animation-delay:calc(1.4s + var(--i)*1.5s);}
+  .frame.m .q-tiles figcaption{animation:qFocus 7.5s ease-in-out infinite backwards; animation-delay:calc(1.4s + var(--i)*1.5s);}
+  @keyframes qFocus{0%{opacity:.4; filter:blur(1.6px) saturate(.6);} 4%,22%{opacity:1; filter:none;} 28%,100%{opacity:.4; filter:blur(1.6px) saturate(.6);}}
+  @keyframes qIn{from{opacity:0; transform:translateY(14px);} to{opacity:1; transform:none;}}
+  @keyframes qDraw{0%{stroke-dashoffset:100; opacity:1;} 16%{stroke-dashoffset:0; opacity:1;} 22%{stroke-dashoffset:0; opacity:1;} 30%,100%{stroke-dashoffset:0; opacity:0;}}
+  @keyframes qGlow{
+    0%,34%,100%{transform:none; box-shadow:0 3px 12px rgba(72,60,40,.14);}
+    10%,22%{transform:translateY(-4px); box-shadow:0 10px 26px rgba(155,114,203,.38);}}
+  @keyframes qLift{0%,34%,100%{transform:none;} 10%,22%{transform:translateY(-4px);}}
+  .frame.m .q-tiles .tr{animation:qLift 7.5s ease-in-out infinite; animation-delay:calc(1.4s + var(--i)*1.5s);}
+  @media (prefers-reduced-motion: reduce){ .frame.m .q-tiles figure,.frame.m .q-tiles .im,.frame.m .q-tiles .n,.frame.m .q-tiles .tr,.frame.m .q-tiles .tr rect,.frame.m .q-tiles figcaption{animation:none;} }
+  .q-tiles figcaption{margin-top:.8cqi; font-size:max(.62rem,1.55cqi); color:var(--ink-2); text-align:center; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
 </style>
 </head>
 <body>
@@ -323,16 +379,31 @@
     </svg>
     <div class="rail-spark" id="spark"></div>
     <div class="nodes" id="nodes">
-      <button class="node" type="button" data-i="0"><span class="bub"><span class="ic">🎭</span><span class="ck">✓</span></span><span class="lb">홍보 이미지<small>with 미미미누</small></span></button>
+      <button class="node" type="button" data-i="0"><span class="bub"><span class="ic">🎭</span><span class="ck">✓</span></span><span class="lb">MT 캐릭터 컷<small>with 미미미누</small></span></button>
       <button class="node" type="button" data-i="1"><span class="bub"><span class="ic">📝</span><span class="ck">✓</span></span><span class="lb">수요조사 폼<small>장소·일시</small></span></button>
       <button class="node" type="button" data-i="2"><span class="bub"><span class="ic">📱</span><span class="ck">✓</span></span><span class="lb">사전 수요조사<br>안내 페이지<small>회비·동의 → 폼</small></span></button>
       <button class="node" type="button" data-i="3"><span class="bub"><span class="ic">🖼️</span><span class="ck">✓</span></span><span class="lb">MT 안내 포스터<small>일정·프로그램·수칙</small></span></button>
-      <button class="node" type="button" data-i="4"><span class="bub"><span class="ic">📊</span><span class="ck">✓</span></span><span class="lb">의사결정 대시보드<small>응답 실시간 반영</small></span></button>
+      <button class="node" type="button" data-i="4"><span class="bub"><span class="ic">📊</span><span class="ck">✓</span></span><span class="lb">실시간 의사결정 대시보드<small>응답 실시간 반영</small></span></button>
     </div>
     </div>
     <div class="frame">
       <span class="badge" id="badge">완성 예시</span>
-      <div class="shot" data-s="0"><img src="sample1.jpg" alt="내 사진과 미미미누 님 사진으로 만든 MT 한 장면 예시"></div>
+      <div class="mission" id="mission"><div class="mc-in">
+        <span class="q-tag">QUEST</span>
+        <p class="q-who">오늘 나는 <b>과대표 · 동아리 총무</b></p>
+        <p class="q-goal">이번 MT<br><span class="gr">무사히 성사</span>시키기</p>
+        <div class="q-rew"><span class="lb">클리어 보상 · 오늘 내 구글 계정에 남는 것</span>
+          <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="qgr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4285f4"/><stop offset=".45" stop-color="#9b72cb"/><stop offset=".75" stop-color="#d96570"/><stop offset="1" stop-color="#f2994a"/></linearGradient></defs></svg>
+          <div class="q-tiles">
+            <figure><div class="im"><img src="sample1.jpg" alt=""></div><svg class="tr" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><rect x="1.2" y="1.2" width="97.6" height="97.6" rx="13" pathLength="100"/></svg><span class="n">1</span><figcaption>캐릭터 컷</figcaption></figure>
+            <figure><div class="im"><img src="form-screen.png" alt=""></div><svg class="tr" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><rect x="1.2" y="1.2" width="97.6" height="97.6" rx="13" pathLength="100"/></svg><span class="n">2</span><figcaption>수요조사 폼</figcaption></figure>
+            <figure><div class="im"><img src="canvas-screen.png" alt=""></div><svg class="tr" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><rect x="1.2" y="1.2" width="97.6" height="97.6" rx="13" pathLength="100"/></svg><span class="n">3</span><figcaption>안내 페이지</figcaption></figure>
+            <figure><div class="im"><img src="sample-poster.jpg" alt=""></div><svg class="tr" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><rect x="1.2" y="1.2" width="97.6" height="97.6" rx="13" pathLength="100"/></svg><span class="n">4</span><figcaption>안내 포스터</figcaption></figure>
+            <figure><div class="im"><img src="dashboard-screen.jpg" alt=""></div><svg class="tr" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><rect x="1.2" y="1.2" width="97.6" height="97.6" rx="13" pathLength="100"/></svg><span class="n">5</span><figcaption>대시보드</figcaption></figure>
+          </div>
+        </div>
+      </div></div>
+      <div class="shot" data-s="0"><img src="sample1.jpg" alt="Gemini Academy MT 캐릭터 컷 예시"></div>
       <div class="shot" data-s="1"><img src="form-screen.png" alt="완성된 MT 수요조사 구글 폼 응답자 화면"></div>
       <div class="shot" data-s="2"><img src="canvas-screen.png" alt="Gemini Canvas로 만든 모바일 MT 안내 페이지"></div>
       <div class="shot" data-s="3"><img src="sample-poster.jpg" alt="Gemini Notebook으로 만든 MT 안내 포스터"></div>
@@ -341,8 +412,8 @@
 
     <div class="info" id="info">
       <span class="no swap" id="iNo">STEP 01</span>
-      <h2 class="swap s2" id="iTitle">Gemini Academy 홍보 이미지</h2>
-      <p class="desc swap s3" id="iDesc">미미미누 님이 MT를 간다면? 사진 한 장으로 <b>미미미누 캐릭터가 등장하는 Gemini Academy 홍보 이미지</b>를 만들어요. 원하면 내 사진을 더해 <b>투샷</b>으로.</p>
+      <h2 class="swap s2" id="iTitle">Gemini Academy MT 캐릭터&nbsp;컷</h2>
+      <p class="desc swap s3" id="iDesc">공지 글만 올리면 아무도 안 읽죠. 먼저 <b>"와, 가고 싶다"</b> 싶은 <b>티저</b>부터! 미미미누 님 사진 한 장으로 <b>Gemini Academy MT 캐릭터 컷</b>을 만들고, 원하면 내 사진을 더해 <b>투샷</b>으로.</p>
       <div class="tools" id="iTools"><span>Gemini</span><span>이미지 생성</span></div>
     </div>
   </div>
@@ -351,11 +422,11 @@
     <h3>오늘 끝나면 <span>이 다섯 개가 내 구글 계정에</span> 남습니다</h3>
     <p>연수가 끝나도 그대로 씁니다 — 동아리 신입 모집, 학과 행사, 팀 프로젝트까지 <b>구조는 똑같습니다.</b></p>
     <div class="thumbs">
-      <figure><div class="tb"><img src="sample1.jpg" alt=""></div><figcaption>홍보 이미지<small>이미지 저장</small></figcaption></figure>
+      <figure><div class="tb"><img src="sample1.jpg" alt=""></div><figcaption>MT 캐릭터 컷<small>이미지 저장</small></figcaption></figure>
       <figure><div class="tb"><img src="form-screen.png" alt=""></div><figcaption>수요조사 폼<small>내 드라이브</small></figcaption></figure>
       <figure><div class="tb"><img src="canvas-screen.png" alt=""></div><figcaption>사전 수요조사 안내 페이지<small>공유 링크</small></figcaption></figure>
       <figure><div class="tb"><img src="sample-poster.jpg" alt=""></div><figcaption>MT 안내 포스터<small>이미지 저장</small></figcaption></figure>
-      <figure><div class="tb"><img src="dashboard-screen.jpg" alt=""></div><figcaption>의사결정 대시보드<small>드라이브 + 링크</small></figcaption></figure>
+      <figure><div class="tb"><img src="dashboard-screen.jpg" alt=""></div><figcaption>실시간 의사결정 대시보드<small>드라이브 + 링크</small></figcaption></figure>
     </div>
   </div>
   </div>
@@ -377,20 +448,20 @@
 <script>
 (function(){
   var DATA = [
-    { no:'STEP 01', title:'Gemini Academy 홍보 이미지',
-      desc:'미미미누 님이 MT를 간다면? 사진 한 장으로 <b>미미미누 캐릭터가 등장하는 Gemini Academy 홍보 이미지</b>를 만들어요. 원하면 내 사진을 더해 <b>투샷</b>으로.',
+    { no:'STEP 01', title:'Gemini Academy MT 캐릭터\u00a0컷',
+      desc:'공지 글만 올리면 아무도 안 읽죠. 먼저 <b>"와, 가고 싶다"</b> 싶은 <b>티저</b>부터! 미미미누 님 사진 한 장으로 <b>Gemini Academy MT 캐릭터 컷</b>을 만들고, 원하면 내 사진을 더해 <b>투샷</b>으로.',
       tools:['Gemini','이미지 생성'], badge:'완성 예시' },
     { no:'STEP 02', title:'MT 장소·날짜 수요조사 폼',
-      desc:'뭘 물어야 할지 막힐 때 <b>AI가 나에게 먼저 질문</b>합니다. 세 번 답하면 문항셋이 완성되고, 그대로 구글 폼이 됩니다.',
+      desc:'"언제 돼? 어디 가고 싶어?" 막상 설문 문항을 만들려고 하면 막힙니다. 빠뜨린 건 없는지, 뭘 더 물어야 할지… 그래서 <b>AI가 나를 인터뷰</b>하게 해서 빠짐없는 문항을 뽑고, 그대로 <b>구글 폼으로 한방에!</b>',
       tools:['Gemini','구글 폼'], badge:'완성 예시' },
-    { no:'STEP 03', title:'사전 수요조사 안내 페이지',
-      desc:'수요조사 폼에 바로 던지지 않습니다. 후보 일정과 <b>참여 유형별 회비</b>, 안전 행동강령을 먼저 읽고 <b>동의해야 폼으로 넘어가는</b> 안내 페이지 — 코드 없이 만드는 진짜 웹페이지예요.',
+    { no:'STEP 03', title:'사전 수요조사 안내 모바일 웹 페이지',
+      desc:'폼 링크만 덜렁 던지면? 뭘 보고 답할지 몰라 대충 누르거나, 나중에 "그럼 저 안 가요" 하는 사람이 꼭 생겨요. 그래서 폼 앞에 <b>예상 일정 · 장소 후보지 · 예상 회비</b>와 안전 수칙을 먼저 보여주고, <b>동의해야 폼으로 넘어가는</b> 안내 페이지를 둡니다. 코드는 한 줄도 안 써요.',
       tools:['Gemini Canvas'], badge:'완성 예시' },
-    { no:'STEP 04', title:'단톡방에 뿌릴 MT 안내 포스터',
-      desc:'일정표 · <b>프로그램</b> · 안전 수칙이 <b>한 장에</b>. 디자인 한 줄만 바꾸면 완전히 다른 느낌으로 다시 나옵니다.',
+    { no:'STEP 04', title:'MT 프로그램 · 안내 포스터',
+      desc:'이제 MT 내용을 채울 차례예요. 1박 2일 <b>예상 일정표와 예상 프로그램</b>을 Gemini Notebook으로 짜보고, 안전 수칙까지 담아 <b>단톡방에 뿌릴 포스터 한 장</b>으로 정리해요.',
       tools:['Gemini Notebook'], badge:'완성 예시' },
-    { no:'STEP 05', title:'의사결정 대시보드',
-      desc:'친구들이 폼에 답하는 순간 <b>화면이 바로 바뀝니다.</b> 어디로 · 언제 갈지가 눈앞에서 정해집니다.',
+    { no:'STEP 05', title:'실시간 의사결정 대시보드',
+      desc:'응답이 쏟아지면 이제 결정할 차례. "그래서 몇 명이 언제 돼? 어디로 가?" 친구들이 답하는 순간 <b>숫자가 실시간으로 바뀌는</b> 대시보드로 눈앞에서 정해요.',
       tools:['Apps Script','API','Canvas'], badge:'라이브 시연' }
   ];
 
@@ -458,6 +529,8 @@
   function railTo(i){
     if(!PTS.length) buildRail();
     if(!PTS.length) return;
+    if(i<0){ fill.style.strokeDashoffset=TOTAL; spark.classList.remove('go'); spark.style.display='none'; return; }
+    spark.style.display='';
     var prev=fill.style.strokeDashoffset;
     fill.style.strokeDashoffset=(TOTAL-(LEN[i]||0));
     if(prev==='') { /* 최초엔 애니메이션 없이 */ }
@@ -476,10 +549,26 @@
     clearTimeout(_rt); _rt=setTimeout(function(){ buildRail(); railTo(cur); }, 180);
   });
 
+  var frame=document.querySelector('.frame');
+  function showMission(){
+    stop(); setFinale(false);
+    cur=-1;
+    frame.classList.add('m'); info.classList.add('ready'); stage.classList.add('spot');
+    nodes.forEach(function(n){ n.classList.remove('on','done'); });
+    shots.forEach(function(s){ s.classList.remove('live'); });
+    info.classList.remove('in');
+    void info.offsetWidth;
+    iNo.textContent='READY'; iTitle.textContent='다섯 단계로 해결합니다';
+    iDesc.innerHTML='';
+    iTools.innerHTML='';
+    requestAnimationFrame(function(){ info.classList.add('in'); });
+    railTo(-1);
+  }
   function show(i, opts){
     opts = opts || {};
     if(i<0 || i>=DATA.length) return;
     cur=i;
+    frame.classList.remove('m'); info.classList.remove('ready'); stage.classList.remove('spot');
     nodes.forEach(function(n,k){
       n.classList.toggle('on', k===i);
       n.classList.toggle('done', k<i);
@@ -533,7 +622,8 @@
   function goPrev(){
     stop();
     if(finaleOn){ setFinale(false); return; }
-    show(Math.max(cur-1, 0));
+    if(cur<=0){ showMission(); return; }
+    show(cur-1);
   }
 
   play.addEventListener('click', function(){ auto ? stop() : runAuto(); });
@@ -547,7 +637,7 @@
     if(e.key==='ArrowRight' || e.key==='PageDown'){ e.preventDefault(); goNext(); }
     else if(e.key==='ArrowLeft' || e.key==='PageUp'){ e.preventDefault(); goPrev(); }
     else if(e.key===' '){ e.preventDefault(); auto ? stop() : runAuto(); }
-    else if(e.key==='Home'){ e.preventDefault(); stop(); setFinale(false); show(0); }
+    else if(e.key==='Home'){ e.preventDefault(); showMission(); }
   });
 
   /* 통합 교안 안에 있으면 홈 탭으로, 단독이면 홈 파일로 */
@@ -567,7 +657,7 @@
   requestAnimationFrame(function(){
     stage.classList.add('ready');
     buildRail(); setTimeout(buildRail, 780);
-    setTimeout(function(){ show(0, {fast:true}); }, reduce ? 0 : 620);
+    setTimeout(function(){ showMission(); }, reduce ? 0 : 620);
   });
 })();
 </script>
