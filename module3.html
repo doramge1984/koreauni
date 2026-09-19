@@ -367,6 +367,23 @@
   .hero::before{content:"";position:absolute;inset:-40px 0 -10px;z-index:0;pointer-events:none;
     background:radial-gradient(620px 360px at 22% 30%, rgba(233,242,255,.95) 0%, rgba(233,242,255,0) 70%),radial-gradient(560px 340px at 68% 22%, rgba(238,226,248,.85) 0%, rgba(238,226,248,0) 70%),radial-gradient(600px 360px at 82% 62%, rgba(254,235,235,.8) 0%, rgba(254,235,235,0) 70%),radial-gradient(620px 380px at 38% 78%, rgba(254,249,231,.9) 0%, rgba(254,249,231,0) 70%);}
   .hero > *{position:relative;z-index:1;}
+  .sharebox{margin:18px 0 6px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:0;overflow:hidden;}
+  .sharebox>summary{cursor:pointer;list-style:none;padding:14px 18px;font-weight:600;color:var(--navy);font-size:.98rem;background:#f8fafd;}
+  .sharebox>summary::-webkit-details-marker{display:none;}
+  .sharebox>summary::before{content:"＋ ";color:#1967d2;font-weight:700;}
+  .sharebox[open]>summary::before{content:"− ";}
+  .sharebox>summary span{font-weight:500;color:var(--muted);font-size:.86rem;}
+  .sb-body{padding:6px 18px 18px;}
+  .sb-acc{margin-top:14px;}
+  .sb-acc h5{margin:0 0 6px;font-size:.95rem;font-weight:600;color:var(--navy);}
+  .sb-acc p{margin:0;font-size:.9rem;line-height:1.65;color:var(--navy-2);}
+  .sb-steps{margin:10px 0 0;padding:0;list-style:none;display:grid;gap:16px;}
+  .sb-steps li{font-size:.9rem;color:var(--navy-2);}
+  .sb-steps li b{display:block;margin-bottom:4px;color:var(--navy);}
+  .sb-tip{display:block;font-size:.82rem;color:var(--muted);margin-bottom:6px;}
+  .sb-steps img{display:block;max-width:100%;width:560px;border:1px solid var(--line);border-radius:12px;box-shadow:0 4px 14px rgba(36,53,81,.08);}
+  .sb-alt{background:#fef7e0;border-radius:12px;padding:12px 14px;}
+  .sb-cap{margin:14px 0 0;font-size:.9rem;color:#1967d2;background:#e8f0fe;border-radius:10px;padding:10px 14px;}
 </style>
 </head>
 <body>
@@ -847,7 +864,31 @@
       <p class="substep" style="margin-top:2.6rem;">🏆 베스트 메이커 — 서로의 대시보드 자랑하기</p>
       <span class="goal">🎯 공유·발표 · 10분</span>
       <p>각자 만든 Canvas 대시보드를 <b>패들릿(Padlet)</b>에 올리고 서로의 결과물을 둘러봅니다.</p>
+      <details class="sharebox">
+        <summary>🔗 Canvas 결과물 공유하기 <span>— 개인 계정과 학교 계정이 달라요</span></summary>
+        <div class="sb-body">
+          <div class="sb-acc">
+            <h5>👤 개인 계정 (gmail.com)</h5>
+            <p>Canvas 오른쪽 위 <b>공유 아이콘</b>을 눌러 링크를 만들고 복사하면 끝이에요. 링크만 있으면 누구나 로그인 없이 볼 수 있어요.</p>
+          </div>
+          <div class="sb-acc">
+            <h5>🏫 학교·기관 계정</h5>
+            <p>공개 링크 대신 <b>구글 드라이브</b>로 공유해요. 세 단계만 따라 하세요.</p>
+            <ol class="sb-steps">
+              <li><b>① 공유 아이콘 → Drive를 통해 공유</b><img src="share-school-1.png" alt="공유 아이콘을 누르고 Drive를 통해 공유 선택" loading="lazy"></li>
+              <li><b>② Google Drive에 연결 → 계속</b><span class="sb-tip">내 드라이브에 저장될 뿐, 아직 다른 사람에게 공개되는 건 아니에요.</span><img src="share-school-2.png" alt="Google Drive에 연결 창에서 계속 누르기" loading="lazy"></li>
+              <li><b>③ 일반 액세스 → 링크가 있는 모든 사용자 → 링크 복사 → 완료</b><span class="sb-tip">왼쪽 아래 🔗 버튼이 링크 복사예요.</span><img src="share-school-3.png" alt="일반 액세스를 링크가 있는 모든 사용자로 바꾸고 완료" loading="lazy"></li>
+            </ol>
+          </div>
+          <div class="sb-acc sb-alt">
+            <h5>🙅 '링크가 있는 모든 사용자'가 목록에 없다면</h5>
+            <p>학교가 외부 공유를 막아둔 경우예요. Canvas 오른쪽 위 <b>⬇️ 다운로드</b>를 눌러 <b>HTML 파일</b>로 받은 뒤, 그 파일을 패들렛에 올려주세요.</p>
+          </div>
+          <p class="sb-cap">📸 어느 방법이든 <b>화면 캡처를 함께</b> 올려주세요. 링크가 안 열리는 사람도 결과물을 바로 볼 수 있어요.</p>
+        </div>
+      </details>
       <a class="cta-btn teal" href="https://padlet.com/JA_Korea/9-21-6enva6oxcsdk72n7" target="_blank" rel="noopener">🧡 결과물 올리러 가기 (Padlet 열기)</a>
+        <p style="margin:10px 0 0;font-size:.9rem;color:var(--navy-2);background:#e8f0fe;border-radius:10px;padding:9px 14px;display:table;">📌 패들렛의 <b>📊 의사결정 대시보드</b> 칸에 올려주세요.</p>
       <div style="margin-top:14px;border:0;border-radius:22px;overflow:hidden;box-shadow:0 6px 18px rgba(36,53,81,.08);background:#F4F4F4;">
         <iframe src="https://padlet.com/embed/6enva6oxcsdk72n7" frameborder="0" allow="camera;microphone;geolocation;clipboard-write;encrypted-media;fullscreen" style="width:100%;height:600px;display:block;border:0;" title="결과물 패들렛 보드"></iframe>
       </div>

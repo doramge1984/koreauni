@@ -297,6 +297,23 @@
   .resultshot figure{margin:0;text-align:center;}
   .resultshot img{width:100%;max-width:340px;max-height:560px;object-fit:cover;object-position:top;border-radius:18px;border:1px solid var(--line);box-shadow:0 10px 26px rgba(36,53,81,.16);background:#fff;display:block;margin:0 auto;}
   .resultshot figcaption{margin-top:10px;font-size:.82rem;font-weight:600;color:var(--navy-2);}
+  .sharebox{margin:18px 0 6px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:0;overflow:hidden;}
+  .sharebox>summary{cursor:pointer;list-style:none;padding:14px 18px;font-weight:600;color:var(--navy);font-size:.98rem;background:#f8fafd;}
+  .sharebox>summary::-webkit-details-marker{display:none;}
+  .sharebox>summary::before{content:"＋ ";color:#1967d2;font-weight:700;}
+  .sharebox[open]>summary::before{content:"− ";}
+  .sharebox>summary span{font-weight:500;color:var(--muted);font-size:.86rem;}
+  .sb-body{padding:6px 18px 18px;}
+  .sb-acc{margin-top:14px;}
+  .sb-acc h5{margin:0 0 6px;font-size:.95rem;font-weight:600;color:var(--navy);}
+  .sb-acc p{margin:0;font-size:.9rem;line-height:1.65;color:var(--navy-2);}
+  .sb-steps{margin:10px 0 0;padding:0;list-style:none;display:grid;gap:16px;}
+  .sb-steps li{font-size:.9rem;color:var(--navy-2);}
+  .sb-steps li b{display:block;margin-bottom:4px;color:var(--navy);}
+  .sb-tip{display:block;font-size:.82rem;color:var(--muted);margin-bottom:6px;}
+  .sb-steps img{display:block;max-width:100%;width:560px;border:1px solid var(--line);border-radius:12px;box-shadow:0 4px 14px rgba(36,53,81,.08);}
+  .sb-alt{background:#fef7e0;border-radius:12px;padding:12px 14px;}
+  .sb-cap{margin:14px 0 0;font-size:.9rem;color:#1967d2;background:#e8f0fe;border-radius:10px;padding:10px 14px;}
 </style>
 </head>
 <body>
@@ -468,7 +485,8 @@
           </div>
         </div>
       </div>
-      <a class="cta-btn pad" href="https://padlet.com/JA_Korea/9-21-6enva6oxcsdk72n7" target="_blank" rel="noopener">🧡 완성한 홍보 이미지 패들렛에 올리기</a>
+      <a class="cta-btn pad" style="margin-top:3.4em;" href="https://padlet.com/JA_Korea/9-21-6enva6oxcsdk72n7" target="_blank" rel="noopener">🧡 완성한 홍보 이미지 패들렛에 올리기</a>
+      <p style="margin:10px 0 0;font-size:.9rem;color:var(--navy-2);background:#e8f0fe;border-radius:10px;padding:9px 14px;display:table;">📌 패들렛의 <b>🎬 Gemini Academy 홍보 이미지</b> 칸에 올려주세요. 제목에는 <b>이름 · 단독 컷/투샷</b>을 적어요.</p>
       <div class="note">💡 마음에 드는 결과가 나오면 <b>이미지를 저장해 패들렛에 올려주세요.</b> 어떤 버튼을 골랐는지도 함께 적으면 서로 참고할 수 있어요.</div>
     </div>
 
@@ -626,6 +644,29 @@
         <a class="cta-btn" href="https://share.gemini.google/jx26n2uW6VVR" target="_blank" rel="noopener">🎨 디자인 적용 예시 보기</a>
       </div>
       <div class="note">💡 완성되면 <b>체크박스 세 개를 눌러 보세요.</b> 다 체크해야 아래 버튼이 켜집니다.<br>💡 <b>디자인이 마음에 안 들면 같은 채팅에 한 줄만 더 보내면 됩니다.</b> 앞에 <span style="color:#c0392b;">"내용은 그대로 두고 디자인만"</span>을 붙이는 게 요령이에요.<br>&nbsp;&nbsp;&nbsp;&nbsp;· <span class="mono" style="color:#c0392b;">내용은 그대로 두고 디자인만 밤에 보기 좋게 어두운 화면으로 바꿔줘.</span><br>&nbsp;&nbsp;&nbsp;&nbsp;· <span class="mono" style="color:#c0392b;">내용은 그대로 두고 디자인만 파스텔 톤으로 부드럽게 바꿔줘.</span><br>&nbsp;&nbsp;&nbsp;&nbsp;· <span class="mono" style="color:#c0392b;">내용은 그대로 두고 디자인만 대학 축제 포스터처럼 통통 튀게 바꿔줘.</span></div>
+      <details class="sharebox">
+        <summary>🔗 Canvas 결과물 공유하기 <span>— 개인 계정과 학교 계정이 달라요</span></summary>
+        <div class="sb-body">
+          <div class="sb-acc">
+            <h5>👤 개인 계정 (gmail.com)</h5>
+            <p>Canvas 오른쪽 위 <b>공유 아이콘</b>을 눌러 링크를 만들고 복사하면 끝이에요. 링크만 있으면 누구나 로그인 없이 볼 수 있어요.</p>
+          </div>
+          <div class="sb-acc">
+            <h5>🏫 학교·기관 계정</h5>
+            <p>공개 링크 대신 <b>구글 드라이브</b>로 공유해요. 세 단계만 따라 하세요.</p>
+            <ol class="sb-steps">
+              <li><b>① 공유 아이콘 → Drive를 통해 공유</b><img src="share-school-1.png" alt="공유 아이콘을 누르고 Drive를 통해 공유 선택" loading="lazy"></li>
+              <li><b>② Google Drive에 연결 → 계속</b><span class="sb-tip">내 드라이브에 저장될 뿐, 아직 다른 사람에게 공개되는 건 아니에요.</span><img src="share-school-2.png" alt="Google Drive에 연결 창에서 계속 누르기" loading="lazy"></li>
+              <li><b>③ 일반 액세스 → 링크가 있는 모든 사용자 → 링크 복사 → 완료</b><span class="sb-tip">왼쪽 아래 🔗 버튼이 링크 복사예요.</span><img src="share-school-3.png" alt="일반 액세스를 링크가 있는 모든 사용자로 바꾸고 완료" loading="lazy"></li>
+            </ol>
+          </div>
+          <div class="sb-acc sb-alt">
+            <h5>🙅 '링크가 있는 모든 사용자'가 목록에 없다면</h5>
+            <p>학교가 외부 공유를 막아둔 경우예요. Canvas 오른쪽 위 <b>⬇️ 다운로드</b>를 눌러 <b>HTML 파일</b>로 받은 뒤, 그 파일을 패들렛에 올려주세요.</p>
+          </div>
+          <p class="sb-cap">📸 어느 방법이든 <b>화면 캡처를 함께</b> 올려주세요. 링크가 안 열리는 사람도 결과물을 바로 볼 수 있어요.</p>
+        </div>
+      </details>
     </div>
 
     <!-- STEP 4 -->
@@ -744,6 +785,7 @@
       <div class="note">💡 <b>결과물 예시는 이 실습 맨 위</b>에 있습니다. 두 장 모두 <b>같은 기획안·같은 [내용 구성]</b>으로 만들고 <b>[디자인]</b> 문단만 갈아 끼운 것이니, 지금 고른 디자인이 어떻게 반영되는지 비교해 보세요.</div>
       <div class="note">💡 디자인 지시는 <b>맨 끝에 따로</b> 둡니다. 앞에 섞으면 <b>&#39;일정표에 지면 절반&#39;</b> 같은 구성 규칙을 디자인 지시가 밀어냅니다. 완성된 PNG는 <b>패들렛</b>에 올려 서로 비교해 보세요.</div>
       <a class="cta-btn pad" href="https://padlet.com/JA_Korea/9-21-6enva6oxcsdk72n7" target="_blank" rel="noopener">🧡 완성한 포스터 패들렛에 올리기</a>
+      <p style="margin:10px 0 0;font-size:.9rem;color:var(--navy-2);background:#e8f0fe;border-radius:10px;padding:9px 14px;display:table;">📌 패들렛의 <b>🖼️ MT 안내 포스터</b> 칸에 올려주세요.</p>
 
       <p class="substep" style="margin-top:2.6rem;">④ [인솔자용] 안전 및 비상상황 대응 체크리스트 <span class="pill">시간 되면</span></p>
       <p>학생회 임원·조장이 <b>인쇄해서 들고 다닐</b> 문서입니다. 이건 그림이 아니라 글이 필요하니, <b>매뉴얼만 체크</b>하고 스튜디오에서 <b>보고서</b>를 고른 뒤 설명란에 아래 프롬프트를 넣으세요.</p>
