@@ -89,6 +89,62 @@
   .stepcard .goalpeek p b{color:var(--teal);}
   .stepcard .goalpeek .cta-btn{margin-top:12px;}
   .substep{font-weight:600;color:var(--navy);margin:16px 0 4px;}
+  /* 실습4: 인덱스 탭 색에 맞춰 단계 안쪽 색도 통일 */
+  .sxsec.c1{--c:#3b6fd8}.sxsec.c2{--c:#2f8f67}.sxsec.c3{--c:#c9772b}.sxsec.c4{--c:#b9474b}
+  .sxsec .prompt-box,.sxsec .prompt-box.qd-box{border-color:color-mix(in srgb,var(--c) 70%,#fff);background:linear-gradient(135deg,color-mix(in srgb,var(--c) 9%,#fff),color-mix(in srgb,var(--c) 3%,#fff));box-shadow:0 6px 20px color-mix(in srgb,var(--c) 12%,transparent);}
+  .sxsec .prompt-box .gh .gi,.sxsec .prompt-box.qd-box .gh .gi{background:var(--c);box-shadow:0 5px 14px color-mix(in srgb,var(--c) 30%,transparent);}
+  .sxsec .cta-btn:not(.pad):not(.ghost){background:var(--c);box-shadow:0 6px 16px color-mix(in srgb,var(--c) 30%,transparent);}
+  .sxsec .note{border-left-color:var(--c);background:color-mix(in srgb,var(--c) 5%,#fff);}
+  .sxsec p[style*="border-left"]{border-left-color:var(--c) !important;}
+  .sxsec .revlaunch{border-color:color-mix(in srgb,var(--c) 25%,#fff);background:color-mix(in srgb,var(--c) 4%,#fff);}
+  .sxsec .revlaunch .go{background:var(--c);box-shadow:0 4px 12px color-mix(in srgb,var(--c) 30%,transparent);}
+  .sxsec .shortp{border-color:color-mix(in srgb,var(--c) 25%,#fff);background:color-mix(in srgb,var(--c) 4%,#fff);}
+  .sxsec .planbox{background:color-mix(in srgb,var(--c) 7%,#fff);border-color:color-mix(in srgb,var(--c) 30%,#fff);}
+  .sxsec .pb-row{border-top-color:color-mix(in srgb,var(--c) 20%,#fff);}
+  .sxsec .pb-row input{border-color:color-mix(in srgb,var(--c) 25%,#fff);}
+  .sxsec .pb-row input:focus{outline-color:var(--c);border-color:var(--c);}
+  .sxsec .pb-chips button{border-color:color-mix(in srgb,var(--c) 35%,#fff);color:var(--c);}
+  .sxsec .pb-chips button:hover{background:color-mix(in srgb,var(--c) 8%,#fff);}
+  .sxsec .pb-chips button.on{background:var(--c);border-color:var(--c);color:#fff;}
+  .sxsec .bp-chip:hover{border-color:var(--c);color:var(--c);}
+  .sxsec .bp-chip[aria-pressed="true"]{background:var(--c);border-color:var(--c);}
+  .sxsec .qd-form{border-color:color-mix(in srgb,var(--c) 50%,#fff);}
+  .sxsec .qd-keys button{border-color:color-mix(in srgb,var(--c) 30%,#fff);color:var(--c);}
+  .sxsec .qd-keys button:hover{background:color-mix(in srgb,var(--c) 8%,#fff);}
+  .sxsec .qd-in:focus{outline-color:var(--c);}
+  .sxsec .path{background:color-mix(in srgb,var(--c) 7%,#fff);}
+  .sxsec .path b{color:var(--c);}
+  .sx3{display:flex;align-items:center;gap:16px;margin:3.4rem 0 16px -28px;}
+  .sx3.c1{--c:#3b6fd8}.sx3.c2{--c:#2f8f67}.sx3.c3{--c:#c9772b}.sx3.c4{--c:#b9474b}
+  .sx3-tab{flex:none;position:relative;align-self:stretch;display:flex;align-items:center;min-height:60px;padding:0 18px 0 28px;background:var(--c);color:#fff;font-weight:800;font-size:.86rem;letter-spacing:.08em;border-radius:0 12px 12px 0;box-shadow:0 4px 12px color-mix(in srgb,var(--c) 30%,transparent);}
+  .sx3-tab:before{content:"";position:absolute;left:0;bottom:-8px;border-top:8px solid color-mix(in srgb,var(--c) 60%,#000);border-left:10px solid transparent;}
+  .sx3-bx{min-width:0;}
+  .sx3 .sx3-t{margin:0;font-size:1.3rem;font-weight:800;color:var(--navy);display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .sx3-d{margin:3px 0 0;font-size:.95rem;color:var(--navy-2);}
+  .sx3-d b{color:var(--c);}
+  .sx3-chip{font-size:.72rem;font-weight:700;color:var(--c);background:color-mix(in srgb,var(--c) 10%,#fff);border:1px solid color-mix(in srgb,var(--c) 30%,#fff);border-radius:999px;padding:2px 10px;}
+  .sx3-chip.gray{color:var(--muted);background:#f1f3f4;border-color:#e3e5e8;}
+  @media (max-width:640px){.sx3{margin-left:-18px;}}
+  .sx2{margin:3.2rem 0 14px;}
+  .sx2.c1{--c:#3b6fd8}.sx2.c2{--c:#2f8f67}.sx2.c3{--c:#c9772b}.sx2.c4{--c:#b9474b}
+  .sx2-k{display:flex;align-items:center;gap:12px;}
+  .sx2-k span{font-size:.78rem;font-weight:800;letter-spacing:.12em;color:#fff;background:var(--c);border-radius:999px;padding:4px 12px;}
+  .sx2-k:after{content:"";flex:1;height:2px;border-radius:2px;background:linear-gradient(90deg,color-mix(in srgb,var(--c) 45%,#fff),rgba(255,255,255,0));}
+  .sx2 .sx2-t{margin:10px 0 2px;font-size:1.35rem;font-weight:800;color:var(--navy);display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .sx2-d{margin:0;font-size:.95rem;color:var(--navy-2);}
+  .sx2-d b{color:var(--c);}
+  .substep.sx{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;font-size:1.12rem;font-weight:800;background:linear-gradient(90deg,#e8f0fe,rgba(232,240,254,0));border-left:5px solid #1967d2;border-radius:0 12px 12px 0;padding:12px 16px;margin-bottom:12px;}
+  .sx-n{display:inline-grid;place-items:center;width:1.9em;height:1.9em;border-radius:50%;background:#1967d2;color:#fff;font-size:.9rem;}
+  .sx-tag{font-size:.74rem;font-weight:700;color:#1967d2;background:#fff;border:1px solid #c6dafc;border-radius:999px;padding:2px 10px;}
+  .sx-d{flex-basis:100%;font-size:.9rem;font-weight:500;color:var(--navy-2);padding-left:calc(1.9em + 10px);}
+  .sx-d b{color:var(--sxc);}
+  .substep.sx{--sxc:#3b6fd8;--sxb:#eef3fd;background:linear-gradient(90deg,var(--sxb),rgba(255,255,255,0));border-left-color:var(--sxc);}
+  .substep.sx .sx-n{background:var(--sxc);}
+  .substep.sx .sx-tag{color:var(--sxc);border-color:color-mix(in srgb,var(--sxc) 30%,#fff);}
+  .substep.sx.c1{--sxc:#3b6fd8;--sxb:#eef3fd;}
+  .substep.sx.c2{--sxc:#2f8f67;--sxb:#ecf6f1;}
+  .substep.sx.c3{--sxc:#c9772b;--sxb:#fbf2e8;}
+  .substep.sx.c4{--sxc:#b9474b;--sxb:#faeeee;}
 
   /* collapsible steps */
   #hands .stepcard.collapsible{padding-top:0;padding-bottom:0;}
@@ -365,6 +421,7 @@
   /* 긴 프롬프트 속 메타프롬프트 핵심 문장 */
   pre .metakey{white-space:nowrap;background:#fcc419;color:#1b2440;font-weight:800;border-radius:6px;padding:2px 7px;box-shadow:0 0 0 2px rgba(252,196,25,.35),0 0 18px rgba(252,196,25,.55);animation:metaKey 2.4s ease-in-out infinite;}
   pre .metakey.slot-filled{white-space:normal;word-break:break-all;background:#0ca678;color:#fff;box-shadow:0 0 0 2px rgba(12,166,120,.35);animation:none;}
+  pre .metakey.mk-wrap{white-space:normal;-webkit-box-decoration-break:clone;box-decoration-break:clone;line-height:1.9;}
   @keyframes metaKey{0%,100%{box-shadow:0 0 0 2px rgba(252,196,25,.35),0 0 10px rgba(252,196,25,.35);}50%{box-shadow:0 0 0 3px rgba(252,196,25,.55),0 0 26px rgba(252,196,25,.8);}}
   @media (prefers-reduced-motion:reduce){pre .metakey{animation:none;}}
   .stepcard p.why{margin:12px 0 14px;padding:2px 0 2px 16px;border-left:4px solid #9b72cb;font-size:1.02rem;line-height:1.75;color:var(--navy-2);}
@@ -394,6 +451,10 @@
   .revlaunch .s{font-weight:500;color:var(--muted);font-size:.86rem;}
   .revlaunch .go{margin-left:auto;flex:none;width:46px;height:28px;border:0;padding:0;cursor:pointer;background:linear-gradient(100deg,#4285f4,#9b72cb);border-radius:999px;box-shadow:0 4px 12px rgba(155,114,203,.3);}
   .revlaunch .go:hover{filter:brightness(1.08);}
+  .revlaunch.mini{width:fit-content;margin:12px 0 12px auto;padding:7px 10px 7px 14px;border-radius:999px;gap:6px;}
+  .revlaunch.mini .t{font-size:.84rem;font-weight:600;}
+  .revlaunch.mini .s{font-size:.78rem;}
+  .revlaunch.mini .go{width:34px;height:22px;margin-left:6px;}
   .rv-bigrow{display:flex;justify-content:flex-end;margin:0 0 8px;}
   .rvs-hero{text-align:center;padding:calc(var(--u)*3) 0;}
   .rvs-hero .q{font-size:max(1.1rem,calc(var(--u)*2.3));color:var(--muted);}
@@ -401,11 +462,18 @@
   .rvs-hero .a b{color:#8430ce;}
   .rvs-pair{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*2);}
   .rvs-pair .c{border:1px solid var(--line);border-radius:20px;padding:calc(var(--u)*2.4);background:#f8fafd;}
-  .rvs-pair .c b{display:block;font-size:max(1.1rem,calc(var(--u)*2));color:var(--navy);}
+  .rvs-pair .c>b{display:block;font-size:max(1.1rem,calc(var(--u)*2));color:var(--navy);}
   .rvs-pair .c small{display:inline-block;margin-top:6px;font-size:max(.72rem,calc(var(--u)*.95));font-weight:700;color:var(--muted);}
   .rvs-pair .c p{margin:14px 0 0;font-size:max(.95rem,calc(var(--u)*1.6));line-height:1.6;color:var(--navy-2);}
   .rvs-pair .c.rv{background:#f3e8fd;border-color:rgba(132,48,206,.3);box-shadow:0 10px 30px rgba(132,48,206,.12);}
-  .rvs-pair .c.rv b{color:#8430ce;}
+  .rvs-pair .c.rv>b{color:#8430ce;}
+  .rvs-pair .c ul{margin:calc(var(--u)*1.2) 0 0;padding-left:1.2em;font-size:max(.95rem,calc(var(--u)*1.55));line-height:1.65;color:var(--navy-2);}
+  .rvs-pair .c ul li{margin-bottom:.35em;}
+  .rvs-pair .c p.big{font-size:max(1.3rem,calc(var(--u)*2.6));font-weight:800;color:var(--navy);margin-top:calc(var(--u)*1.2);}
+  .rvs-pair .c.fast{background:#e8f0fe;border-color:rgba(25,103,210,.3);}
+  .rvs-pair .c.fast>b{color:#1967d2;}
+  .rvs-pair .c ul b,.rvs-pair .c p b{font-weight:700;color:var(--navy);}
+  .rvs-pair .c.rv p.big{color:#8430ce;} .rvs-pair .c.fast p.big{color:#1967d2;}
   .rvs-steps{list-style:none;margin:0;padding:0;display:grid;gap:calc(var(--u)*1.2);}
   .rvs-steps li{display:flex;align-items:center;gap:16px;background:#f8fafd;border:1px solid var(--line);border-radius:16px;padding:calc(var(--u)*1.5) calc(var(--u)*2);font-size:max(1rem,calc(var(--u)*1.65));color:var(--navy-2);}
   .rvs-steps span{flex:none;width:1.9em;height:1.9em;border-radius:50%;display:grid;place-items:center;background:linear-gradient(120deg,#4285f4,#9b72cb);color:#fff;font-weight:800;}
@@ -419,6 +487,53 @@
   .rvs-read .row i.on{background:linear-gradient(120deg,#d93025,#e37400);color:#fff;transform:translateY(-6px);box-shadow:0 8px 20px rgba(217,48,37,.3);}
   .rvs-read p{font-size:max(1rem,calc(var(--u)*1.65));color:var(--navy-2);margin:0;}
   @media (max-width:760px){.rvs-pair{grid-template-columns:1fr;}}
+  .shortp{width:min(560px,100%);box-sizing:border-box;margin:12px 0 8px auto;background:#f8fafd;border:1px solid var(--line);border-radius:14px;padding:10px 14px;}
+  .shortp .sp-h{font-size:.86rem !important;}
+  .shortp pre{font-size:.82rem;padding:10px 12px !important;}
+  .shortp .copy{font-size:.76rem;padding:4px 10px;}
+  .shortp .sp-h{font-size:.95rem;color:var(--navy);}
+  .shortp .sp-h span{font-size:.84rem;color:var(--muted);}
+  .shortp pre{white-space:pre-wrap;word-break:keep-all;}
+  .shortp .sp-tip{margin:8px 0 0;font-size:.88rem;color:var(--navy-2);}
+  .plangrid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:18px;align-items:start;margin-top:10px;}
+  .plangrid .planbox{margin:0;position:sticky;top:84px;}
+  .plangrid .planbox .pb-row{grid-template-columns:1fr;}
+  .plangrid .planbox .pb-chips{grid-column:1;}
+  .plangrid .codewrap pre{max-height:620px;overflow:auto;}
+  @media (max-width:980px){.plangrid{grid-template-columns:1fr;}.plangrid .planbox{position:static;}}
+  .planbox{margin:10px 0 14px;background:#fff8e1;border:1px solid #f6d77a;border-radius:14px;padding:14px 16px;}
+  .planbox .pb-h{font-size:.98rem;color:var(--navy);margin-bottom:10px;}
+  .planbox .pb-h span{display:block;font-size:.82rem;color:var(--muted);margin-top:2px;}
+  .pb-row{display:grid;grid-template-columns:175px 1fr;gap:6px 12px;align-items:center;padding:8px 0;border-top:1px dashed #f0dca0;}
+  .pb-row label{font-weight:700;font-size:.9rem;color:var(--navy);}
+  .pb-row input{width:100%;box-sizing:border-box;border:1px solid #e3d7ae;border-radius:10px;padding:9px 12px;font:inherit;font-size:.92rem;background:#fff;}
+  .pb-row input:focus{outline:2px solid #fcc419;border-color:#fcc419;}
+  .pb-chips{grid-column:2;display:flex;flex-wrap:wrap;gap:6px;}
+  .pb-chips button{border:1px solid #f0d27a;background:#fff;color:#8a6100;border-radius:999px;padding:4px 11px;font:inherit;font-size:.8rem;font-weight:600;cursor:pointer;}
+  .pb-chips button:hover{background:#fff3c4;}
+  .pb-chips button.on{background:#fcc419;border-color:#fcc419;color:#1b2440;}
+  pre .pslot{color:#8ab4f8;border-bottom:1px dashed #8ab4f8;}
+  pre .pslot.filled{color:#1b2440;background:#fcc419;border-bottom:0;border-radius:5px;padding:1px 6px;font-weight:700;}
+  @media (max-width:640px){.pb-row{grid-template-columns:1fr;}.pb-chips{grid-column:1;}}
+  .prompt-box.qd-box{background:linear-gradient(135deg,#f3e8fd,#e9f2ff);border-color:#9b72cb;box-shadow:0 6px 20px rgba(155,114,203,.12);}
+  .prompt-box.qd-box .gh .gi{background:#8430ce;box-shadow:0 5px 14px rgba(132,48,206,.3);}
+  .quickdes{margin:14px 0 18px;background:#f3e8fd;border:1px solid rgba(132,48,206,.25);border-radius:16px;padding:16px 18px;}
+  .qd-h{font-size:1rem;color:#5b2a91;}
+  .qd-lead{margin:6px 0 12px;font-size:.93rem;color:var(--navy-2);line-height:1.7;}
+  .qd-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .qd-form{display:inline-flex;align-items:center;gap:6px;background:#fff;border:2px dashed #b88ae6;border-radius:12px;padding:10px 16px;font-size:1.08rem;font-weight:700;color:var(--navy);}
+  .qd-slot{display:inline-block;min-width:4.5em;text-align:center;background:#fcc419;border-radius:6px;padding:0 8px;margin-right:4px;color:#1b2440;}
+  .qd-keys{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0;}
+  .qd-keys button{cursor:pointer;font:inherit;background:#fff;border:1px solid rgba(132,48,206,.25);color:#6a3aa6;border-radius:999px;padding:5px 12px;font-size:.85rem;font-weight:600;}
+  .qd-keys button:hover{background:#efe2fb;}
+  .qd-keys button.on{background:#fcc419;border-color:#fcc419;color:#1b2440;}
+  .qd-in{width:9em;border:0;border-radius:6px;background:#fcc419;color:#1b2440;font:inherit;font-weight:700;text-align:center;padding:3px 8px;}
+  .qd-in::placeholder{color:#7a5a00;}
+  .qd-in:focus{outline:2px solid #8430ce;}
+  .qd-in.need{outline:2px solid #d93025;}
+  .qd-copy{border:0;border-radius:10px;background:#1b2440;color:#fff;font:inherit;font-weight:600;font-size:.9rem;padding:10px 16px;cursor:pointer;}
+  .qd-copy.ok{background:#1e8e3e;}
+  .qd-next{margin:14px 0 0;font-size:.9rem;color:var(--navy-2);line-height:1.7;}
   .dx-big{background:linear-gradient(100deg,#4285f4,#9b72cb);color:#fff;border:0;border-radius:999px;padding:8px 16px;font:inherit;font-weight:600;font-size:.86rem;cursor:pointer;box-shadow:0 4px 12px rgba(155,114,203,.3);}
   /* 발표 모드 팝업 — 화면 안에 딱 맞게 (폭·높이 둘 다 기준) */
   .dxm{position:fixed;inset:0;z-index:9000;background:rgba(20,28,45,.72);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:2vh 2vw;opacity:0;transition:opacity .22s ease;}
@@ -692,7 +807,7 @@ window.dxmFit=function(card){
   for(var i=0;i<14;i++){ var m=(lo+hi)/2; if(ok(m)){ k=m; lo=m; } else { hi=m; } }
   card.style.setProperty('--u',(base*k*0.97).toFixed(2)+'px');
 };
-window.addEventListener('resize',function(){ ['dxmCard','rvCard'].forEach(function(id){ var c=document.getElementById(id); if(c && !c.closest('.dxm').hidden) dxmFit(c); }); });
+window.addEventListener('resize',function(){ ['dxmCard','rvCard','frCard'].forEach(function(id){ var c=document.getElementById(id); if(c && !c.closest('.dxm').hidden) dxmFit(c); }); });
 </script>
       <div class="dxm" id="dxModal" hidden role="dialog" aria-modal="true" aria-label="메타프롬프트 뜯어보기 발표 화면">
         <div class="dxm-card" id="dxmCard">
@@ -1014,7 +1129,7 @@ window.addEventListener('resize',function(){ ['dxmCard','rvCard'].forEach(functi
     <div class="stepcard" id="step4">
       <div class="head"><div class="num">4</div><h3>Gemini Notebook으로 MT 프로그램 + 단톡방 안내 포스터 만들기 <span class="tool-tag nlm">Gemini Notebook</span></h3></div>
       <span class="goal">🎯 결과물 · 단톡방에 뿌릴 MT 안내 포스터 1장 (일정표 + 안전 수칙)</span>
-      <p class="why">이제 MT 내용을 채울 차례예요. 1박 2일 <b>예상 일정표와 예상 프로그램</b>을 Gemini Notebook으로 짜보고, 안전 수칙까지 담아 <b>단톡방에 뿌릴 포스터 한 장</b>으로 정리해요.</p>
+      <p class="why" style="margin:2.6rem 0;">이제 MT 내용을 채울 차례예요. 1박 2일 <b>예상 일정표와 예상 프로그램</b>을 Gemini Notebook으로 짜보고, 안전 수칙까지 담아 <b>단톡방에 뿌릴 포스터 한 장</b>으로 정리해요.</p>
       <div class="expair goalex">
         <h5>👀 오늘 이걸 만듭니다 — 완성 예시 두 장</h5>
         <p class="exlead">일정표 · 준비물 · 안전 수칙이 <b>한 장에</b> 들어간 포스터입니다. 단톡방에 그대로 올릴 수 있어요. 두 장은 <b>같은 기획안, 같은 [내용 구성]</b>으로 만들고 <b>[디자인]</b> 문단만 갈아 끼운 것 — 디자인을 바꿔도 일정표가 지면 절반, 안전 수칙은 맨 아래 띠 박스라는 구조는 그대로입니다.</p>
@@ -1030,16 +1145,74 @@ window.addEventListener('resize',function(){ ['dxmCard','rvCard'].forEach(functi
         </div>
         <p class="goalnext">👉 그런데 이걸 만들려면 <b>먼저 프로그램이 있어야</b> 하죠. 그래서 <b>① 사례 수집 → ② 기획안</b>부터 갑니다.</p>
       </div>
-      <p>Gemini Notebook으로 이동하여 <b>새 노트북 만들기</b>를 선택합니다.</p>
       <a class="cta-btn teal" href="https://drive.google.com/drive/folders/14QItAD_9cTW0antNQ0M2w5qCIm6kiAvC" target="_blank" rel="noopener">📥 Gemini Notebook 소스 다운로드</a>
-      <ul>
-        <li>다운로드 한 소스를 추가합니다. (<b>대학생 집단연수 운영 안전 확보 매뉴얼(교육부)</b>)</li>
-      </ul>
+      <p style="margin:12px 0 0;font-size:.92rem;color:var(--navy-2);background:#f8f9fa;border-left:4px solid #1e8e3e;border-radius:0 10px 10px 0;padding:10px 14px;line-height:1.7;">📄 <b>소스: 교육부 「대학생 집단연수 운영 안전 확보 매뉴얼」</b><br>이 매뉴얼을 근거로 이번 MT에 꼭 필요한 <b>안전 수칙 4가지</b>를 뽑아, 기획안과 <b>안내 포스터 맨 아래 안전 수칙 박스</b>에 넣어요.</p>
+      <a class="cta-btn" style="display:table;margin:2.6em 0 0;" href="https://notebooklm.google.com/" target="_blank" rel="noopener">📚 Gemini Notebook 바로가기</a>
+      <p>Gemini Notebook으로 이동하여 <b>새 노트북 만들기</b>를 선택합니다.</p>
 
-      <p class="substep" style="margin-top:2.6rem;">① MT 프로그램 사례 수집 (Fast Research)</p>
+      <div class="sxsec c1">
+      <div class="sx3 c1"><div class="sx3-tab">STEP 1</div><div class="sx3-bx"><p class="substep sx3-t">MT 프로그램 사례 수집 <span class="sx3-chip">Fast Research</span></p><p class="sx3-d">웹에서 MT 프로그램 아이디어를 빠르게 모아 <b>노트북 소스로 가져와요</b></p></div></div>
       <ul>
         <li>MT 프로그램을 구성하기 위한 자료를 수집하기 위해 <b>웹소스 검색</b> 칸에 아래 프롬프트를 입력하여 <b>Fast Research</b>를 진행합니다.</li>
       </ul>
+      <div class="revlaunch mini"><span class="t">⚡ Fast Research vs 🔍 Deep Research</span><span class="s">— 뭐가 다를까?</span><button type="button" class="go" id="frBig" aria-label="발표 화면 열기"></button></div>
+      <div class="dxm" id="frModal" hidden role="dialog" aria-modal="true" aria-label="Fast Research와 Deep Research 비교 발표 화면">
+        <div class="dxm-card" id="frCard">
+          <div class="dxm-top"><span class="dxm-kicker">⚡ Fast Research vs 🔍 Deep Research</span><button type="button" class="dxm-x" id="frX" aria-label="닫기">✕</button></div>
+          <h2 class="dxm-title" id="frTitle"></h2>
+          <div class="dxm-stage" id="frStage"></div>
+          <p class="dxm-msg" id="frMsg"></p>
+          <div class="dxm-foot"><button type="button" class="dxm-nav" id="frPrev" aria-label="이전">‹</button><button type="button" class="dxm-nav" id="frNext" aria-label="다음">›</button><div class="dxm-bar"><i id="frBar"></i></div><span class="dxm-page" id="frPage"></span><span class="dxm-keys"><button type="button" class="dxm-k" data-go="-1">← 이전</button><button type="button" class="dxm-k" data-go="1">다음 →</button><span>Esc 닫기</span></span></div>
+        </div>
+      </div>
+      <script>
+      (function(){
+        function pair(a,b){ return '<div class="rvs-pair"><div class="c fast"><b>⚡ Fast Research</b>'+a+'</div><div class="c rv"><b>🔍 Deep Research</b>'+b+'</div></div>'; }
+        var S=[
+          {t:'특징', h:pair('<ul><li>빠른 속도로 관련 웹 소스를 <b>검색하고 요약</b></li><li><b>즉각적인 자료 수집</b>이 필요할 때 적합</li></ul>','<ul><li>AI가 <b>검색을 여러 번 반복</b>하며 웹을 다각도로 탐색</li><li>방대한 자료와 <b>심층적인 인사이트</b>를 종합</li></ul>'),
+           m:'Fast는 <b>빠르게 훑기</b>, Deep은 <b>여러 번 파고들어 깊게 조사하기</b>예요.'},
+          {t:'소요 시간', h:pair('<p class="big">매우 빠름</p><p>몇 초 ~ 수십 초 내 완료</p>','<p class="big">몇 분 이상</p><p>주제에 따라 <b>꽤 오래</b> 걸리기도 해요.<br>백그라운드에서 돌아가니 그동안 <b>다른 작업</b>을 해도 돼요</p>'),
+           m:'기다리는 시간이 다르니, 급할 땐 Fast · 여유 있을 땐 Deep.'},
+          {t:'활용 목적', h:pair('<ul><li>간단한 사례 수집</li><li>가벼운 아이디어 확장</li><li>빠른 팩트 체킹</li></ul>','<ul><li>복잡한 시장 조사</li><li>전문 보고서 작성</li><li>다각도 분석이 필요한 심층 연구</li></ul>'),
+           m:'오늘처럼 <b>MT 사례 모으기</b>는 Fast면 충분해요.'},
+          {t:'핵심 요약', h:pair('<p>키워드나 주제와 관련된 웹 자료를 <b>빠르게 훑어보고 소스로 가져오고 싶을 때</b></p>','<p>AI가 <b>전담 연구원처럼</b> 시간을 들여 깊이 있게 웹을 파헤쳐, <b>체계적이고 전문적인 리서치 결과물</b>이 필요할 때</p>'),
+           m:'💡 오늘 실습은 <b>⚡ Fast Research</b>로 사례를 빠르게 모으고, 정리는 다음 단계 기획안 프롬프트로 해요.'}
+        ];
+        var modal=document.getElementById('frModal'); if(!modal) return;
+        var card=document.getElementById('frCard'), st=document.getElementById('frStage'), tt=document.getElementById('frTitle'), mm=document.getElementById('frMsg'),
+            pg=document.getElementById('frPage'), bar=document.getElementById('frBar'), n=0, N=S.length, last=null;
+        function show(k){
+          n=Math.max(0,Math.min(N-1,k));
+          tt.textContent=S[n].t; st.innerHTML=S[n].h; mm.innerHTML=S[n].m;
+          pg.textContent=(n+1)+' / '+N; bar.style.width=((n+1)/N*100)+'%';
+          document.getElementById('frPrev').disabled=n===0; document.getElementById('frNext').disabled=n===N-1;
+          st.classList.remove('flip'); void st.offsetWidth; st.classList.add('flip');
+          if(window.dxmFit) dxmFit(card);
+        }
+        function open(){ last=document.activeElement; modal.hidden=false; document.documentElement.style.overflow='hidden';
+          requestAnimationFrame(function(){ modal.classList.add('open'); }); show(0); document.getElementById('frX').focus(); }
+        function close(){ modal.classList.remove('open'); document.documentElement.style.overflow='';
+          setTimeout(function(){ modal.hidden=true; },220); if(last) try{ last.focus(); }catch(e){} }
+        document.getElementById('frBig').addEventListener('click',open);
+        document.getElementById('frX').addEventListener('click',function(e){ e.stopPropagation(); close(); });
+        document.getElementById('frPrev').addEventListener('click',function(e){ e.stopPropagation(); show(n-1); });
+        document.getElementById('frNext').addEventListener('click',function(e){ e.stopPropagation(); show(n+1); });
+        modal.addEventListener('click',function(e){
+          if(e.target===modal){ close(); return; }
+          var g=e.target.closest('[data-go]'); if(g){ show(n+(+g.dataset.go)); return; }
+          if(e.target.closest('.dxm-foot')||e.target.closest('.dxm-top')) return;
+          var rc=card.getBoundingClientRect();
+          show(e.clientX < rc.left + rc.width*0.25 ? n-1 : n+1);
+        });
+        document.addEventListener('keydown',function(e){
+          if(modal.hidden) return;
+          if(e.key==='Escape'){ e.preventDefault(); close(); }
+          else if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'||e.key==='Enter'){ e.preventDefault(); show(n+1); }
+          else if(e.key==='ArrowLeft'||e.key==='PageUp'||e.key==='Backspace'){ e.preventDefault(); show(n-1); }
+          else if(e.key==='Home'){ e.preventDefault(); show(0); }
+        }, true);
+      })();
+      </script>
       <div class="prompt-box">
         <div class="gh"><span class="gi">🔍</span><h4>프롬프트 · MT 프로그램 사례 Fast Research</h4></div>
         <p class="desc">Gemini Notebook <b>웹소스 검색(Fast Research)</b> 칸에 입력하세요.</p>
@@ -1051,41 +1224,75 @@ window.addEventListener('resize',function(){ ['dxmCard','rvCard'].forEach(functi
 3. 소외 없는 운영: 내향적인 참가자나 중간에 합류한 인원도 빠지지 않고 참여하게 만드는 진행 방식</pre>
         </div>
       </div>
+      <div class="shortp">
+        <div class="sp-h">⚡ <b>짧게 써도 돼요</b> <span>— 한 줄 버전</span></div>
+        <div class="codewrap">
+          <button class="copy" onclick="copyPrompt(this)">📋 복사</button>
+          <pre>대학생 30명 1박 2일 MT 프로그램 사례를 찾아 줘. 아이스브레이킹, 술 없는 야간 소통 프로그램, 늦게 온 사람도 함께하는 진행 방식 위주로.</pre>
+        </div>
+      </div>
       <ul>
         <li>수집한 자료를 <b>가져오기</b> 버튼을 눌러 가져옵니다.</li>
         <li>수집되지 않는 자료는 모두 삭제합니다.</li>
       </ul>
 
-      <p class="substep" style="margin-top:2.6rem;">② MT 세부 프로그램 기획안</p>
+      </div>
+      <div class="sxsec c2">
+      <div class="sx3 c2"><div class="sx3-tab">STEP 2</div><div class="sx3-bx"><p class="substep sx3-t">MT 세부 프로그램 기획안</p><p class="sx3-d">모은 사례 + 교육부 매뉴얼로 <b>1박 2일 일정표·프로그램·안전 수칙</b>을 짜요</p></div></div>
       <ul>
         <li>매뉴얼과 가져온 웹소스를 <b>모두 선택한 상태</b>에서 채팅에 아래 프롬프트를 입력합니다.</li>
       </ul>
       <div class="prompt-box">
         <div class="gh"><span class="gi">📋</span><h4>프롬프트 · MT 프로그램 기획안</h4></div>
         <p class="desc">자료를 추가한 Gemini Notebook 대화창에 붙여넣으세요.</p>
+        <div class="plangrid">
+        <div class="planbox" id="planBox">
+          <div class="pb-h">🎯 <b>우리 MT, 이렇게 해 볼까?</b> <span>칸을 채우면 오른쪽 프롬프트에 바로 들어가요 · 비워 두면 AI가 자유롭게 정해요</span></div>
+          <div class="pb-row">
+            <label for="pvIn1">🎨 MT 컨셉</label>
+            <input id="pvIn1" type="text" placeholder="예: 힐링, 액티비티…" autocomplete="off">
+            <div class="pb-chips" data-f="1"><button type="button">힐링</button><button type="button">액티비티</button><button type="button">레트로 게임</button><button type="button">캠핑 감성</button></div>
+          </div>
+          <div class="pb-row">
+            <label for="pvIn2">⭐ 꼭 넣고 싶은 활동</label>
+            <input id="pvIn2" type="text" placeholder="예: 바비큐, 보물찾기…" autocomplete="off">
+            <div class="pb-chips" data-f="2" data-multi="1"><button type="button">바비큐</button><button type="button">보물찾기</button><button type="button">레크 대회</button><button type="button">장기자랑</button></div>
+          </div>
+          <div class="pb-row">
+            <label for="pvIn3">🌙 야간 분위기</label>
+            <input id="pvIn3" type="text" placeholder="예: 술 없이 진솔한 대화…" autocomplete="off">
+            <div class="pb-chips" data-f="3"><button type="button">술 없이 진솔한 대화</button><button type="button">보드게임 파티</button><button type="button">별 보기와 캠프파이어</button></div>
+          </div>
+        </div>
         <div class="codewrap">
           <button class="copy" onclick="copyPrompt(this)">📋 프롬프트 복사</button>
           <pre>[역할 및 목적]
-당신은 전문 레크리에이션 강사이자 행사 기획자입니다. 약 30명 규모의 인원이 참여하는 1박 2일 MT(Membership Training)의 세부 프로그램과 일정표를 기획해 주세요.
+당신은 <span class="metakey mk-wrap">전문 레크리에이션 강사이자 행사 기획자</span>입니다. 약 30명 규모의 인원이 참여하는 <span class="metakey mk-wrap">1박 2일 MT(Membership Training)의 세부 프로그램과 일정표를 기획해 주세요</span>. 아래 [우리 MT 설정]을 꼭 반영하고, '자유롭게 제안해 줘'라고 적힌 칸은 대학생 MT에 어울리게 자유롭게 정해 주세요.
+
+[우리 MT 설정]
+- MT 컨셉: <span class="pslot" id="pvS1">자유롭게 제안해 줘</span>
+- 꼭 넣고 싶은 활동: <span class="pslot" id="pvS2">자유롭게 제안해 줘</span>
+- 야간 분위기: <span class="pslot" id="pvS3">자유롭게 제안해 줘</span>
 
 [기획안 구조 및 필수 포함 내용]
 1. 1박 2일 타임라인
 
-첫날 숙소 도착부터 둘째 날 해산까지의 전체 일정을 시간대별로 표(Table)로 구성해 주세요. 표에는 <span style="color:#ff8f8f;">&#39;시간 / 프로그램 / 장소 / 안전 체크포인트&#39;</span> 열을 두고, 안전 체크포인트에는 <span style="color:#8ad3a4;">업로드된 교육부 매뉴얼에서 그 시간대에 해당하는 수칙만</span> 한 줄로 적어 주세요.
+첫날 숙소 도착부터 둘째 날 해산까지의 전체 일정을 시간대별로 표(Table)로 구성해 주세요. [꼭 넣고 싶은 활동]은 반드시 일정에 포함해 주세요. 표에는 <span style="color:#ff8f8f;">&#39;시간 / 프로그램 / 장소 / 안전 체크포인트&#39;</span> 열을 두고, 안전 체크포인트에는 <span style="color:#8ad3a4;">업로드된 교육부 매뉴얼에서 그 시간대에 해당하는 수칙만</span> 한 줄로 적어 주세요.
 
 2. 30인 규모 맞춤형 팀빌딩 및 레크리에이션
 
-참석자 전원이 소외되지 않고 다 함께 어색함을 깨며 참여할 수 있는 창의적인 실내외 단합 게임 3~4가지를 제안해 주세요.
+[MT 컨셉]에 어울리게, 참석자 전원이 소외되지 않고 다 함께 어색함을 깨며 참여할 수 있는 창의적인 실내외 단합 게임 3~4가지를 제안해 주세요.
 
 각 게임의 진행 방법, 소요 시간, 필요 준비물을 구체적으로 명시해 주세요.
 
 3. 의미 있는 야간 소통 프로그램
 
-단순한 술자리를 대체할 수 있는 구성원들이 서로 진솔한 이야기를 나누고 깊은 유대감을 형성할 수 있는 야간 네트워킹 활동을 기획해 주세요.
+[야간 분위기]에 맞게, 단순한 술자리를 대체할 수 있는 구성원들이 서로 진솔한 이야기를 나누고 깊은 유대감을 형성할 수 있는 야간 네트워킹 활동을 기획해 주세요.
 
 4. 안전 핵심 수칙 4가지
 
 <span style="color:#8ad3a4;">업로드된 교육부 매뉴얼만을 근거로</span>, 이번 MT에 반드시 들어가야 할 수칙을 <span style="color:#ff8f8f;">(1) 이동 및 차량 안전, (2) 숙소 안전과 야간 인원 점검, (3) 음주로 인한 안전사고 예방(강요 금지 포함), (4) 사고 발생 시 응급 대응과 신고 절차</span> — 네 항목으로 각각 한 문장씩 정리해 주세요. 대학생이 한 번에 읽고 이해할 만큼 짧고 직관적인 문장으로 써 주세요.</pre>
+        </div>
         </div>
       </div>
       <ul>
@@ -1093,16 +1300,27 @@ window.addEventListener('resize',function(){ ['dxmCard','rvCard'].forEach(functi
         <li>생성된 메모를 <b>설정에서 소스로 변환</b>합니다.</li>
       </ul>
 
-      <p class="substep" style="margin-top:2.6rem;">③ 단톡방에 뿌릴 안내 포스터 1장</p>
+      </div>
+      <div class="sxsec c3">
+      <div class="sx3 c3"><div class="sx3-tab">STEP 3</div><div class="sx3-bx"><p class="substep sx3-t">단톡방에 뿌릴 안내 포스터 1장</p><p class="sx3-d">기획안을 <b>인포그래픽 포스터 한 장</b>으로 만들어요</p></div></div>
       <p>소스로 변환한 <b>기획안 하나만 체크</b>합니다. (매뉴얼·웹소스는 체크 해제)</p>
       <p class="path">스튜디오 → <b>인포그래픽</b> → 카드 오른쪽 <b>&gt;</b> → <b>세부정보 수준 &#39;간결하게&#39;</b></p>
       <ul>
-        <li><b>방향</b> — 단톡방 배포용은 <b>세로</b>, 인쇄용 포스터는 <b>정사각형</b></li>
         <li>결과물은 <b>PNG</b>로 내려받을 수 있습니다.</li>
       </ul>
-      <div class="prompt-box">
-        <div class="gh"><span class="gi">🖼️</span><h4>프롬프트 · MT 안내 포스터 (인포그래픽)</h4></div>
-        <p class="desc">아래에서 <b>디자인을 하나 고르면</b> 프롬프트 맨 끝의 <b>[디자인]</b> 문단이 바뀝니다. 복사 버튼은 항상 전체를 복사합니다.</p>
+      <div class="prompt-box qd-box" style="margin-top:2.4rem;">
+        <div class="gh"><span class="gi">✍️</span><h4>먼저, 디자인 한마디만 직접 써 보세요</h4></div>
+        <p class="desc">인포그래픽 설명란에 <b>스타일 키워드 하나</b>만 넣어도 원하는 느낌으로 나와요. 아래 키워드를 누르거나 <b>빈칸에 직접 써서</b> 문장을 완성한 뒤, <b>📋 복사</b>해서 붙여넣으세요.</p>
+        <div class="qd-row"><div class="qd-form"><input class="qd-in" id="qdIn" type="text" placeholder="○○○" autocomplete="off"> 스타일로 만들어 줘</div><button type="button" class="qd-copy" id="qdCopy">📋 복사</button></div>
+        <div class="qd-keys">
+          <button type="button" data-k="3D 클레이">🧸 3D 클레이</button><button type="button" data-k="레트로 게임">🕹️ 레트로 게임</button><button type="button" data-k="수채화 일러스트">🎨 수채화 일러스트</button><button type="button" data-k="여행 티켓">🎫 여행 티켓</button><button type="button" data-k="캠핑 감성">⛺ 캠핑 감성</button>
+          <button type="button" data-k="네온 사이버">🌃 네온 사이버</button><button type="button" data-k="종이 콜라주">✂️ 종이 콜라주</button><button type="button" data-k="스티커 다꾸">📓 스티커 다꾸</button><button type="button" data-k="웹툰 말풍선">💬 웹툰 말풍선</button><button type="button" data-k="미니멀 모노">🤍 미니멀 모노</button>
+        </div>
+        <p class="qd-next">👇 한마디로 충분하면 끝! 그다음은 <b>[내용 구성] + [디자인]</b>을 함께 써도 돼요. 일정표 배치나 글자 크기까지 정하고 싶다면 아래 프롬프트를 써 보세요.</p>
+      </div>
+      <div class="prompt-box" style="margin-top:3.2rem;">
+        <div class="gh"><span class="gi">🖼️</span><h4>내용 구성 + 디자인까지 정할 수 있어요 <span style="font-weight:500;font-size:.82em;color:var(--muted);">· 인포그래픽 프롬프트</span></h4></div>
+        <p class="desc">아래에서 <b>디자인을 하나 고르면</b> 맨 끝 [디자인] 문단이 바뀌어요. <b>강조하고 싶은 내용</b>이 있으면 [내용 구성]에 한 줄 더해도 돼요. (예: <i>바비큐 시간을 가장 크게</i>)</p>
         <div class="bp-g" style="margin-bottom:14px;">
           <h5>디자인 골라 넣기 <em>하나만</em></h5>
           <div class="bp-chips" id="posterChips"></div>
@@ -1117,19 +1335,19 @@ window.addEventListener('resize',function(){ ['dxmCard','rvCard'].forEach(functi
 - 가장 크고 눈에 띄게: <span style="color:#ff8f8f;">1박 2일 시간대별 일정표</span>
 - 중간: 주요 팀빌딩 게임과 야간 프로그램의 이름, 소요 시간
 - 맨 아래 띠 모양 박스: <span style="color:#ff8f8f;">안전 핵심 수칙 4가지</span>를 각각 한 줄씩
-<span style="color:#8ad3a4;">전체 지면의 절반 이상을 일정표에 쓰고, 안전 수칙은 하단 박스 안에만 넣어 줘.</span> 대학생이 휴대폰으로 한 번에 훑어볼 수 있게 문장은 짧게, 글자는 크게 해 줘.
+<span style="color:#8ad3a4;">전체 지면의 절반 이상을 일정표에 쓰고, 안전 수칙은 하단 박스 안에만 넣어 줘.</span> 대학생이 휴대폰으로 한 번에 훑어볼 수 있게 문장은 짧게, 글자는 크고 배경과 또렷하게 구분되게 해 줘.
 
 [디자인]
 <span style="color:#8ad3a4;">위 내용 구성과 지면 비중은 그대로 지키고, 색·글씨·장식만 아래 느낌으로 바꿔 줘.</span>
-<span id="posterDesign">게임 화면처럼 만들어 줘. 일정표는 시간순 퀘스트 목록처럼, 각 프로그램은 획득할 미션 카드처럼 배치해 줘. 어두운 남색 배경에 밝은 하늘색·노란색 강조, 픽셀 느낌의 테두리와 체크박스 장식을 넣어 줘. 글자는 배경과 또렷하게 구분되도록 밝고 굵게 써 줘.</span></pre>
+<span id="posterDesign">게임 퀘스트 화면처럼. 일정표는 퀘스트 목록, 남색 배경에 하늘색·노랑 강조, 픽셀 테두리.</span></pre>
         </div>
       </div>
-      <div class="note">💡 <b>결과물 예시는 이 실습 맨 위</b>에 있습니다. 두 장 모두 <b>같은 기획안·같은 [내용 구성]</b>으로 만들고 <b>[디자인]</b> 문단만 갈아 끼운 것이니, 지금 고른 디자인이 어떻게 반영되는지 비교해 보세요.</div>
-      <div class="note">💡 디자인 지시는 <b>맨 끝에 따로</b> 둡니다. 앞에 섞으면 <b>&#39;일정표에 지면 절반&#39;</b> 같은 구성 규칙을 디자인 지시가 밀어냅니다. 완성된 PNG는 <b>패들렛</b>에 올려 서로 비교해 보세요.</div>
       <a class="cta-btn pad" href="https://padlet.com/JA_Korea/9-21-6enva6oxcsdk72n7" target="_blank" rel="noopener">🧡 완성한 포스터 패들렛에 올리기</a>
       <p style="margin:10px 0 0;font-size:.9rem;color:var(--navy-2);background:#e8f0fe;border-radius:10px;padding:9px 14px;display:table;">📌 패들렛의 <b>🖼️ MT 안내 포스터</b> 칸에 올려주세요.</p>
 
-      <p class="substep" style="margin-top:2.6rem;">④ [인솔자용] 안전 및 비상상황 대응 체크리스트 <span class="pill">시간 되면</span></p>
+      </div>
+      <div class="sxsec c4">
+      <div class="sx3 c4"><div class="sx3-tab">STEP 4</div><div class="sx3-bx"><p class="substep sx3-t">[인솔자용] 안전 및 비상상황 대응 체크리스트 <span class="sx3-chip gray">시간 되면</span></p><p class="sx3-d">매뉴얼로 <b>인솔자가 들고 다닐 체크리스트</b>를 만들어요</p></div></div>
       <p>학생회 임원·조장이 <b>인쇄해서 들고 다닐</b> 문서입니다. 이건 그림이 아니라 글이 필요하니, <b>매뉴얼만 체크</b>하고 스튜디오에서 <b>보고서</b>를 고른 뒤 설명란에 아래 프롬프트를 넣으세요.</p>
       <div class="prompt-box">
         <div class="gh"><span class="gi">📋</span><h4>프롬프트 · 안전 및 비상상황 대응 체크리스트 (보고서)</h4></div>
@@ -1146,6 +1364,7 @@ window.addEventListener('resize',function(){ ['dxmCard','rvCard'].forEach(functi
         <li><b>Tip</b>: 상세한 요청사항(프롬프트)을 추가하면, 내가 원하는 내용과 디자인을 반영하여 자료를 제작할 수 있습니다.</li>
       </ul>
       <a class="cta-btn teal" href="https://notebooklm.google.com/notebook/06199da8-1ca3-42f1-ad24-e6bdc4aeb55f" target="_blank" rel="noopener">🎬 Gemini Notebook 스튜디오 자료 링크</a>
+      </div>
     </div>
 
 
@@ -1209,13 +1428,13 @@ function copyPrompt(btn){
   if(!wrap || !out) return;
   var D = [
     { id:'game',   label:'\uD83C\uDFAE 게임 퀘스트', tip:'기본',
-      v:'게임 화면처럼 만들어 줘. 일정표는 시간순 퀘스트 목록처럼, 각 프로그램은 획득할 미션 카드처럼 배치해 줘. 어두운 남색 배경에 밝은 하늘색·노란색 강조, 픽셀 느낌의 테두리와 체크박스 장식을 넣어 줘. 글자는 배경과 또렷하게 구분되도록 밝고 굵게 써 줘.' },
+      v:'게임 퀘스트 화면처럼. 일정표는 퀘스트 목록, 남색 배경에 하늘색·노랑 강조, 픽셀 테두리.' },
     { id:'insta',  label:'\uD83D\uDCF1 인스타 스토리',
-      v:'인스타그램 스토리처럼 깔끔하고 트렌디하게 만들어 줘. 흰 배경에 여백을 넉넉히 두고, 파스텔 색 둥근 카드 안에 내용을 담아 줘. 각 프로그램 앞에 단순한 선 아이콘을 하나씩 붙이고, 글씨는 둥근 고딕으로.' },
+      v:'인스타 스토리처럼 깔끔하게. 흰 배경, 파스텔 둥근 카드, 작은 선 아이콘.' },
     { id:'retro',  label:'\uD83D\uDCE3 레트로 축제 전단지',
-      v:'1990년대 대학 축제 전단지 같은 레트로 포스터로 만들어 줘. 형광 노랑과 진한 빨강, 검정 세 가지 색만 쓰고, 제목은 아주 굵은 글씨로 크게. 거친 인쇄 종이 질감과 살짝 삐뚠 도형을 넣어 손으로 만든 느낌을 줘.' },
+      v:'90년대 대학 축제 전단지처럼. 형광 노랑·빨강·검정, 아주 굵은 제목, 거친 종이 질감.' },
     { id:'ticket', label:'\uD83C\uDFAB 여행 티켓',
-      v:'전체를 한 장의 여행 티켓처럼 디자인해 줘. 위쪽은 티켓 헤더, 일정표는 탑승 구간표처럼, 하단 안전 수칙 박스는 절취선 아래 부분에 배치해 줘. 점선 절취선과 도장 스탬프 장식을 넣고, 색은 남색과 크림색 바탕에 주황색 포인트로.' },
+      v:'여행 티켓처럼. 일정표는 탑승 구간표, 안전 수칙은 절취선 아래, 남색·크림에 주황 포인트.' },
     { id:'custom', label:'\u270F\uFE0F 직접 쓰기', custom:true }
   ];
   var cur = 'game';
@@ -1766,6 +1985,47 @@ function copyPrompt(btn){
   prev.addEventListener("click", function(e){ e.stopPropagation(); show(i - 1); });
   next.addEventListener("click", function(e){ e.stopPropagation(); show(i + 1); });
   show(0);
+})();
+</script>
+<script>
+/* 실습4 기획안: 우리 MT 설정 칸 → 프롬프트에 반영 */
+(function(){
+  var D='자유롭게 제안해 줘';
+  [1,2,3].forEach(function(i){
+    var inp=document.getElementById('pvIn'+i), sl=document.getElementById('pvS'+i);
+    if(!inp||!sl) return;
+    var chips=document.querySelector('.pb-chips[data-f="'+i+'"]'), multi=chips&&chips.dataset.multi;
+    function sync(){
+      var v=inp.value.trim(); sl.textContent=v||D; sl.classList.toggle('filled',!!v);
+      if(chips) [].forEach.call(chips.children,function(b){
+        var t=b.textContent; b.classList.toggle('on', multi ? v.split(/\s*,\s*/).indexOf(t)>-1 : v===t);
+      });
+    }
+    inp.addEventListener('input',sync);
+    if(chips) chips.addEventListener('click',function(e){
+      var b=e.target.closest('button'); if(!b) return; var t=b.textContent, v=inp.value.trim();
+      if(multi){ var arr=v?v.split(/\s*,\s*/):[]; var k=arr.indexOf(t); if(k>-1) arr.splice(k,1); else arr.push(t); inp.value=arr.join(', '); }
+      else { inp.value = (v===t) ? '' : t; }
+      sync();
+    });
+    sync();
+  });
+})();
+</script>
+<script>
+/* 포스터 디자인 한마디: 키워드 → 빈칸, 복사 버튼으로 한 줄 복사 */
+(function(){
+  var box=document.querySelector('.qd-keys'), inp=document.getElementById('qdIn'), cp=document.getElementById('qdCopy'); if(!box||!inp||!cp) return;
+  function mark(){ [].forEach.call(box.children,function(b){ b.classList.toggle('on', b.dataset.k===inp.value.trim()); }); }
+  box.addEventListener('click',function(e){ var b=e.target.closest('button[data-k]'); if(!b) return; inp.value=b.dataset.k; mark(); });
+  inp.addEventListener('input',mark);
+  cp.addEventListener('click',function(){
+    var v=inp.value.trim(); if(!v){ inp.focus(); inp.classList.add('need'); setTimeout(function(){inp.classList.remove('need');},900); return; }
+    var t=v+' 스타일로 만들어 줘';
+    function done(){ cp.classList.add('ok'); cp.textContent='✅ 복사됨!'; setTimeout(function(){ cp.classList.remove('ok'); cp.textContent='📋 복사'; },1400); }
+    function fb(){ var ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(x){} document.body.removeChild(ta); done(); }
+    if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(t).then(done,fb); } else fb();
+  });
 })();
 </script>
 </body>
