@@ -76,6 +76,13 @@
     }
   });
   /* 열 때는 항상 홈부터 — 마지막 탭을 기억하지 않습니다 */
+  /* 모듈 상단 번호(1·2·3…)를 '🏠 홈' 버튼 왼쪽 끝선에 맞추도록 위치를 알려줍니다 */
+  function sendAlign(){
+    try{ frame.contentWindow.postMessage({type:'mt-navalign', left: tabs[0].getBoundingClientRect().left}, '*'); }catch(e){}
+  }
+  frame.addEventListener('load', function(){ sendAlign(); setTimeout(sendAlign,300); });
+  window.addEventListener('resize', function(){ setTimeout(sendAlign,30); });
+  window.addEventListener('message', function(ev){ if(ev.data && ev.data.type==='mt-navalign-req') sendAlign(); });
 })();
 </script>
 </body>

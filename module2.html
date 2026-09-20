@@ -21,13 +21,18 @@
     background:#ffffff;line-height:1.72;}
 
   nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);background:var(--navy);border-bottom:1px solid rgba(255,255,255,.12);}
-  .nav-inner{max-width:1080px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+  .nav-inner{max-width:1240px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
   .brand{font-weight:600;color:#fff;letter-spacing:.2px;display:flex;align-items:center;gap:8px;font-size:1.02rem;}
   .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px rgba(30,142,62,.18);}
-  .nav-links{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
+  .nav-links{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap;}
   .nav-links a{color:rgba(255,255,255,.85);text-decoration:none;font-size:.86rem;font-weight:600;padding:6px 11px;border-radius:999px;transition:.18s;}
   .nav-links a:hover{background:rgba(255,255,255,.18);color:#fff;}
-  .nav-links a{width:32px;height:32px;padding:0;display:grid;place-items:center;border:1px solid rgba(255,255,255,.28);font-size:.92rem;}
+  .nav-links a{width:32px;height:32px;padding:0;display:grid;place-items:center;border-radius:10px;background:linear-gradient(135deg,#4285f4,#9b72cb);color:#fff;font-weight:600;font-size:.95rem;box-shadow:0 3px 10px rgba(25,103,210,.35);}
+  .nav-links a{animation:navGlow 3.6s ease-in-out infinite;}
+  .nav-links a:nth-child(2){animation-delay:.3s;} .nav-links a:nth-child(3){animation-delay:.6s;} .nav-links a:nth-child(4){animation-delay:.9s;} .nav-links a:nth-child(5){animation-delay:1.2s;} .nav-links a:nth-child(6){animation-delay:1.5s;}
+  @keyframes navGlow{0%,100%{box-shadow:0 3px 10px rgba(25,103,210,.35),0 0 8px rgba(66,133,244,.35);}50%{box-shadow:0 3px 12px rgba(25,103,210,.45),0 0 20px rgba(110,168,255,.75);}}
+  @media (prefers-reduced-motion:reduce){.nav-links a{animation:none;}}
+  .nav-links a:hover{background:linear-gradient(135deg,#5a95f6,#ab85d6);color:#fff;transform:translateY(-1px);}
   .stepcard{scroll-margin-top:74px;}
 
   .wrap{max-width:1240px;margin:0 auto;padding:0 22px;}
@@ -77,7 +82,7 @@
   #step2.stepcard{animation-delay:.5s;} #step3.stepcard{animation-delay:1s;} #step4.stepcard{animation-delay:1.5s;} #step5.stepcard{animation-delay:2s;} #step6.stepcard{animation-delay:2.5s;}
   @media (prefers-reduced-motion:reduce){.stepcard[id^="step"]{animation:none;}}
   .stepcard .head{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
-  .stepcard .num{flex:none;width:42px;height:42px;border-radius:14px;background:#1967d2;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:1.15rem;box-shadow:0 5px 14px rgba(25,103,210,.35);}
+  .stepcard .num{flex:none;width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,#4285f4,#9b72cb);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:1.15rem;box-shadow:0 5px 14px rgba(25,103,210,.35);}
   .stepcard .head h3{margin:0;color:var(--navy);font-size:1.2rem;}
   .stepcard p{margin:6px 0;}
   .stepcard ol,.stepcard ul{margin:8px 0 0;padding-left:20px;color:var(--ink);}
@@ -2033,6 +2038,23 @@ function copyPrompt(btn){
     function fb(){ var ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(x){} document.body.removeChild(ta); done(); }
     if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(t).then(done,fb); } else fb();
   });
+})();
+</script>
+<script>
+/* 통합 보기(index.html) 안에서 열릴 때: 위 번호를 '🏠 홈' 버튼 왼쪽 끝선에서 시작 */
+(function(){
+  var links=document.querySelector('nav .nav-links'), brand=document.querySelector('nav .brand'), L=null;
+  if(!links) return;
+  function reset(){ links.style.position=''; links.style.left=''; links.style.top=''; links.style.transform=''; links.style.marginLeft=''; }
+  function align(){
+    if(window.parent===window || L===null || innerWidth<=620) return reset();
+    var br=brand?brand.getBoundingClientRect().right:0;
+    if(L < br+16 || L+links.offsetWidth > innerWidth-8) return reset();
+    links.style.position='absolute'; links.style.left=L+'px'; links.style.top='50%'; links.style.transform='translateY(-50%)'; links.style.marginLeft='0';
+  }
+  window.addEventListener('message',function(ev){ if(ev.data && ev.data.type==='mt-navalign'){ L=ev.data.left; align(); } });
+  window.addEventListener('resize',align);
+  try{ if(window.parent!==window) window.parent.postMessage({type:'mt-navalign-req'},'*'); }catch(e){}
 })();
 </script>
 </body>

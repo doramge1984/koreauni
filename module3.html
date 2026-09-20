@@ -21,13 +21,18 @@
     background:#ffffff;line-height:1.72;}
 
   nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);background:var(--navy);border-bottom:1px solid rgba(255,255,255,.12);}
-  .nav-inner{max-width:1080px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+  .nav-inner{max-width:1240px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
   .brand{font-weight:600;color:#fff;letter-spacing:.2px;display:flex;align-items:center;gap:8px;font-size:1.02rem;}
   .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--terra);box-shadow:0 0 0 4px rgba(25,103,210,.18);}
-  .nav-links{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
+  .nav-links{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap;}
   .nav-links a{color:rgba(255,255,255,.85);text-decoration:none;font-size:.86rem;font-weight:600;padding:6px 11px;border-radius:999px;transition:.18s;}
   .nav-links a:hover{background:rgba(255,255,255,.18);color:#fff;}
-  .nav-links a{width:32px;height:32px;padding:0;display:grid;place-items:center;border:1px solid rgba(255,255,255,.28);font-size:.92rem;}
+  .nav-links a{width:32px;height:32px;padding:0;display:grid;place-items:center;border-radius:10px;background:linear-gradient(135deg,#4285f4,#9b72cb);color:#fff;font-weight:600;font-size:.95rem;box-shadow:0 3px 10px rgba(25,103,210,.35);}
+  .nav-links a{animation:navGlow 3.6s ease-in-out infinite;}
+  .nav-links a:nth-child(2){animation-delay:.3s;} .nav-links a:nth-child(3){animation-delay:.6s;} .nav-links a:nth-child(4){animation-delay:.9s;} .nav-links a:nth-child(5){animation-delay:1.2s;} .nav-links a:nth-child(6){animation-delay:1.5s;}
+  @keyframes navGlow{0%,100%{box-shadow:0 3px 10px rgba(25,103,210,.35),0 0 8px rgba(66,133,244,.35);}50%{box-shadow:0 3px 12px rgba(25,103,210,.45),0 0 20px rgba(110,168,255,.75);}}
+  @media (prefers-reduced-motion:reduce){.nav-links a{animation:none;}}
+  .nav-links a:hover{background:linear-gradient(135deg,#5a95f6,#ab85d6);color:#fff;transform:translateY(-1px);}
   .stepcard{scroll-margin-top:74px;}
 
   .wrap{max-width:1240px;margin:0 auto;padding:0 22px;}
@@ -261,7 +266,7 @@
   .stepcard:nth-of-type(5){animation-delay:2s;}
   @media (prefers-reduced-motion:reduce){.stepcard{animation:none;}}
   .stepcard .head{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
-  .stepcard .num{flex:none;width:42px;height:42px;border-radius:14px;background:#1967d2;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:1.15rem;box-shadow:0 5px 14px rgba(25,103,210,.35);}
+  .stepcard .num{flex:none;width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,#4285f4,#9b72cb);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:1.15rem;box-shadow:0 5px 14px rgba(25,103,210,.35);}
   .stepcard .head h3{margin:0;color:var(--navy);font-size:1.2rem;}
   .stepcard p{margin:6px 0;}
   .stepcard ol,.stepcard ul{margin:8px 0 0;padding-left:20px;color:var(--ink);}
@@ -476,6 +481,7 @@
   .od-pr{background:#1f2430;color:#e8eaed;border-radius:16px;padding:calc(var(--u)*1.8) calc(var(--u)*2.2);font-size:max(.82rem,calc(var(--u)*1.3));line-height:1.8;white-space:pre-wrap;text-align:left;margin:0;font-family:inherit;}
   .od-pr mark{border-radius:6px;padding:1px 5px;color:#0b1a33;font-weight:700;}
   .od-pr mark.r,.od-lg .r{background:#8ab4f8;} .od-pr mark.s,.od-lg .s{background:#81c995;} .od-pr mark.x,.od-lg .x{background:#d7aefb;} .od-pr mark.o,.od-lg .o{background:#dadce0;}
+  .od-pr mark.y{background:#ffe066;}
   .od-lg{display:flex;justify-content:center;flex-wrap:wrap;gap:calc(var(--u)*1.2);margin-top:calc(var(--u)*1.3);}
   .od-lg span{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:var(--navy);font-size:max(.85rem,calc(var(--u)*1.25));}
   .od-lg i{display:inline-block;width:14px;height:14px;border-radius:4px;}
@@ -769,9 +775,21 @@
       <span class="goal">🎯 시트 데이터를 실시간으로 내보내는 공개 API 주소</span>
       <p>💡 <b>앱스 스크립트(Apps Script)가 처음이어도 걱정 마세요.</b> 어려운 코드는 이미 다 써뒀어요 — 여러분은 <b>복사해서 붙여넣고 배포</b>만 하면 '데이터 창구(API)'가 뚝딱 생깁니다.</p>
       <p class="substep" style="margin-top:3.2rem;">① 코드를 못 짜도 괜찮아요 — Gemini에게 코드를 받아옵니다<button type="button" class="gs-go od-go" id="odBig" aria-label="발표 화면 열기"></button></p>
+      <details class="tip">
+        <summary>📖 내용 펼쳐 보기 · 한 줄 요청 → Gemini가 써 준 프롬프트</summary>
+        <div class="tb">
       <div class="prompt-box">
-        <div class="gh"><span class="gi">✨</span><h4>Gemini 프롬프트 · 데이터 창구(API) 코드 받아오기</h4></div>
-        <p class="desc">이 프롬프트 하나로 아래 ②의 <span class="mono">doGet</span> 코드가 만들어집니다.</p>
+        <div class="gh"><span class="gi">✍️</span><h4>먼저 · 이렇게 짧게만 썼어요</h4></div>
+        <p class="desc">하고 싶은 일 한 줄 + <b>"프롬프트는 네가 써 줘"</b>. 이것만으로 시작할 수 있어요.</p>
+        <div class="codewrap">
+          <button class="copy" onclick="copyPrompt(this)">📋 복사</button>
+          <pre>구글 시트에 쌓인 설문 응답을 웹 대시보드가 바로 읽을 수 있도록, JSON으로 내보내는 Apps Script를 만들고 싶어. <span style="background:#ffe066;color:#1f2430;font-weight:700;border-radius:4px;padding:0 4px;">이 작업에 딱 맞는 프롬프트를 네가 작성해 줘.</span></pre>
+        </div>
+      </div>
+      <p style="margin:1.6rem 0 .4rem;font-weight:700;color:var(--navy);">👇 그랬더니 Gemini가 아래 프롬프트를 써 줬어요.</p>
+      <div class="prompt-box">
+        <div class="gh"><span class="gi">✨</span><h4>Gemini가 써 준 프롬프트 · 데이터 창구(API) 코드 받아오기</h4></div>
+        <p class="desc">이 프롬프트로 다시 요청하면 아래 ②의 <span class="mono">doGet</span> 코드가 만들어집니다.</p>
         <div class="codewrap">
           <button class="copy" onclick="copyPrompt(this)">📋 프롬프트 복사</button>
           <pre>구글 시트에 쌓인 설문 응답을 웹 대시보드가 바로 읽을 수 있도록, <span style="color:#ff8f8f;font-weight:600;">JSON</span>으로 내보내는 Apps Script를 만들어줘.
@@ -786,9 +804,6 @@
 7. 코드 각 줄에 무슨 일을 하는지 한국어 주석을 달아줘.</pre>
         </div>
       </div>
-      <details class="tip">
-        <summary>📖 설명 글로 보기</summary>
-        <div class="tb">
       <p>아래 코드는 <b>제가 직접 타이핑한 게 아니라, Gemini에게 시켜서 받은 것</b>입니다. 프롬프트를 그대로 붙여넣으면 <b>바로 아래 ②에 들어갈 코드</b>가 거의 완성된 형태로 나옵니다. 오늘 진짜 배울 건 코드 문법이 아니라, <b style="color:#c0392b;">필요한 자동화를 AI에게 정확히 주문하는 법</b>이에요.</p>
       <div class="note">💡 <b>주문서에 꼭 들어가야 할 세 가지</b>예요.<br>&nbsp;&nbsp;· <b>어디서 읽을지</b> — 현재 스프레드시트의 첫 번째 시트<br>&nbsp;&nbsp;· <b>어떤 모양으로 만들지</b> — 헤더 이름을 키로 갖는 JSON 배열<br>&nbsp;&nbsp;· <b>어떻게 내보낼지</b> — doGet + 웹 앱 배포 + MimeType.JSON<br>→ 이 세 개를 빼먹으면 <b>엉뚱한 코드</b>가 나옵니다. 반대로 이 세 개만 정확하면 거의 그대로 작동하는 코드가 나와요.</div>
       <div class="note" style="border-left-color:var(--terra);background:#fdf3ec;">🔨 <b>코드가 예상과 다르게 나와도 괜찮아요.</b> 에러 메시지를 그대로 붙여넣거나 <span class="mono">이 부분이 이렇게 안 돼</span>, <span class="mono">이렇게 바꿔줘</span>처럼 <b>대화하듯 고쳐나가면</b> 됩니다. 오류를 잡는 과정도 AI와 함께 하는 거예요.<br>오늘은 시간 관계상 <b>제가 미리 받아둔 최종 코드를 아래 ②에서 다 같이</b> 붙여넣겠습니다.</div>
@@ -875,8 +890,9 @@
         <div class="ok">✅ 아래 프롬프트의 [웹 앱 URL] 자리에 들어갔어요.</div>
       </div>
       <div class="prompt-box">
-        <div class="gh"><span>🗣️</span><h4>프롬프트 · 실시간 대시보드 (예쁨 강화판)</h4></div>
-        <p class="desc"><b style="color:#c0392b;">🔴 빨강 = 열 매칭·집계 규칙</b> · <b style="color:#1f9d57;">🟢 초록 = 데이터·실시간 규칙</b> · <b style="color:#2b6cb0;">🔵 파랑 = 디자인(바꿔도 OK)</b> — 빨강·초록은 꼭 유지!</p>
+        <div class="gh"><span>🗣️</span><h4>프롬프트 · MT 결정 대시보드 만들기</h4></div>
+        <p class="desc"><b style="color:#c0392b;">🔴 숫자가 정확하게</b> — 항목 이름 그대로, 정확히 같은 값끼리만 세기<br><b style="color:#1f9d57;">🟢 진짜 데이터로, 실시간으로</b> — 지어내지 않기, 30초마다 새로고침, 실패하면 솔직하게 빨간 박스<br><b style="color:#2b6cb0;">🔵 보이는 모습</b> — 마음대로 바꿔도 OK</p>
+        <p class="desc" style="background:#fff8e1;border-radius:10px;padding:10px 14px;margin-top:10px;">💡 <b>왜 이렇게 길까요?</b> AI는 모르면 그럴듯하게 지어내요. 빨강·초록은 <b>가짜 숫자를 막는 안전장치</b>예요. 결정에 쓸 숫자는 틀리면 안 되니까요.</p>
         <div class="codewrap">
           <button class="copy" onclick="copyPrompt(this)">📋 프롬프트 복사</button>
           <pre>나는 구글 폼 응답을 앱스 스크립트(Apps Script)로 JSON API로 배포했어. API 주소는 '<span id="appUrlSlot" style="color:#ff8f8f;font-weight:600;">[웹 앱 URL]</span>' 이야.
@@ -910,6 +926,8 @@
 <span style="color:#7fb8ff;">[디자인] 딥네이비 배경에 시안·민트·코랄 포인트의 밝고 화사한 카드형 대시보드로 만들어줘. 그라데이션 헤더, 둥근 카드, 부드러운 그림자, KPI 숫자는 크게, 이모지 포인트. 상단에 'LIVE 동기화 중 · 다음 새로고침 N초' 상태 바. 모바일에서는 KPI·차트가 1열로 자연스럽게 쌓이게. 긴 장소명도 가로 막대에서 다 보이도록 여백을 충분히 줘.</span></pre>
         </div>
       </div>
+
+      <div class="note" style="margin-top:1.4rem;">📱 대시보드가 나오면, <b>본인이 만든 구글 폼 응답자 링크</b>에 접속해서 응답을 하나 입력해 보세요. <b>데이터가 잘 반영되는지</b> 확인해 보아요.</div>
 
       <p class="substep" style="margin-top:2.6rem;">🔍 심화 · 추가 프롬프트 하나씩 — 붙일 때마다 바뀝니다</p>
       <p>기본 대시보드가 나왔으면, 아래 <b>추가 프롬프트</b>를 <b>하나씩</b> 같은 채팅창에 이어 붙여넣어 보세요. <b>한 줄 추가할 때마다 대시보드가 어떻게 바뀌는지</b> 직접 느낄 수 있어요.</p>
@@ -1294,7 +1312,7 @@ function copyPrompt(btn){
 </script>
 <div class="dxm" id="odModal" hidden role="dialog" aria-modal="true" aria-label="코드 받아오기 설명 발표 화면">
   <div class="dxm-card" id="odCard">
-    <div class="dxm-top"><span class="dxm-kicker">✨ 코드는 받아오는 것 · 주문하는 법</span><button type="button" class="dxm-x" id="odX" aria-label="닫기">✕</button></div>
+    <div class="dxm-top"><span class="dxm-kicker">✨ 코드는 받아오는 것 · 한 줄로 시작하기</span><button type="button" class="dxm-x" id="odX" aria-label="닫기">✕</button></div>
     <h2 class="dxm-title" id="odTitle"></h2>
     <div class="dxm-stage" id="odStage"></div>
     <p class="dxm-msg" id="odMsg"></p>
@@ -1303,15 +1321,12 @@ function copyPrompt(btn){
 </div>
 <script>
 (function(){
-  var PR='구글 시트에 쌓인 설문 응답을 웹 대시보드가 바로 읽을 수 있도록, JSON으로 내보내는 Apps Script를 만들어줘.\n\n[필수 조건]\n1. <mark class="x">doGet(e) 함수로 만들고, 웹 앱으로 배포</mark>하면 주소 하나로 데이터를 받아볼 수 있게 해줘.\n2. <mark class="r">현재 스프레드시트의 첫 번째 시트를 읽고</mark>, 첫 행은 헤더(항목 이름), 나머지 행은 응답 데이터로 나눠줘.\n3. <mark class="s">각 행을 헤더 이름을 키로 갖는 객체로 바꿔서 전체를 JSON 배열로</mark> 반환해줘.\n4. 값이 날짜·시간이면 <mark class="s">Asia/Seoul 기준 문자열</mark>로 바꿔줘.\n5. <mark class="s">완전히 빈 행은 결과에서 빼줘.</mark>\n6. <mark class="x">ContentService로 MimeType.JSON을 지정해서 반환</mark>해줘.\n7. 코드 각 줄에 무슨 일을 하는지 <mark class="o">한국어 주석</mark>을 달아줘.';
   var S=[
-    {t:'코드를 못 짜도 괜찮아요', h:'<div class="gs-hero"><p class="big">코드는 <b>짜는</b> 게 아니라<br><b>받아오는</b> 것</p><div class="gs-chips"><span>문법 몰라도 OK</span><span>코드는 Gemini가 작성</span><span>나는 주문만</span></div></div>', m:'오늘 붙여넣을 코드도 <b>제가 직접 타이핑한 게 아니라, Gemini에게 시켜서 받은 것</b>이에요.'},
-    {t:'오늘 진짜 배울 것', h:'<div class="gs-cmp"><div class="bad"><b>✕ 코드 문법 외우기 <em>NO</em></b><p>함수, 반복문, 괄호 짝 맞추기…<br>오늘은 <b>몰라도 됩니다.</b></p></div><div class="good"><b>○ 정확히 주문하는 법 <em>YES</em></b><p>필요한 자동화를<br><b>AI에게 정확히 주문</b>하는 법.</p></div></div>', m:'주문이 정확하면 <b>거의 그대로 작동하는 코드</b>가 나와요.'},
-    {t:'주문서에 꼭 들어가야 할 세 가지', h:'<div class="od-3"><div class="r"><i>📍</i><b>어디서 읽을지</b><p>현재 스프레드시트의<br><b>첫 번째 시트</b></p></div><div class="s"><i>🧱</i><b>어떤 모양으로 만들지</b><p><b>헤더 이름을 키</b>로 갖는<br>JSON 배열</p></div><div class="x"><i>📤</i><b>어떻게 내보낼지</b><p><code>doGet</code> + 웹 앱 배포<br>+ <code>MimeType.JSON</code></p></div></div>', m:'이 세 개를 빼먹으면 <b>엉뚱한 코드</b>가 나와요. 반대로 이 세 개만 정확하면 <b>거의 그대로 작동</b>해요.'},
-    {t:'프롬프트 해부 · 세 가지는 어디 있을까?', h:'<pre class="od-pr">'+PR+'</pre><div class="od-lg"><span><i class="r"></i>어디서 읽을지</span><span><i class="s"></i>어떤 모양으로</span><span><i class="x"></i>어떻게 내보낼지</span><span><i class="o"></i>보너스 · 나도 읽을 수 있게</span></div>', m:'색깔별로 보면 <b>세 가지가 모두 들어 있어요.</b> 7번은 코드를 <b>내가 이해하기 위한</b> 보너스 주문이에요.'},
-    {t:'에러는 어디서 보나요?', h:'<div class="od-3"><div class="e"><i>💾</i><b>저장할 때 · 화면 위쪽</b><p>괄호가 빠지는 등 문법이 틀리면<br><b>저장(Ctrl+S)하는 순간</b><br>편집기 위에 <b>빨간 오류</b>가 떠요.</p></div><div class="e"><i>▶️</i><b>실행할 때 · 아래 실행 로그</b><p>편집기에서 <b>▶ 실행</b>을 누르면<br>아래 <b>실행 로그</b> 창에<br><code>TypeError…</code> 같은 빨간 글씨가 떠요.</p></div><div class="e"><i>🌐</i><b>배포 후 · 주소를 열었을 때</b><p>웹 앱 주소를 브라우저에 열면<br>데이터 대신 <b>오류 문구</b>가 나와요.<br>대시보드가 비어 보일 때도요.</p></div></div>', m:'빨간 글씨를 <b>통째로 복사</b>해 Gemini에게 붙여넣으면 돼요. 복사가 어려우면 <b>화면 캡처</b>를 올려도 괜찮아요.'},
-    {t:'안 되면? 대화로 고쳐요', h:'<div class="od-loop"><div><i>🧾</i><b>주문하기</b><small>프롬프트 붙여넣기</small></div><em>→</em><div><i>🤖</i><b>코드 받기</b><small>복사해서 붙여넣기</small></div><em>→</em><div><i>▶️</i><b>실행하기</b><small>저장 · 실행 · 배포</small></div><em>→</em><div class="hot"><i>⚠️</i><b>에러가 나면</b><small>빨간 글씨 복사</small></div><em>→</em><div class="hot"><i>💬</i><b>그대로 붙여넣기</b><small>“이 부분 이렇게 바꿔줘”</small></div></div><p class="od-back">↺ 고친 코드로 다시 실행 — 될 때까지 반복</p>', m:'오류를 잡는 과정도 <b>AI와 함께</b> 하는 거예요. 코드를 몰라도 <b>대화로</b> 고칠 수 있어요.'},
-    {t:'오늘은 이렇게 해요', h:'<div class="gs-hero"><p class="big">미리 받아둔 <b>최종 코드</b>로<br>다 같이 붙여넣어요</p><div class="gs-chips"><span>① 주문하는 법 ✔</span><span>② 코드 붙여넣기</span><span>③ 웹 앱으로 배포</span></div></div>', m:'시간 관계상 <b>제가 받아둔 코드</b>를 쓰지만, 집에서는 <b>위 프롬프트로 직접 받아 보세요.</b>'}
+    {t:'코드를 못 짜도 괜찮아요', h:'<div class="gs-hero"><p class="big">코드는 <b>짜는</b> 게 아니라<br><b>받아오는</b> 것</p><div class="gs-chips"><span>문법 몰라도 OK</span><span>코드는 Gemini가 작성</span><span>나는 요청만</span></div></div>', m:'오늘 붙여넣을 코드도 <b>제가 직접 쓴 게 아니라, Gemini에게 받은 것</b>이에요.'},
+    {t:'한 줄이면 시작돼요', h:'<pre class="od-pr" style="font-size:max(1rem,calc(var(--u)*1.9));line-height:1.8;"><span style="color:#ff8f8f;font-weight:700;">구글 시트에 쌓인 설문 응답을 웹 대시보드가 바로 읽을 수 있도록,</span> JSON으로 내보내는 <span style="color:#ff8f8f;font-weight:700;">Apps Script를 만들고 싶어.</span>\n<mark class="y">이 작업에 딱 맞는 프롬프트를 네가 작성해 줘.</mark></pre>', m:'하고 싶은 일 한 줄 + <b>“프롬프트는 네가 써 줘”</b>. 모듈 2에서 배운 <b>리버스 프롬프팅</b> 기억나죠?'},
+    {t:'Gemini가 주문서를 대신 써 줘요', h:'<div class="od-loop"><div><i>✍️</i><b>한 줄 요청</b><small>하고 싶은 일만</small></div><em>→</em><div><i>🤖</i><b>긴 프롬프트</b><small>Gemini가 작성</small></div><em>→</em><div><i>📋</i><b>그대로 다시 요청</b><small>복사 · 붙여넣기</small></div><em>→</em><div class="hot"><i>🧩</i><b>코드 완성</b><small>②에 붙여넣을 코드</small></div></div>', m:'긴 프롬프트는 <b>외우는 게 아니라 AI에게 받아내는 것</b>이에요.'},
+    {t:'에러가 나도 괜찮아요', h:'<div class="od-loop"><div class="hot"><i>⚠️</i><b>빨간 글씨가 떠요</b><small>저장·실행할 때 편집기 화면에</small></div><em>→</em><div><i>📋</i><b>통째로 복사</b><small>캡처해도 OK</small></div><em>→</em><div><i>💬</i><b>Gemini에게 붙여넣기</b><small>“이거 고쳐 줘”</small></div><em>→</em><div><i>✅</i><b>고친 코드로 다시</b><small>저장 · 실행</small></div></div><p class="od-back">↺ 될 때까지 대화로 고쳐요</p>', m:'코드를 몰라도 괜찮아요. 오류를 잡는 과정도 <b>AI와 함께</b> 해요.'},
+    {t:'오늘은 이렇게 해요', h:'<div class="gs-hero"><p class="big">미리 받아둔 <b>최종 코드</b>로<br>다 같이 붙여넣어요</p><div class="gs-chips"><span>① 요청하는 법 ✔</span><span>② 코드 붙여넣기</span><span>③ 웹 앱으로 배포</span></div></div>', m:'시간 관계상 <b>제가 받아둔 코드</b>를 쓰지만, 집에서는 <b>위의 한 줄 프롬프트로 직접</b> 받아 보세요.'}
   ];
   var modal=document.getElementById('odModal'); if(!modal) return;
   var card=document.getElementById('odCard'), st=document.getElementById('odStage'), tt=document.getElementById('odTitle'), mm=document.getElementById('odMsg'),
@@ -1352,6 +1367,23 @@ function copyPrompt(btn){
     else if(e.key==='Home'){ e.preventDefault(); show(0); }
   }, true);
   window.addEventListener('resize',function(){ if(!modal.hidden) fit(); });
+})();
+</script>
+<script>
+/* 통합 보기(index.html) 안에서 열릴 때: 위 번호를 '🏠 홈' 버튼 왼쪽 끝선에서 시작 */
+(function(){
+  var links=document.querySelector('nav .nav-links'), brand=document.querySelector('nav .brand'), L=null;
+  if(!links) return;
+  function reset(){ links.style.position=''; links.style.left=''; links.style.top=''; links.style.transform=''; links.style.marginLeft=''; }
+  function align(){
+    if(window.parent===window || L===null || innerWidth<=620) return reset();
+    var br=brand?brand.getBoundingClientRect().right:0;
+    if(L < br+16 || L+links.offsetWidth > innerWidth-8) return reset();
+    links.style.position='absolute'; links.style.left=L+'px'; links.style.top='50%'; links.style.transform='translateY(-50%)'; links.style.marginLeft='0';
+  }
+  window.addEventListener('message',function(ev){ if(ev.data && ev.data.type==='mt-navalign'){ L=ev.data.left; align(); } });
+  window.addEventListener('resize',align);
+  try{ if(window.parent!==window) window.parent.postMessage({type:'mt-navalign-req'},'*'); }catch(e){}
 })();
 </script>
 </body>
