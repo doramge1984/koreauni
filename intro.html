@@ -380,9 +380,9 @@
     <div class="rail-spark" id="spark"></div>
     <div class="nodes" id="nodes">
       <button class="node" type="button" data-i="0"><span class="bub"><span class="ic">🎭</span><span class="ck">✓</span></span><span class="lb">MT 캐릭터 컷<small>with 미미미누</small></span></button>
-      <button class="node" type="button" data-i="1"><span class="bub"><span class="ic">📝</span><span class="ck">✓</span></span><span class="lb">수요조사 폼<small>장소·일시</small></span></button>
+      <button class="node" type="button" data-i="1"><span class="bub"><span class="ic">📝</span><span class="ck">✓</span></span><span class="lb">수요조사 폼<small>일정·장소·회비</small></span></button>
       <button class="node" type="button" data-i="2"><span class="bub"><span class="ic">📱</span><span class="ck">✓</span></span><span class="lb">사전 수요조사<br>안내 페이지<small>회비·동의 → 폼</small></span></button>
-      <button class="node" type="button" data-i="3"><span class="bub"><span class="ic">🖼️</span><span class="ck">✓</span></span><span class="lb">MT 안내 포스터<small>일정·프로그램·수칙</small></span></button>
+      <button class="node" type="button" data-i="3"><span class="bub"><span class="ic">🖼️</span><span class="ck">✓</span></span><span class="lb">MT 프로그램·포스터<small>일정·프로그램·수칙</small></span></button>
       <button class="node" type="button" data-i="4"><span class="bub"><span class="ic">📊</span><span class="ck">✓</span></span><span class="lb">실시간 의사결정 대시보드<small>응답 실시간 반영</small></span></button>
     </div>
     </div>
@@ -398,7 +398,7 @@
             <figure><div class="im"><img src="sample1.jpg" alt=""></div><svg class="tr" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><rect x="1.2" y="1.2" width="97.6" height="97.6" rx="13" pathLength="100"/></svg><span class="n">1</span><figcaption>캐릭터 컷</figcaption></figure>
             <figure><div class="im"><img src="form-screen.png" alt=""></div><svg class="tr" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><rect x="1.2" y="1.2" width="97.6" height="97.6" rx="13" pathLength="100"/></svg><span class="n">2</span><figcaption>수요조사 폼</figcaption></figure>
             <figure><div class="im"><img src="canvas-screen.png" alt=""></div><svg class="tr" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><rect x="1.2" y="1.2" width="97.6" height="97.6" rx="13" pathLength="100"/></svg><span class="n">3</span><figcaption>안내 페이지</figcaption></figure>
-            <figure><div class="im"><img src="sample-poster.jpg" alt=""></div><svg class="tr" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><rect x="1.2" y="1.2" width="97.6" height="97.6" rx="13" pathLength="100"/></svg><span class="n">4</span><figcaption>안내 포스터</figcaption></figure>
+            <figure><div class="im"><img src="sample-poster.jpg" alt=""></div><svg class="tr" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><rect x="1.2" y="1.2" width="97.6" height="97.6" rx="13" pathLength="100"/></svg><span class="n">4</span><figcaption>프로그램·포스터</figcaption></figure>
             <figure><div class="im"><img src="dashboard-screen.jpg" alt=""></div><svg class="tr" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><rect x="1.2" y="1.2" width="97.6" height="97.6" rx="13" pathLength="100"/></svg><span class="n">5</span><figcaption>대시보드</figcaption></figure>
           </div>
         </div>
@@ -425,7 +425,7 @@
       <figure><div class="tb"><img src="sample1.jpg" alt=""></div><figcaption>MT 캐릭터 컷<small>이미지 저장</small></figcaption></figure>
       <figure><div class="tb"><img src="form-screen.png" alt=""></div><figcaption>수요조사 폼<small>내 드라이브</small></figcaption></figure>
       <figure><div class="tb"><img src="canvas-screen.png" alt=""></div><figcaption>사전 수요조사 안내 페이지<small>공유 링크</small></figcaption></figure>
-      <figure><div class="tb"><img src="sample-poster.jpg" alt=""></div><figcaption>MT 안내 포스터<small>이미지 저장</small></figcaption></figure>
+      <figure><div class="tb"><img src="sample-poster.jpg" alt=""></div><figcaption>MT 프로그램·포스터<small>이미지 저장</small></figcaption></figure>
       <figure><div class="tb"><img src="dashboard-screen.jpg" alt=""></div><figcaption>실시간 의사결정 대시보드<small>드라이브 + 링크</small></figcaption></figure>
     </div>
   </div>
@@ -461,8 +461,8 @@
       desc:'이제 MT 내용을 채울 차례예요. 1박 2일 <b>예상 일정표와 예상 프로그램</b>을 Gemini Notebook으로 짜보고, 안전 수칙까지 담아 <b>단톡방에 뿌릴 포스터 한 장</b>으로 정리해요.',
       tools:['Gemini Notebook'], badge:'완성 예시' },
     { no:'STEP 05', title:'실시간 의사결정 대시보드',
-      desc:'응답이 쏟아지면 이제 결정할 차례. "그래서 몇 명이 언제 돼? 어디로 가?" 친구들이 답하는 순간 <b>숫자가 실시간으로 바뀌는</b> 대시보드로 눈앞에서 정해요.',
-      tools:['Apps Script','API','Canvas'], badge:'라이브 시연' }
+      desc:'응답이 쏟아지면 이제 결정할 차례. "그래서 몇 명이 언제 돼? 어디로 가?" 친구들이 답하는 순간 <b>숫자가 실시간으로 바뀌는</b> 대시보드를 <b>시연으로 먼저 보고, 직접 만들어요.</b>',
+      tools:['Apps Script','API','Canvas'], badge:'시연 → 직접 실습' }
   ];
 
   var stage=document.getElementById('stage'), nodesWrap=document.getElementById('nodes'),
