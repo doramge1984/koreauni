@@ -384,6 +384,87 @@
   .sb-steps img{display:block;max-width:100%;width:560px;border:1px solid var(--line);border-radius:12px;box-shadow:0 4px 14px rgba(36,53,81,.08);}
   .sb-alt{background:#fef7e0;border-radius:12px;padding:12px 14px;}
   .sb-cap{margin:14px 0 0;font-size:.9rem;color:#1967d2;background:#e8f0fe;border-radius:10px;padding:10px 14px;}
+
+  /* ⚙️ 앱스 스크립트 발표 화면 */
+  .gs-go{flex:none;align-self:center;margin-left:auto;width:46px;height:28px;border:0;padding:0;cursor:pointer;background:linear-gradient(100deg,#4285f4,#9b72cb);border-radius:999px;box-shadow:0 4px 12px rgba(155,114,203,.3);}
+  .gs-go:hover{filter:brightness(1.08);}
+  .dxm{position:fixed;inset:0;z-index:9000;background:rgba(20,28,45,.72);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:2vh 2vw;opacity:0;transition:opacity .22s ease;}
+  .dxm.open{opacity:1;} .dxm[hidden]{display:none;}
+  .dxm-card{--u:min(1vw,1.75vh);width:min(1560px,96vw);max-height:96vh;overflow:hidden;background:#fff;border-radius:calc(var(--u)*2);box-shadow:0 30px 80px rgba(0,0,0,.35);padding:calc(var(--u)*2.6) calc(var(--u)*3.6);cursor:pointer;transform:scale(.96) translateY(10px);transition:transform .3s cubic-bezier(.2,.9,.3,1);display:flex;flex-direction:column;}
+  .dxm.open .dxm-card{transform:none;}
+  .dxm-top{display:flex;align-items:center;justify-content:space-between;}
+  .dxm-kicker{font-size:max(.78rem,calc(var(--u)*1.05));font-weight:700;letter-spacing:.06em;color:#7a5bb0;}
+  .dxm-x{border:0;background:#f1f3f4;color:var(--navy-2);width:40px;height:40px;border-radius:50%;font-size:1.1rem;cursor:pointer;flex:none;}
+  .dxm-title{margin:calc(var(--u)*.8) 0 calc(var(--u)*1.4);font-size:max(1.3rem,calc(var(--u)*2.6));font-weight:800;color:var(--navy);letter-spacing:-.02em;}
+  .dxm-stage.flip>*{animation:dxmIn .45s ease both;}
+  @keyframes dxmIn{from{opacity:.25;transform:translateY(6px);}to{opacity:1;transform:none;}}
+  .dxm-msg{margin:calc(var(--u)*1.3) 0 0;padding:calc(var(--u)*1.1) calc(var(--u)*1.6);border-radius:14px;background:#f1f3f4;color:var(--navy-2);font-size:max(.92rem,calc(var(--u)*1.35));line-height:1.55;}
+  .dxm-foot{display:flex;align-items:center;gap:14px;margin-top:calc(var(--u)*1.3);}
+  .dxm-bar{flex:1;height:6px;border-radius:99px;background:#eceff3;overflow:hidden;}
+  .dxm-bar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#4285f4,#9b72cb,#d96570);transition:width .35s ease;}
+  .dxm-nav{flex:none;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--navy);font-size:1.4rem;line-height:1;cursor:pointer;display:grid;place-items:center;}
+  .dxm-nav:disabled{opacity:.35;cursor:default;} .dxm-nav:hover{border-color:#1967d2;color:#1967d2;}
+  .dxm-page{font-size:.9rem;font-weight:700;color:var(--navy-2);font-variant-numeric:tabular-nums;}
+  .dxm-keys{display:flex;align-items:center;gap:6px;font-size:.8rem;color:var(--muted);}
+  .dxm-k{border:1px solid var(--line);background:#fff;color:var(--navy-2);border-radius:999px;padding:5px 12px;font:inherit;font-size:.8rem;font-weight:600;cursor:pointer;}
+  .dxm-k:hover{border-color:#1967d2;color:#1967d2;}
+  .gs-hero{text-align:center;padding:calc(var(--u)*1.5) 0;}
+  .gs-hero img{height:calc(var(--u)*7);max-width:80%;}
+  .gs-hero .big{font-size:max(1.4rem,calc(var(--u)*3));font-weight:800;color:var(--navy);margin:calc(var(--u)*1.6) 0;}
+  .gs-hero .big b{color:#1967d2;}
+  .gs-chips{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;}
+  .gs-chips span{background:#e8f0fe;color:#1967d2;font-weight:700;border-radius:999px;padding:6px 14px;font-size:max(.85rem,calc(var(--u)*1.2));}
+  .gs-pt{display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto auto;column-gap:calc(var(--u)*2.4);align-items:center;background:#f8fafd;border:1px solid var(--line);border-radius:20px;padding:calc(var(--u)*2.6) calc(var(--u)*3);}
+  .gs-num{grid-row:1/4;width:calc(var(--u)*8);height:calc(var(--u)*8);border-radius:calc(var(--u)*2);background:linear-gradient(135deg,#4285f4,#9b72cb);color:#fff;font-weight:800;font-size:calc(var(--u)*4.4);display:grid;place-items:center;box-shadow:0 10px 26px rgba(66,133,244,.3);}
+  .gs-ic{font-size:calc(var(--u)*2.4);}
+  .gs-pt h3{margin:0;font-size:max(1.2rem,calc(var(--u)*2.3));color:var(--navy);}
+  .gs-pt p{margin:calc(var(--u)*.8) 0 0;font-size:max(1rem,calc(var(--u)*1.55));line-height:1.65;color:var(--navy-2);}
+  .gs-pt p b{color:#1967d2;}
+  .gs-api{text-align:center;}
+  .gs-flow{display:flex;justify-content:center;align-items:center;gap:calc(var(--u)*1.4);flex-wrap:wrap;margin:calc(var(--u)*1) 0 calc(var(--u)*2);}
+  .gs-flow span{background:#f8fafd;border:1px solid var(--line);border-radius:18px;padding:calc(var(--u)*1.4) calc(var(--u)*2);font-weight:800;font-size:max(1rem,calc(var(--u)*1.8));color:var(--navy);display:flex;flex-direction:column;gap:4px;}
+  .gs-flow span.k{background:#e8f0fe;border-color:#c6dafc;color:#1967d2;box-shadow:0 8px 22px rgba(66,133,244,.18);}
+  .gs-flow small{font-size:.6em;font-weight:600;color:var(--muted);}
+  .gs-flow em{font-style:normal;font-size:calc(var(--u)*2.4);color:#9aa0a6;}
+  .gs-api p{font-size:max(1rem,calc(var(--u)*1.6));color:var(--navy-2);margin:0;} .gs-api p small{color:var(--muted);font-size:.7em;margin-right:6px;} .gs-api p b{color:var(--navy);}
+  .gs-cmp{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*2);}
+  .gs-cmp>div{border-radius:20px;padding:calc(var(--u)*2.2);border:1px solid var(--line);}
+  .gs-cmp .bad{background:#fdf1ef;border-color:#f3c7c1;} .gs-cmp .good{background:#eaf6ee;border-color:#bfe2cb;}
+  .gs-cmp>div>b{display:block;font-size:max(1.05rem,calc(var(--u)*1.8));color:var(--navy);} .gs-cmp>div>b em{font-style:normal;font-size:.7em;background:#fff;border-radius:999px;padding:2px 10px;margin-left:6px;}
+  .gs-cmp .bad>b em{color:#c5221f;} .gs-cmp .good>b em{color:#1e8e3e;}
+  .gs-cmp p b{color:var(--navy);}
+  .gs-cmp code{display:block;margin:calc(var(--u)*1.2) 0;background:#fff;border-radius:10px;padding:calc(var(--u)*1) calc(var(--u)*1.2);font-size:max(.95rem,calc(var(--u)*1.45));}
+  .gs-cmp p code{display:inline;margin:0;padding:1px 6px;}
+  .gs-cmp p{margin:0;font-size:max(.95rem,calc(var(--u)*1.4));line-height:1.6;color:var(--navy-2);}
+  .gs-use{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*1.4);}
+  .gs-use>div{display:grid;grid-template-columns:auto 1fr;column-gap:calc(var(--u)*1.4);align-items:center;background:#f8fafd;border:1px solid var(--line);border-radius:18px;padding:calc(var(--u)*1.6) calc(var(--u)*2);}
+  .gs-use i{grid-row:1/3;font-style:normal;font-size:calc(var(--u)*3.4);}
+  .gs-use b{font-size:max(1.05rem,calc(var(--u)*1.8));color:var(--navy);} .gs-use p{margin:4px 0 0;font-size:max(.92rem,calc(var(--u)*1.35));color:var(--navy-2);}
+  .gs-chain{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:calc(var(--u)*1);margin:calc(var(--u)*1.5) 0 calc(var(--u)*2.4);}
+  .gs-chain span{background:linear-gradient(135deg,#e8f0fe,#f3e8fd);border:1px solid #d6cdf0;border-radius:16px;padding:calc(var(--u)*1.2) calc(var(--u)*1.8);font-weight:800;font-size:max(1rem,calc(var(--u)*1.9));color:var(--navy);}
+  .gs-chain em{font-style:normal;font-size:calc(var(--u)*2.2);color:#9b72cb;}
+  .gs-ex{text-align:center;font-size:max(1rem,calc(var(--u)*1.6));line-height:1.7;color:var(--navy-2);margin:0;} .gs-ex b{color:#1967d2;}
+  .gs-steps{display:flex;align-items:stretch;justify-content:center;gap:calc(var(--u)*.8);flex-wrap:wrap;}
+  .gs-steps>div{flex:1;min-width:110px;background:#fff8ee;border:1px solid #f0d9b5;border-radius:18px;padding:calc(var(--u)*1.6) calc(var(--u)*1);text-align:center;display:flex;flex-direction:column;gap:4px;}
+  .gs-steps i{font-style:normal;font-size:calc(var(--u)*3.4);}
+  .gs-steps b{font-size:max(1rem,calc(var(--u)*1.7));color:var(--navy);}
+  .gs-steps small{font-size:max(.8rem,calc(var(--u)*1.15));color:var(--muted);}
+  .gs-steps>em{align-self:center;font-style:normal;font-size:calc(var(--u)*2.2);color:#c9772b;}
+  .gs-ba{display:flex;align-items:center;gap:calc(var(--u)*1.6);}
+  .gs-ba figure{flex:1;margin:0;text-align:center;}
+  .gs-ba img{max-height:calc(var(--u)*26);object-fit:contain;width:100%;border-radius:14px;box-shadow:0 8px 24px rgba(36,53,81,.15);}
+  .gs-ba figcaption{margin-top:calc(var(--u)*1);font-size:max(.9rem,calc(var(--u)*1.35));color:var(--navy-2);line-height:1.6;}
+  .gs-ba code{background:#fff3c4;border-radius:6px;padding:1px 6px;font-size:.9em;}
+  .gs-ba>em{font-style:normal;font-size:calc(var(--u)*3);color:#c9772b;}
+  .gs-mail{display:grid;grid-template-columns:1.1fr 1fr;gap:calc(var(--u)*2.4);align-items:center;}
+  .gs-mail img{max-height:calc(var(--u)*30);object-fit:contain;width:100%;border-radius:14px;border:1px solid var(--line);box-shadow:0 8px 24px rgba(36,53,81,.12);}
+  .gs-mail ul{list-style:none;margin:0;padding:0;display:grid;gap:calc(var(--u)*1.2);}
+  .gs-mail li{font-size:max(1rem,calc(var(--u)*1.55));color:var(--navy-2);background:#f8fafd;border:1px solid var(--line);border-radius:14px;padding:calc(var(--u)*1) calc(var(--u)*1.4);}
+  .gs-mail li b{color:var(--navy);}
+  .gs-vs .m4{background:#fff8ee;border-color:#f0d9b5;} .gs-vs .m4>b em{color:#c9772b;}
+  .gs-vs p{font-size:max(1rem,calc(var(--u)*1.6));}
+  @media (max-width:760px){.gs-mail{grid-template-columns:1fr;}.gs-ba{flex-direction:column;}}
+  @media (max-width:760px){.gs-cmp,.gs-use{grid-template-columns:1fr;}.dxm-keys{display:none;}}
 </style>
 </head>
 <body>
@@ -443,6 +524,7 @@
           <p>모듈 3과 모듈 4에서 함께 쓰는 도구입니다. 처음 보셔도 괜찮아요 — 네 가지만 알면 충분합니다.</p>
           <span class="open">눌러서 설명 보기</span>
         </span>
+        <button type="button" class="gs-go" id="gsBig" aria-label="발표 화면 열기"></button>
       </summary>
       <div class="gasbody">
       <div class="gasrow">
@@ -454,7 +536,7 @@
         <div class="g">
           <div class="n">2</div>
           <h4>구글 앱들을 대신 조작합니다</h4>
-          <p>시트를 읽고, 문서를 만들고, 드라이브에 저장하고, <b>메일까지 보냅니다.</b> 사람이 손으로 하던 일을 구글이 대신합니다.</p>
+          <p>시트를 읽고, 문서를 만들고, 드라이브에 저장하고, <b>메일까지 보냅니다.</b> 사람이 손으로 하던 일을 <b>내가 넣은 코드가 대신합니다.</b></p>
         </div>
         <div class="g">
           <div class="n">3</div>
@@ -1114,5 +1196,73 @@ function copyPrompt(btn){
 </script>
 
 
+<div class="dxm" id="gsModal" hidden role="dialog" aria-modal="true" aria-label="앱스 스크립트 설명 발표 화면">
+  <div class="dxm-card" id="gsCard">
+    <div class="dxm-top"><span class="dxm-kicker">⚙️ 앱스 스크립트(Apps Script)란?</span><button type="button" class="dxm-x" id="gsX" aria-label="닫기">✕</button></div>
+    <h2 class="dxm-title" id="gsTitle"></h2>
+    <div class="dxm-stage" id="gsStage"></div>
+    <p class="dxm-msg" id="gsMsg"></p>
+    <div class="dxm-foot"><button type="button" class="dxm-nav" id="gsPrev" aria-label="이전">‹</button><button type="button" class="dxm-nav" id="gsNext" aria-label="다음">›</button><div class="dxm-bar"><i id="gsBar"></i></div><span class="dxm-page" id="gsPage"></span><span class="dxm-keys"><button type="button" class="dxm-k" data-go="-1">← 이전</button><button type="button" class="dxm-k" data-go="1">다음 →</button><span>Esc 닫기</span></span></div>
+  </div>
+</div>
+<script>
+(function(){
+  function pt(n,h,p,ic){ return '<div class="gs-pt"><div class="gs-num">'+n+'</div><div class="gs-ic">'+ic+'</div><h3>'+h+'</h3><p>'+p+'</p></div>'; }
+  var S=[
+    {t:'앱스 스크립트(Apps Script)란?', h:'<div class="gs-hero"><img src="apps-script-logo.png" alt="Google Apps Script"><p class="big">구글 안에 들어 있는 <b>자동화 도구</b></p><div class="gs-chips"><span>설치 없음</span><span>구글 계정만 있으면 됨</span><span>무료</span><span>코드는 교안에 준비됨</span></div></div>', m:'구글 시트·폼·슬라이드·드라이브·Gmail을 <b>코드로 연결해서 대신 일하게</b> 만드는 도구예요.'},
+    {t:'① 구글 안에 들어 있어요', h:pt(1,'구글 안에 들어있는 자동화 도구','따로 설치하지 않아요. 구글 <b>시트·폼·문서·슬라이드 안에</b> 이미 들어 있고,<br>구글 계정만 있으면 바로 열려요.','🧩'), m:'시트에서 <b>확장 프로그램 → Apps Script</b> 메뉴로 바로 열 수 있어요.'},
+    {t:'② 구글 앱들을 대신 조작해요', h:pt(2,'구글 앱들을 대신 조작합니다','시트를 읽고, 문서를 만들고, 드라이브에 저장하고,<br><b>메일까지 보내요.</b> 사람이 손으로 하던 일을 <b>내가 넣은 코드가 대신해요.</b>','🤖'), m:'반복되는 일을 코드 몇 줄로 맡길 수 있어요.'},
+    {t:'③ 알아서 실행돼요', h:pt(3,'알아서 실행됩니다','내가 버튼을 누를 때는 물론,<br><b>폼에 응답이 들어오는 순간</b>이나 <b>매일 정해진 시간</b>에<br>저절로 실행되게 걸어둘 수 있어요.','⏰'), m:'이걸 <b>트리거</b>라고 불러요. → 모듈 4에서 써요.'},
+    {t:'④ 내 데이터에 주소를 붙여줘요', h:pt(4,'내 데이터에 주소를 붙여줍니다','<b>웹 앱으로 배포</b>하면 <b>주소 하나</b>가 생겨요.<br>대시보드는 그 주소로 찾아와 데이터를 가져가요.<br>이 주소를 <b>API</b>라고 불러요.','🔗'), m:'→ 오늘 <b>모듈 3</b>에서 바로 이걸 만들어요.'},
+    {t:'같은 도구, 다른 초능력', h:'<div class="gs-cmp gs-vs"><div class="good"><b>모듈 3 · 실시간 의사결정 대시보드 <em>웹 앱 · API</em></b><p>시트 데이터를 <b>읽어서 주소로 내보내요.</b><br>대시보드가 그 주소로 데이터를 가져가요.</p></div><div class="m4"><b>모듈 4 · MT 추억 엽서 자동화 <em>트리거</em></b><p>폼 제출에 <b>자동으로 반응해 일해요.</b><br>엽서 만들고, 저장하고, 메일까지.</p></div></div>', m:'💡 코드는 <b>Gemini가 써 줘요.</b> 우리는 붙여넣고 배포만 하면 돼요.'},
+    {t:'모듈 3 · 이 주소(API)가 왜 필요할까요?', h:'<div class="gs-api"><div class="gs-flow"><span>📋 구글 시트<small>폼 응답이 쌓인 곳</small></span><em>→</em><span class="k">🔗 API 주소<small>앱스 스크립트 웹 앱</small></span><em>→</em><span>📊 대시보드<small>Gemini Canvas</small></span></div><p><b>API</b> <small>Application Programming Interface</small> = <b>프로그램끼리 데이터를 주고받는 통로</b></p></div>', m:'대시보드가 시트를 읽으려면 <b>읽을 수 있는 주소</b>가 하나 있어야 해요. 새 응답이 들어오면 <b>대시보드 숫자도 바로</b> 바뀌어요.'},
+    {t:'모듈 3 · 데이터를 보내는 두 가지 방식', h:'<div class="gs-cmp"><div class="bad"><b>쉼표로 이어붙이기 <em>CSV</em></b><code>김민준,가평,2학년</code><p>답 안에 <b>쉼표가 있으면</b> 칸이 밀려요.<br>폼 체크박스는 <code>가평, 강촌</code>처럼 저장돼서 실제로 생겨요.</p></div><div class="good"><b>값마다 이름표 붙이기 <em>JSON</em></b><code>이름: 김민준 / 장소: 가평 / 학년: 2학년</code><p><b>이름표가 붙어 있어서</b> 칸이 밀릴 일이 없어요.<br>쉼표가 있어도 그대로 전달돼요.</p></div></div>', m:'👉 오늘 교안 코드는 <b>앱스 스크립트로 주소를 만들고, 이름표 방식(JSON)으로</b> 내보내요.'},
+    {t:'모듈 4 · 자동화의 완성형: MT 추억 엽서', h:'<div class="gs-steps"><div><i>📝</i><b>폼 제출</b><small>이름·소감·사진</small></div><em>→</em><div><i>📋</i><b>시트 저장</b><small>응모번호 #001 부여</small></div><em>→</em><div><i>🖼️</i><b>엽서 만들기</b><small>슬라이드 템플릿에 채움</small></div><em>→</em><div><i>📁</i><b>PDF 저장</b><small>드라이브</small></div><em>→</em><div><i>✉️</i><b>메일 발송</b><small>Gmail</small></div></div>', m:'<b>폼 제출 트리거</b> 하나로 도구 다섯 개가 이어져요. 사람 손은 <b>한 번도</b> 안 닿아요.'},
+    {t:'모듈 4 · 빈 템플릿이 → 나만의 엽서로', h:'<div class="gs-ba"><figure><img src="postcard-before.jpg" alt="엽서 템플릿"><figcaption>슬라이드 템플릿<br><code>{{이름}}</code> <code>{{소감}}</code> <code>{{응모번호}}</code> 자리</figcaption></figure><em>➜</em><figure><img src="postcard-after.jpg" alt="완성된 엽서"><figcaption><b>폼 응답이 자동으로</b> 채워진 완성 엽서</figcaption></figure></div>', m:'이름·소감·사진·응모번호가 <b>한 명씩 알아서</b> 들어가요.'},
+    {t:'모듈 4 · 메일이 저절로 도착해요', h:'<div class="gs-mail"><img src="postcard-mail.png" alt="자동 발송된 메일"><ul><li>📨 제목: <b>[MT 추억 엽서]</b> ○○님의 커피 추첨 응모번호</li><li>🎟️ 응모번호가 <b>겹치지 않게</b> 자동 부여</li><li>📎 엽서 <b>PDF 첨부</b></li><li>⏰ 여러 명이 동시에 제출해도 <b>24시간, 실수 없이</b></li></ul></div>', m:'한 명씩 손으로 보낼 필요 없어요. <b>반복은 자동화에게</b> 맡겨요.'},
+    {t:'🙋 이럴 때도 씁니다', h:'<div class="gs-use"><div><i>🔒</i><b>선착순 자동 마감</b><p>정원이 차면 폼을 닫고 확정 메일 발송</p></div><div><i>👥</i><b>조 편성 자동 배정</b><p>버튼 한 번에 조를 나누고 조장에게 명단</p></div><div><i>📮</i><b>사람마다 다른 파일</b><p>신청 즉시 엽서를 PDF로 만들어 발송</p></div><div><i>💸</i><b>회비 안 낸 사람에게만</b><p>매일 미납자만 표시하고 그 사람에게만 메일</p></div></div>', m:'진짜 핵심은 코딩 실력이 아니라 <b>"이 반복은 자동화할 수 있다"는 눈</b>이에요.'}
+  ];
+  var modal=document.getElementById('gsModal'); if(!modal) return;
+  var card=document.getElementById('gsCard'), st=document.getElementById('gsStage'), tt=document.getElementById('gsTitle'), mm=document.getElementById('gsMsg'),
+      pg=document.getElementById('gsPage'), bar=document.getElementById('gsBar'), n=0, N=S.length, last=null;
+  function fit(){
+    var base=Math.min(innerWidth/100, innerHeight*0.0175), lo=0.6, hi=2.2, k=1;
+    function ok(v){ card.style.setProperty('--u',(base*v).toFixed(2)+'px'); return card.scrollHeight<=card.clientHeight+1 && card.scrollHeight<=innerHeight*0.96; }
+    for(var i=0;i<14;i++){ var m=(lo+hi)/2; if(ok(m)){ k=m; lo=m; } else { hi=m; } }
+    card.style.setProperty('--u',(base*k*0.97).toFixed(2)+'px');
+  }
+  function show(k){
+    n=Math.max(0,Math.min(N-1,k));
+    tt.textContent=S[n].t; st.innerHTML=S[n].h; mm.innerHTML=S[n].m;
+    pg.textContent=(n+1)+' / '+N; bar.style.width=((n+1)/N*100)+'%';
+    document.getElementById('gsPrev').disabled=n===0; document.getElementById('gsNext').disabled=n===N-1;
+    st.classList.remove('flip'); void st.offsetWidth; st.classList.add('flip');
+    [].forEach.call(st.querySelectorAll('img'),function(im){ if(!im.complete) im.onload=fit; });
+    fit();
+  }
+  function open(){ last=document.activeElement; modal.hidden=false; document.documentElement.style.overflow='hidden';
+    requestAnimationFrame(function(){ modal.classList.add('open'); }); show(0); document.getElementById('gsX').focus(); }
+  function close(){ modal.classList.remove('open'); document.documentElement.style.overflow='';
+    setTimeout(function(){ modal.hidden=true; },220); if(last) try{ last.focus(); }catch(e){} }
+  document.getElementById('gsBig').addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation(); open(); });
+  document.getElementById('gsX').addEventListener('click',function(e){ e.stopPropagation(); close(); });
+  document.getElementById('gsPrev').addEventListener('click',function(e){ e.stopPropagation(); show(n-1); });
+  document.getElementById('gsNext').addEventListener('click',function(e){ e.stopPropagation(); show(n+1); });
+  modal.addEventListener('click',function(e){
+    if(e.target===modal){ close(); return; }
+    var g=e.target.closest('[data-go]'); if(g){ show(n+(+g.dataset.go)); return; }
+    if(e.target.closest('.dxm-foot')||e.target.closest('.dxm-top')) return;
+    var rc=card.getBoundingClientRect(); show(e.clientX < rc.left + rc.width*0.25 ? n-1 : n+1);
+  });
+  document.addEventListener('keydown',function(e){
+    if(modal.hidden) return;
+    if(e.key==='Escape'){ e.preventDefault(); close(); }
+    else if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'||e.key==='Enter'){ e.preventDefault(); show(n+1); }
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'||e.key==='Backspace'){ e.preventDefault(); show(n-1); }
+    else if(e.key==='Home'){ e.preventDefault(); show(0); }
+  }, true);
+  window.addEventListener('resize',function(){ if(!modal.hidden) fit(); });
+})();
+</script>
 </body>
 </html>
